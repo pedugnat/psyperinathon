@@ -7,20 +7,10 @@ from itertools import chain
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 
 eq_width = {"width": "20%",
             "text-align": "center"}
-
-tab2_content = dbc.Card(
-    dbc.CardBody(
-        [
-            html.P("This is tab 2!", className="card-text"),
-            dbc.Button("Don't click here", color="danger"),
-        ]
-    ),
-    className="mt-3",
-)
-
 
 
 def make_group(title, items):
@@ -33,8 +23,10 @@ def make_group(title, items):
             color="dark", outline=True
         )
 # DEPRESSION
-items_depression_mere = {"Coût pour le service public de la dépression de la mère": dcc.Slider(min=0, max=100, value=50, step=1)}
-items_depression_mere = {"Coût pour le service public de la dépression de la mère": dcc.Slider(min=0, max=100, value=50, step=1)}
+items_depression_mere = {"Coûts supplémentaires attribuables à dépréssion périnatale": dcc.Slider(min=0, max=3200, value=1688, step=1, marks={0: {'label': '0 %'},
+                                                                                                                                               10: {'label': '10 %'},
+                                                                                                                                               25: {'label': '25 %'}})}
+items_depression_bebe = {"Coût pour le service public de la dépression de la mère": dcc.Slider(min=0, max=100, value=50, step=1)}
 
 
 
