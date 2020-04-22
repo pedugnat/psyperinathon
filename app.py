@@ -23,9 +23,9 @@ def make_group(title, items):
             color="dark", outline=True
         )
 # DEPRESSION
-items_depression_mere = {"Coûts supplémentaires attribuables à dépréssion périnatale": dcc.Slider(min=0, max=3200, value=1688, step=1, marks={0: {'label': '0 %'},
-                                                                                                                                               10: {'label': '10 %'},
-                                                                                                                                               25: {'label': '25 %'}})}
+items_depression_mere = {"Coûts supplémentaires attribuables à dépréssion périnatale": dcc.Slider(min=0, max=3200, value=1688, step=1, marks={0: {'label': '0 €'},
+                                                                                                                                               1688: {'label': '1688 €'},
+                                                                                                                                               3200: {'label': '3200 €'}})}
 items_depression_bebe = {"Coût pour le service public de la dépression de la mère": dcc.Slider(min=0, max=100, value=50, step=1)}
 
 
@@ -117,4 +117,5 @@ app.layout = dbc.Container(
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
 
