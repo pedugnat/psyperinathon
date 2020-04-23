@@ -43,7 +43,7 @@ def generate_random_df():
     df_final = pd.concat([df, a])
     df_final = df_final.set_index("Maladie")
     df_final = df_final.astype(float).round(3)
-    
+
     return df_final
 
 
@@ -66,8 +66,30 @@ def generate_qm(item):
 
 def make_group(title, items):
     """items est un dict sous forme : key = nom var ; value = widget"""
+    rd_cost_maladie = np.random.randint(0, 100000)
+
+    card_header = dbc.CardHeader(
+                [
+                    dbc.Row(
+                        [
+                            dbc.Col([html.B(title)]),
+                            dbc.Col(
+                                [
+                                    dbc.Badge(
+                                        '{:,} € par cas'.format(rd_cost_maladie).replace(',', ' '),
+                                        color="secondary",
+                                        className="ml-1",
+                                    )
+                                ]
+                            ),
+                        ],
+                        align="end",
+                    )
+                ]
+            )
+
     return dbc.Card(
-        [dbc.CardHeader(title),]
+        [ card_header ]
         + list(
             chain(
                 *[
@@ -99,9 +121,9 @@ def generate_item(df_variables, category):
                 step=row.step,
                 tooltip=tt,
                 marks={
-                    row.mini: {"label": f"{row.mini} {row.unit}"},
-                    row.val: {"label": f"{row.val} {row.unit}"},
-                    row.maxi: {"label": f"{row.maxi} {row.unit}"},
+                    row.mini: {"label": "{} {}".format(round(row.mini, 2), row.unit)},
+                    row.val:  {"label": "{} {}".format(round(row.val, 2), row.unit)},
+                    row.maxi: {"label": "{} {}".format(round(row.maxi, 2), row.unit)},
                 },
             ),
             dbc.Popover(
@@ -109,7 +131,7 @@ def generate_item(df_variables, category):
                 id="popover-" + " ".join(["qm", row["nom_variable"].lower()]),
                 target=" ".join(["qm", row["nom_variable"].lower()]),
                 is_open=False,
-            )
+            ),
         ]
         for _, row in df_categ.iterrows()
     }
@@ -203,14 +225,20 @@ button_generate = dbc.Button(
 df_final = generate_random_df()
 
 # BAR CHART
-fig = go.Figure(data=[go.Table(
-    header=dict(values=list(df_final.columns),
-                fill_color='paleturquoise',
-                align='left'),
-    cells=dict(values=[df_final[c] for c in df_final.columns],
-               fill_color='lavender',
-               align='left'))
-])
+fig = go.Figure(
+    data=[
+        go.Table(
+            header=dict(
+                values=list(df_final.columns), fill_color="paleturquoise", align="left"
+            ),
+            cells=dict(
+                values=[df_final[c] for c in df_final.columns],
+                fill_color="lavender",
+                align="left",
+            ),
+        )
+    ]
+)
 
 
 # PIE CHART
@@ -230,13 +258,21 @@ random_cost = np.random.randint(5, 10) + np.random.random()
 charts_coll = dbc.Collapse(
     [
         dbc.Row(
-            [dbc.Col([html.H4(f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: "),
-                        html.H2(f"\n\n{random_cost: .2f} milliards d'€")]),
-            dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),]),
+            [
+                dbc.Col(
+                    [
+                        html.H4(
+                            f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: "
+                        ),
+                        html.H2(f"\n\n{random_cost: .2f} milliards d'€"),
+                    ]
+                ),
+                dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),
+            ]
+        ),
     ],
     id="collapsed-graphs",
 )
-
 
 
 app.layout = dbc.Container(
@@ -254,6 +290,7 @@ app.layout = dbc.Container(
 )
 
 
+# CALLBACK GRAPHS
 @app.callback(
     Output("collapsed-graphs", "is_open"),
     [Input("button-generate", "n_clicks")],
@@ -264,7 +301,7 @@ def toggle_collapse(n, is_open):
         return not is_open
     return is_open
 
-
+# CALLBACK POPOVERS
 def toggle_popover(n, is_open):
     if n:
         return not is_open
