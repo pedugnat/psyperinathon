@@ -22,15 +22,12 @@ tt = {"always_visible": False, "placement": "topLeft"}
 # VARIABLES
 global df_variables
 
-df_variables = pd.read_csv(
-    "variables_bauer - Feuille 1.csv"
-)
-
+df_variables = pd.read_csv("variables_bauer - Feuille 1.csv")
 
 
 def generate_random_df():
     df = pd.DataFrame(data={"Maladie": ["Dépression", "Anxiété", "Psychose"]})
-    df["Coût total"] = np.random.randint(0, int(2e10)) / np.arange(1, 4)
+    df["Coût total"] = np.random.randint(0, 10) / np.arange(1, 4)
     df["Part Mères"] = np.random.random(size=3) / 2
     df["Part Bébés"] = 1 - df["Part Mères"]
     df["Part Santé Social"] = np.random.random(size=3) / 5
@@ -46,6 +43,7 @@ def generate_random_df():
     df_final = pd.concat([df, a])
     df_final = df_final.set_index("Maladie")
     df_final = df_final.astype(float).round(3)
+    
     return df_final
 
 
@@ -60,7 +58,7 @@ def make_row(it):
 
 
 def generate_qm(item):
-    id_hash = df_variables[df_variables['nom_variable']==item].index.values[0]
+    id_hash = df_variables[df_variables["nom_variable"] == item].index.values[0]
     question_mark = dbc.Badge("?", pill=True, color="light", id="badge_" + str(id_hash))
 
     return dbc.Col(question_mark, width=1)
@@ -107,34 +105,30 @@ def generate_item(df_variables, category):
                 },
             ),
             dbc.Popover(
-                        [
-                            dbc.PopoverHeader("Header"),
-                            dbc.PopoverBody(f"{row.explication}"),
-                        ],
-                        id="popover-" + " ".join(["qm", row["nom_variable"].lower()]),
-                        target=" ".join(["qm", row["nom_variable"].lower()]),
-                        is_open=False,
-                    )
-
-            #dbc.Tooltip(row.explication, target=, autohide=False),
+                [dbc.PopoverHeader("Header"), dbc.PopoverBody(f"{row.explication}"),],
+                id="popover-" + " ".join(["qm", row["nom_variable"].lower()]),
+                target=" ".join(["qm", row["nom_variable"].lower()]),
+                is_open=False,
+            )
         ]
         for _, row in df_categ.iterrows()
     }
 
     return dict_items
 
+
 def generate_popovers():
     popovers = list()
     for i in range(df_variables.shape[0]):
         pp = dbc.Popover(
-                            [
-                                dbc.PopoverHeader("Header"),
-                                dbc.PopoverBody(df_variables.iloc[i, :]['explication']),
-                            ],
-                            id=f"popover-{i}",
-                            target=f"badge_{i}",
-                            is_open=False,
-                        )
+            [
+                dbc.PopoverHeader(df_variables.iloc[i, :]["nom_variable"]),
+                dbc.PopoverBody(df_variables.iloc[i, :]["explication"]),
+            ],
+            id=f"popover-{i}",
+            target=f"badge_{i}",
+            is_open=False,
+        )
         popovers.append(pp)
     return popovers
 
@@ -209,20 +203,15 @@ button_generate = dbc.Button(
 df_final = generate_random_df()
 
 # BAR CHART
-idxs = list(df_final.index[:])
-fig = go.Figure(
-    data=[
-        go.Bar(
-            name="Part Bébés", x=idxs, y=df_final["Part Bébés"].values[:], text=idxs
-        ),
-        go.Bar(
-            name="Part Mères", x=idxs, y=df_final["Part Mères"].values[:], text=idxs
-        ),
-    ]
-)
-fig.update_layout(
-    barmode="stack", title="Répartition des coûts entre la mère et le bébé (en %)"
-)
+fig = go.Figure(data=[go.Table(
+    header=dict(values=list(df_final.columns),
+                fill_color='paleturquoise',
+                align='left'),
+    cells=dict(values=[df_final[c] for c in df_final.columns],
+               fill_color='lavender',
+               align='left'))
+])
+
 
 # PIE CHART
 df_pie = df_final.iloc[:-1, :-1]
@@ -237,13 +226,18 @@ pie_maladies = px.pie(
 
 pie_maladies.update_traces(textposition="inside", textinfo="percent+label")
 
+random_cost = np.random.randint(5, 10) + np.random.random()
 charts_coll = dbc.Collapse(
     [
-        # dcc.Graph(id="example-graph-2", figure=fig),
-        dcc.Graph(id="example-graph-pie", figure=pie_maladies),
+        dbc.Row(
+            [dbc.Col([html.H4(f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: "),
+                        html.H2(f"\n\n{random_cost: .2f} milliards d'€")]),
+            dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),]),
     ],
     id="collapsed-graphs",
 )
+
+
 
 app.layout = dbc.Container(
     [
@@ -255,7 +249,8 @@ app.layout = dbc.Container(
         html.Hr(),
         charts_coll,
         html.Hr(),
-    ] + generate_popovers()
+    ]
+    + generate_popovers()
 )
 
 
@@ -275,6 +270,7 @@ def toggle_popover(n, is_open):
         return not is_open
     return is_open
 
+
 for i in range(df_variables.shape[0]):
     app.callback(
         Output(f"popover-{i}", "is_open"),
@@ -285,6 +281,5 @@ for i in range(df_variables.shape[0]):
 
 if __name__ == "__main__":
     app.run_server(
-        debug=True, 
-        #port=8890,  # remove line if heroku
+        debug=True, port=8890,  # remove line if heroku
     )

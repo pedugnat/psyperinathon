@@ -1,38 +1,38 @@
 nom_variable,mini,maxi,val,step,category,unit,explication
-Coûts supplémentaires attribuables à dépréssion périnatale,0,3200,1670,1,depression_mere,€,ceci est une explication de variable
-Probabilité de suicide lors d'une dépréssion périnatale,0,2,0.5,0.01,depression_mere,%,ceci est une explication de variable
+Coûts attribuables à dépréssion périnatale pour le secteur public,0,3200,1670,1,depression_mere,€,"Source : McMahon et al. 2012, Petrou et al. 2002"
+Probabilité de suicide lors d'une dépréssion périnatale,0,0.2,0.05,0.01,depression_mere,%,"Source : Calculated from rates of suicide due to depression and prevalence of depression (Kunzman 2011); suicide numbers (ONS 2012), population estimates (ONS 2014); weighted average for women, 20-44 years."
 Durée moyenne d'une dépréssion périnatale,0,10,2.5,0.1,depression_mere,années,ceci est une explication de variable
-Indice de perte de qualité de vie,0,1,0.29,0.01,depression_mere, ,ceci est une explication de variable
-Réduction des semaines de travail chaque année,0,52,12,1,depression_mere,semaines,ceci est une explication de variable
-Coût pour le service public de la dépression de la mère,0,2000,968,1,depression_bebe,€,ceci est une explication de variable
+Indice de perte de qualité de vie,0,1,0.29,0.01,depression_mere, ,"Source : Mann et al. 2009, Ara and Brazier 2011"
+Réduction des semaines de travail chaque année,0,52,12,1,depression_mere,semaines,Source : Plaisier et al. 2010
+Coût pour le service public de la dépression de la mère,0,2000,968,1,depression_bebe,€,Source : sah
 Prévalence de la dépression,0,25,10,0.5,medical,%,ceci est une explication de variable
 Prévalence de l'anxiété,0,10,3,0.1,medical,%,ceci est une explication de variable
-Prévalence de la psychose,0,3,0.2,0.01,medical,%,ceci est une explication de variable
-Nombre de naissances en France,0,1000,800,1,medical,k naissances,ceci est une explication de variable
-Valeur d'une année de QALY,0,25,10,1,economique,k €,ceci est une explication de variable
-Prix d'une vie,0,10,3,0.1,economique,M €,ceci est une explication de variable
-Revenu hebdomadaire moyen d'une femme,0,1000,450,10,economique,€,ceci est une explication de variable
-Part des femmes employées avant la naissance,0,100,74,1,economique,%,ceci est une explication de variable
-Part des femmes reprenant un emploi après la naissance,0,100,75,1,economique,%,ceci est une explication de variable
-Part des femmes reprenant à plein temps,0,100,20,1,economique,%,ceci est une explication de variable
-Probabilité supplémentaire de problèmes de conduite ,0,100,12,1,depression_bebe,%,ceci est une explication de variable
-Coût des problèmes émotionnels,0,2000,1020,1,depression_bebe,€,ceci est une explication de variable
-Coûts supplémentaires pour l'éducation,0,5000,3166,1,depression_bebe,€,ceci est une explication de variable
+Prévalence de la psychose,0,2,0.2,0.01,medical,%,ceci est une explication de variable
+Nombre de naissances,0,1000,753,1,medical,k naissances,Adaptable à toutes les échelles. Source : INSEE 2019
+Valeur d'une année de QALY,0,150,25,1,economique,k €,"Le QALY (de l’anglais quality-adjusted life year, « année de vie pondérée par la qualité ») est un indicateur économique visant à estimer la valeur de la vie. Source : valeur utilisée par les Anglais"
+Prix d'une vie,0,10,3,0.1,economique,M €,Source : valeur utilisée par l'Etat français lors de son évaluation d'impact des politiques publiques (dernier exemple : évaluer les 80km/h
+Revenu hebdomadaire moyen d'une femme,0,1000,450,10,economique,€,<i>Source :</i> INSEE 2018
+Part des femmes employées avant la naissance,0,100,74,1,economique,%,Source : INSEE 2018
+Part des femmes reprenant un emploi après la naissance,0,100,75,1,economique,%,Source : INSEE 2018
+Part des femmes reprenant à plein temps,0,100,20,1,economique,%,Source : INSEE 2018
+Probabilité supplémentaire de problèmes de conduite ,0,100,12,1,depression_bebe,%,Bauer et al. 2014; based on data from South London Development Study; conduct problems were measured when child was 11 years
+Coût des problèmes émotionnels,0,2000,1020,1,depression_bebe,€,Source : /
+Coûts supplémentaires pour l'éducation,0,5000,3166,1,depression_bebe,€,Source : Bauer et al. 2014; refers to children with special educational needs (during primary and secondary school) per woman with perinatal depression
 Coûts supplémentaires pour la justice,0,4000,1974,1,depression_bebe,€,ceci est une explication de variable
-Perte de qualité de vie pour un bébé très prématuré,0,1,0.167,0.001,depression_bebe,QALY,ceci est une explication de variable
-Perte de qualité de vie pour un bébé prématuré,0,1,0.073,0.001,depression_bebe,QALY,ceci est une explication de variable
+Perte de qualité de vie pour un bébé très prématuré,0,1,0.167,0.001,depression_bebe,QALY,Source : Petrou et al. 2009; measured at 11 years; we applied this in our analysis for children 5 to 18 years
+Perte de qualité de vie pour un bébé prématuré,0,1,0.073,0.001,depression_bebe,QALY,Source : Petrou et al. 2010
 Années de perte de qualité de vie,0,20,13,1,depression_bebe,années,ceci est une explication de variable
 Probabilité supplémentaire de mort de l'enfant,0,2,1.3,0.01,depression_bebe,%,ceci est une explication de variable
 Coûts supplémentaires des problèmes étionnels,0,8000,4609,1,depression_bebe,€,ceci est une explication de variable
 Pertes de productivité liées aux problèmes de conduite,0,5000,2688,1,depression_bebe,€,ceci est une explication de variable
 Pertes de productivité liées à l'abandon précoce de l'école,0,3000,1797,1,depression_bebe,€,ceci est une explication de variable
-Pertes de productivité liées aux problèmes émotionnels,0,3000,1463,1,depression_bebe,€,ceci est une explication de variable
+Pertes de productivité liées aux problèmes émotionnels,0,3000,1463,1,depression_bebe,€,Source : Bauer et al. 2014; refers to life-time productivity loss due to increased risk of leaving school without qualifications per woman with perinatal depression
 Coûts pour les victimes de crimes et délits ,0,15000,7446,1,depression_bebe,€,ceci est une explication de variable
-Coût attribuable à l'anxiété périnat par femme chaque année,0,1500,866,1,anxiete_mere,€,ceci est une explication de variable
+Coût attribuable à l'anxiété périnat par femme chaque année,0,1500,866,1,anxiete_mere,€,"Source : McManus t. 2009, NICE 2011, p128; refers to costs for generalised anxiety disorder; derived from data in McManus et al. 2009."
 Durée moyenne de l'anxiété en année,0,10,5,0.5,anxiete_mere,années,ceci est une explication de variable
 Perte de qualité de vie,0,1,0.088,0.01,anxiete_mere,QALY,ceci est une explication de variable
 Nombre de semaines de travail perdues chaque année,0,15,9,0.5,anxiete_mere,semaines,ceci est une explication de variable
 Coût supplémentaire pour une naissance prématurée,0,50000,36900,100,anxiete_mere,€,ceci est une explication de variable
-Test anxiete bebe,0,1,0.5,0.5,anxiete_bebe,%,
-Test psychose mere,0,1,0.5,0.5,psychose_mere,%,
-Test psychose bebe,0,1,0.5,0.5,psychose_bebe,%,
+Test anxiete bebe,0,1,0.5,0.5,anxiete_bebe,%,ceci est une explication de variable
+Test psychose mere,0,1,0.5,0.5,psychose_mere,%,ceci est une explication de variable
+Test psychose bebe,0,1,0.5,0.5,psychose_bebe,%,ceci est une explication de variable
