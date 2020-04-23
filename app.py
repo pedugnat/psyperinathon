@@ -23,7 +23,7 @@ tt = {"always_visible": False, "placement": "topLeft"}
 global df_variables
 
 df_variables = pd.read_csv(
-    "/Users/paul-emile/Downloads/variables_bauer - Feuille 1.csv"
+    "variables_bauer - Feuille 1.csv"
 )
 
 
