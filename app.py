@@ -16,11 +16,12 @@ import time
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
+from utils import make_card_repartition
 from model import process_values
 
 
 # DASH AND APP SETTINGS
-external_stylesheets = [dbc.themes.BOOTSTRAP]
+external_stylesheets = [dbc.themes.DARKLY]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
@@ -36,11 +37,8 @@ nb_variables_total = df_variables.shape[0]
 
 
 def make_row(it):
-    return (
-        dbc.Row(
-            [dbc.Col(html.Label(it)), dbc.Col(question_mark)]
-        ),
-    )
+    return (dbc.Row([dbc.Col(html.Label(it)), 
+                     dbc.Col(question_mark)]))
 
 
 def marker(num):
@@ -83,8 +81,7 @@ def generate_item(df_variables, category):
 
 def generate_hidden_divs():
     return [
-        html.Div(id=f"hidden-div-{i}", hidden=True)
-        for i in range(nb_variables_total)
+        html.Div(id=f"hidden-div-{i}", hidden=True) for i in range(nb_variables_total)
     ]
 
 
@@ -110,6 +107,16 @@ items_medical = generate_item(df_variables, "medical")
 
 tabs = dbc.Tabs(
     [
+        dbc.Tab(
+            make_group("Variables économiques", items_economique, is_maladie=False),
+            label="Variables économiques",
+            tab_style=eq_width,
+        ),
+        dbc.Tab(
+            make_group("Variables médicales", items_medical, is_maladie=False),
+            label="Variables médicales",
+            tab_style=eq_width,
+        ),
         dbc.Tab(
             [
                 make_group("Depression Mère", items_depression_mere),
@@ -137,16 +144,6 @@ tabs = dbc.Tabs(
             label="Psychose",
             tab_style=eq_width,
         ),
-        dbc.Tab(
-            make_group("Variables médicales", items_medical),
-            label="Variables médicales",
-            tab_style=eq_width,
-        ),
-        dbc.Tab(
-            make_group("Variables économiques", items_economique),
-            label="Variables économiques",
-            tab_style=eq_width,
-        ),
     ]
 )
 
@@ -156,22 +153,6 @@ button_generate = dbc.Button(
 )
 
 df_final = generate_random_df()
-
-# BAR CHART
-fig = go.Figure(
-    data=[
-        go.Table(
-            header=dict(
-                values=list(df_final.columns), fill_color="paleturquoise", align="left"
-            ),
-            cells=dict(
-                values=[df_final[c] for c in df_final.columns],
-                fill_color="lavender",
-                align="left",
-            ),
-        )
-    ]
-)
 
 
 # PIE CHART
@@ -207,13 +188,8 @@ charts_coll = dbc.Collapse(
     id="collapsed-graphs",
 )
 
-
-#table_test = dbc.Table.from_dataframe(df_final, striped=True, bordered=True, hover=True)
-
-
 app.layout = dbc.Container(
     [
-        dcc.Store(id="store"),
         html.H1("Estimer le coût des maladies psypérinatales en France"),
         tabs,
         html.Hr(),
@@ -221,11 +197,10 @@ app.layout = dbc.Container(
         html.Hr(),
         charts_coll,
         html.Hr(),
-        #table_test,
-        #html.Div(id="output-state"),
-        html.H3("Tableau récapitulatif du coût par cas (en €)"),
+        html.H3("Tableaux récapitulatifs"),
         html.Div(id="table1"),
-
+        html.Div(id="table2"),
+        html.Div(id="draw1"),
     ]
     + generate_popovers()
     + generate_hidden_divs()
@@ -234,13 +209,17 @@ app.layout = dbc.Container(
 global slider_values
 slider_values = list()
 
+
 def update_output(n_clicks, inp):
-    print("test")
+    time.sleep(0.01)
     slider_values.append(inp)
-    return "Input 1 is {}".format(inp)
+    return "Input is {}".format(inp)
+
 
 for i in range(nb_variables_total):
-    print(f"\n BLABLA updated item {i}")
+    if i % 10 == 0:
+        print(slider_values)
+
     app.callback(
         Output(f"hidden-div-{i}", "children"),
         [Input("button-generate", "n_clicks")],
@@ -249,31 +228,83 @@ for i in range(nb_variables_total):
 
 
 @app.callback(
-    Output('table1','children'),
-    [Input("button-generate", "n_clicks")]
+    [
+        Output("table1", "children"),
+        Output("table2", "children"),
+        Output("draw1", "children"),
+    ],
+    [Input("button-generate", "n_clicks")],
 )
-def download_csv(n):
-    time.sleep(0.2)
-    print("\nslept\n")
-    df_variables["upd_variables"] = slider_values[-nb_variables_total:]
-    df_variables.to_csv("upd_df_var.csv", index=False)
-    
-    print(df_variables.set_index("nom_variable").loc[["Prix d'une vie", 
-                                                        "Valeur d'une année de QALY",
-                                                        "Indice de perte de qualité de vie",
-                                                        "Perte de qualité de vie pour une psychose"]].iloc[:, -1])
+def compute_costs(n):
+    time.sleep(0.6)
+    try:
+        print("\nupdated values\n")
+        df_variables["upd_variables"] = slider_values[-nb_variables_total:]
+    except ValueError:
+        print("\n did not update\n")
+        df_variables["upd_variables"] = df_variables["val"]
 
-    df_scores = process_values(df_variables).reset_index()
+    print(
+        df_variables.set_index("nom_variable")
+        .loc[
+            [
+                "Prix d'une vie",
+                "Valeur d'une année de QALY",
+                "Indice de perte de qualité de vie",
+                "Perte de qualité de vie pour une psychose",
+                "Proba suppl. de naissance prématurée si dépression",
+            ]
+        ]
+        .iloc[:, -1]
+    )
 
-    
+    df_par_cas = process_values(df_variables).reset_index()
+
+    prevalences = (
+        df_variables.set_index("nom_variable")
+        .loc[
+            [
+                "Prévalence de la dépression",
+                "Prévalence de l'anxiété",
+                "Prévalence de la psychose",
+            ]
+        ]
+        .iloc[:, -1]
+        .values
+        / 100
+    )
+    # print(prevalences)
+    df_par_naissance = df_par_cas.copy()
+    df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
+
+    card_repartition = make_card_repartition(df_par_naissance)
+
     def formating(x):
         return "{:,} €".format(x).replace(",", " ")
 
-    for c in df_scores.columns:
-        if df_scores[c].dtype != "object":
-            df_scores[c] = df_scores[c].apply(formating)
-    
-    return dbc.Table.from_dataframe(df_scores, striped=True, bordered=True, hover=True)
+    for c in df_par_cas.columns:
+        if df_par_cas[c].dtype != "object":
+            df_par_cas[c] = df_par_cas[c].astype(int).apply(formating)
+
+    for c in df_par_naissance.columns:
+        if df_par_naissance[c].dtype != "object":
+            df_par_naissance[c] = df_par_naissance[c].astype(int).apply(formating)
+
+    df_par_cas.columns = [
+        c if i > 0 else "Coût par cas" for i, c in enumerate(df_par_cas.columns)
+    ]
+    df_par_naissance.columns = [
+        c if i > 0 else "Coût par naissance"
+        for i, c in enumerate(df_par_naissance.columns)
+    ]
+
+    table_cas = dbc.Table.from_dataframe(
+        df_par_cas, striped=True, bordered=True, hover=True
+    )
+    table_naissance = dbc.Table.from_dataframe(
+        df_par_naissance, striped=True, bordered=True, hover=True
+    )
+    return table_cas, table_naissance, card_repartition
 
 
 # CALLBACK GRAPHS
@@ -294,6 +325,7 @@ def toggle_popover(n, is_open):
         return not is_open
     return is_open
 
+
 for i in range(nb_variables_total):
     app.callback(
         Output(f"popover-{i}", "is_open"),
@@ -304,5 +336,5 @@ for i in range(nb_variables_total):
 
 if __name__ == "__main__":
     app.run_server(
-        debug=False, port=8890,  # remove line if heroku
+        debug=False, port=8890,
     )

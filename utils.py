@@ -9,6 +9,7 @@ from dash.dependencies import Input, Output, State
 import plotly.express as px
 import plotly.graph_objs as go
 from itertools import chain
+import base64
 
 
 # CSS SETTINGS
@@ -42,30 +43,21 @@ def generate_random_df():
     return df_final
 
 
-def make_group(title, items):
+def make_group(title, items, is_maladie=True):
     """items est un dict sous forme : key = nom var ; value = widget"""
     rd_cost_maladie = np.random.randint(0, 100000)
 
+    if is_maladie:
+        badge = dbc.Badge(
+            "{:,} € par cas".format(rd_cost_maladie).replace(",", " "),
+            color="secondary",
+            className="ml-1",
+        )
+    else:
+        badge = html.Div("")
+
     card_header = dbc.CardHeader(
-        [
-            dbc.Row(
-                [
-                    dbc.Col([html.B(title)]),
-                    dbc.Col(
-                        [
-                            dbc.Badge(
-                                "{:,} € par cas".format(rd_cost_maladie).replace(
-                                    ",", " "
-                                ),
-                                color="secondary",
-                                className="ml-1",
-                            )
-                        ]
-                    ),
-                ],
-                align="start",
-            )
-        ]
+        [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([badge]),], align="start",)]
     )
 
     return dbc.Card(
@@ -107,3 +99,48 @@ def generate_popovers():
         )
         popovers.append(pp)
     return popovers
+
+
+def make_card_repartition(df_par_naissance):
+
+    total_mere = df_par_naissance["Mère"].sum()
+    total_bebe = df_par_naissance["Bébé"].sum()
+
+    proportion_mere = 100 * total_mere / (total_mere + total_bebe)
+
+    image_filename = "card_image.png"
+    encoded_image = base64.b64encode(open(image_filename, "rb").read())
+
+    card = dbc.Row(
+        [
+            dbc.Col(
+                [
+                    html.Img(
+                        src="data:image/png;base64,{}".format(encoded_image.decode()),
+                        alt="Image non disponible",
+                        width=200,
+                    ),
+                ]
+            ),
+            dbc.Col(
+                [
+                            html.H1(
+                                f"{proportion_mere: .0f} %",
+                                style={
+                                    "color": "#00cc66",
+                                    "font-weight": "bold",
+                                },
+                            ),
+                            html.H4("de ces coûts sont liés à la mère"),
+                            html.H1(
+                                f"{100 - proportion_mere: .0f} %",
+                                style={"color": "#1b75bc", "font-weight": "bold",},
+                            ),
+                            html.H4("de ces coûts sont liés au bébé"),
+                        ]
+            ),
+        ],
+        justify="center", align="center",
+    )
+
+    return card
