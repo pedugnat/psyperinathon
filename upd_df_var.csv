@@ -1,0 +1,67 @@
+nom_variable,mini,maxi,val,step,category,unit,explication,upd_variables
+Part de cas d'anxiété grave,0,1.0,0.15,0.01,anxiete_bebe,%,Pourcentage des cas graves parmi les mères anxieuses,0.15
+Coût pour le service public d'une naissance prématurée,0,100000.0,36896.0,1.0,anxiete_bebe,€,Source : Petrou et Khan 2012,36896.0
+Risque suppl. de naissance prématurée si anxiété simple,0,100.0,5.0,0.1,anxiete_bebe,%,Source : Orr et al 2006,5.0
+Risque suppl. de naissance prématurée si anxiété grave,0,100.0,13.0,0.1,anxiete_bebe,%,Source : Orr et al 2007,13.0
+Coût des problèmes émotionnels en cas d'anxiété,0,500.0,273.0,1.0,anxiete_bebe,€,b,273.0
+Risque supplémentaire de problèmes de conduite,0,100.0,3.0,0.1,anxiete_bebe,%,"Si la mère est atteinte d'anxiété, quel est le pourcentage supplémentaire d'enfants qui auront des problèmes de conduite",3.0
+Coût pour le service public de douleur abdominale chronique pédiatrique par an,0,9028.0,15000.0,1.0,anxiete_bebe,€,Source : Sleed et al. 2005,15000.0
+Risque suppl. d'avoir des douleurs abdominales chroniques si anxiété,0,100.0,4.0,0.1,anxiete_bebe,%,b,4.0
+Durée moyenne des douleurs abdominales chroniques en année,0,10.0,7.0,0.5,anxiete_bebe,années,b,7.0
+Coût lié aux problèmes émotionnels si anxiété,0,300.0,176.0,1.0,anxiete_bebe,€,b,176.0
+Coût de perte de qualité de vie si anxiété (en QALY),0,2000.0,1044.0,1.0,anxiete_bebe,€,b,1044.0
+Coûts des problème emotionnels (en QALY),0,1000.0,535.0,1.0,anxiete_bebe,€,b,535.0
+Coûts de problèmes de conduite par cas (en QALY),0,40000.0,28300.0,100.0,anxiete_bebe,€,Source : Parsonnage et al. 2014,28300.0
+Coût de pertes de productivité liées aux problèmes émotionnels,0,1000.0,440.0,1.0,anxiete_bebe,€,b,440.0
+Coût lié aux douleurs abdominales chroniques,0,3000.0,1827.0,1.0,anxiete_bebe,€,Source : Sleed et al. 2005,1827.0
+Coût unpaid care douleurs abdo chroniques,0,10000.0,5850.0,1.0,anxiete_bebe,€,Source : Sleed et al. 2005,5850.0
+Coût out-of-pocket lié douleurs abdo chroniques,0,2000.0,1071.0,1.0,anxiete_bebe,€,Source : Sleed et al. 2005,1071.0
+Coût pour la Sécu des problèmes de conduite par cas,0,10000.0,6975.0,1.0,anxiete_bebe,€,Source : Parsonnage et al. 2014,6975.0
+Coût pour la justice des problèmes de conduite par cas,0,30000.0,16450.0,10.0,anxiete_bebe,€,Source : Parsonnage et al. 2014,16450.0
+Coût attribuable à l'anxiété périnat par femme chaque année,0,1500.0,866.0,1.0,anxiete_mere,€,"Source : McManus t. 2009, NICE 2011, p128; refers to costs for generalised anxiety disorder; derived from data in McManus et al. 2009.",866.0
+Durée moyenne de l'anxiété,0,10.0,5.0,0.5,anxiete_mere,années,b,5.0
+Perte de qualité de vie pour la mère en cas d'anxiété,0,1.0,0.08800000000000001,0.01,anxiete_mere,QALY,Source : Saarni et al. 2007,0.08800000000000001
+Nombre de semaines de travail perdues chaque année,0,15.0,9.0,0.5,anxiete_mere,semaines,b,9.0
+Coût pour le service public de la dépression de la mère,0,2000.0,968.0,1.0,depression_bebe,€,Source : Petrou et Khan 2012,968.0
+Probabilité supplémentaire de problèmes de conduite ,0,100.0,12.0,1.0,depression_bebe,%,Bauer et al. 2014; based on data from South London Development Study; conduct problems were measured when child was 11 years,12.0
+Coût des problèmes émotionnels,0,2000.0,1020.0,1.0,depression_bebe,€,Source : Snell et al. 2013,1020.0
+Coûts supplémentaires pour l'éducation,0,5000.0,3166.0,1.0,depression_bebe,€,Source : Bauer et al. 2014; refers to children with special educational needs (during primary and secondary school) per woman with perinatal depression,3166.0
+Perte de qualité de vie pour un bébé très prématuré,0,1.0,0.16699999999999998,0.001,depression_bebe,QALY,Source : Petrou et al. 2009; measured at 11 years; we applied this in our analysis for children 5 to 18 years,0.16699999999999998
+Perte de qualité de vie pour un bébé prématuré,0,1.0,0.073,0.001,depression_bebe,QALY,Source : Petrou et al. 2009; measured at 11 years; we applied this in our analysis for children 5 to 18 years,0.073
+Années de perte de qualité de vie,0,20.0,13.0,1.0,depression_bebe,années,b,13.0
+Probabilité supplémentaire de mort de l'enfant,0,2.0,1.3,0.01,depression_bebe,%,b,1.3
+Coûts supplémentaires des problèmes étionnels (en QALY),0,8000.0,4609.0,1.0,depression_bebe,€,b,4609.0
+Pertes de productivité liées aux problèmes émotionnels,0,5000.0,2688.0,1.0,depression_bebe,€,b,2688.0
+Coût lié à l'abandon de l'école sans qualification,0,3000.0,1463.0,1.0,depression_bebe,€,Source : Bauer et al. 2014; refers to life-time productivity loss due to increased risk of leaving school without qualifications per woman with perinatal depression,1463.0
+Perte de qualité vie due à un poblème de conduite (en QALY),0,2.0,1.12,0.01,depression_bebe,QALY,Source : Parsonnage et al. 2014,1.12
+Coût des problèmes de conduite pour le service public,0,1500.0,837.0,1.0,depression_bebe,€,Source : Parsonnage et al. 2014,837.0
+Coût total SP pour la justice,0,3000.0,1974.0,1.0,depression_bebe,€,Source : Parsonnage et al. 2014,1974.0
+Proba suppl. de naissance extrêmement prématurée si dépression,0,1.0,0.1,0.01,depression_bebe,%,Source : Parsonnage et al. 2014,0.1
+Proba suppl. de naissance prématurée si dépression,0,5.0,2.54,0.01,depression_bebe,%,Source : Parsonnage et al. 2014,2.54
+Coût en perte de productivité des problèmes de conduite par cas,0,20000.0,14975.0,1.0,depression_bebe,€,Source : Parsonnage et al. 2014,14975.0
+Coût suppl total pour victimes crimes et délits par cas,0,100000.0,62050.0,10.0,depression_bebe,€,Source : Parsonnage et al. 2014,62050.0
+Coûts attribuables à dépréssion périnatale pour le secteur public,0,3200.0,1670.0,1.0,depression_mere,€,"Source : McMahon et al. 2012, Petrou et al. 2002",1670.0
+Probabilité de suicide lors d'une dépréssion périnatale,0,0.2,0.05,0.01,depression_mere,%,"Source : Calculated from rates of suicide due to depression and prevalence of depression (Kunzman 2011); suicide numbers (ONS 2012), population estimates (ONS 2014); weighted average for women, 20-44 years.",0.05
+Durée moyenne d'une dépréssion périnatale,0,10.0,2.5,0.1,depression_mere,années,b,2.5
+Indice de perte de qualité de vie,0,1.0,0.29,0.01,depression_mere, ,"Source : Mann et al. 2009, Ara and Brazier 2011",0.29
+Réduction des semaines de travail chaque année,0,52.0,12.0,1.0,depression_mere,semaines,Source : Plaisier et al. 2010,12.0
+Valeur d'une année de QALY,0,150000.0,25000.0,1.0,economique,€,"Le QALY (de l’anglais quality-adjusted life year, « année de vie pondérée par la qualité ») est un indicateur économique visant à estimer la valeur de la vie. Source : valeur utilisée par les Anglais",25000.0
+Prix d'une vie,0,10000000.0,3000000.0,100000.0,economique,€,Source : valeur utilisée par l'Etat français lors de son évaluation d'impact des politiques publiques (dernier exemple : évaluer les 80km/h). Cf. https://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/archives/Elements-pour-une-r%C3%A9vision-de-la-valeur-de-la-vie-humaine.pdf et https://fr.wikipedia.org/wiki/Valeur_de_la_vie,3000000.0
+Revenu hebdomadaire moyen d'une femme,0,1000.0,450.0,10.0,economique,€,Source : INSEE 2018,920.0
+Part des femmes employées avant la naissance,0,100.0,74.0,1.0,economique,%,Source : INSEE 2018,74.0
+Part des femmes reprenant un emploi après la naissance,0,100.0,75.0,1.0,economique,%,Source : INSEE 2018,75.0
+Part des femmes reprenant à plein temps,0,100.0,20.0,1.0,economique,%,Source : INSEE 2018,20.0
+Prévalence de la dépression,0,25.0,10.0,0.5,medical,%,b,13.0
+Prévalence de l'anxiété,0,10.0,3.0,0.1,medical,%,b,3.0
+Prévalence de la psychose,0,2.0,0.2,0.01,medical,%,b,0.2
+Nombre de naissances,0,1000000.0,753000.0,1.0,medical,naissances,Adaptable à toutes les échelles. Source : INSEE 2019,258031.0
+Risque supplémentaire de naissance prématurée,0,2.0,0.94,0.01,psychose_bebe,%,Source : Nilsson et al. 2008,0.94
+Risque supplémentaire de mort de l'enfant,0,1.0,0.77,0.01,psychose_bebe,%,b,0.77
+Test psychose mere,0,1.0,0.5,0.5,psychose_mere,%,b,0.5
+Coût pour la Sécu d'une psychose,0,50000.0,22810.0,1.0,psychose_mere,€,b,22810.0
+Perte de qualité de vie pour une psychose,0,1.0,0.177,0.01,psychose_mere,QALY,b,0.177
+Durée moyenne d'une psychose,0,10.0,4.0,0.5,psychose_mere,années,b,4.0
+Risque supplémentaire de suicide en cas de psychose,0,1.0,0.1,0.01,psychose_mere,%,b,0.1
+Pourcentage de schizophrènes parmi psychose,0,100.0,37.0,1.0,psychose_mere,%,Source : Mangalore et Knapp 2007,37.0
+Perte de productivité en cas d'épisode de schizophrènie,0,50000.0,25405.0,1.0,psychose_mere,€,Source : Mangalore et Knapp 2007,25405.0
+Coût unpaid care en cas de schizophrénie,0,10000.0,6556.0,1.0,psychose_mere,€,Source : Mangalore et Knapp 2007,6556.0
