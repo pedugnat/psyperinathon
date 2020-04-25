@@ -118,7 +118,7 @@ def make_card_repartition(df_par_naissance):
                     html.Img(
                         src="data:image/png;base64,{}".format(encoded_image.decode()),
                         alt="Image non disponible",
-                        width=200,
+                        width=100,
                     ),
                 ]
             ),
@@ -127,16 +127,16 @@ def make_card_repartition(df_par_naissance):
                             html.H1(
                                 f"{proportion_mere: .0f} %",
                                 style={
-                                    "color": "#00cc66",
+                                    "color": "#1b75bc",
                                     "font-weight": "bold",
                                 },
                             ),
-                            html.H4("de ces coûts sont liés à la mère"),
+                            html.P("de ces coûts sont liés à la mère"),
                             html.H1(
                                 f"{100 - proportion_mere: .0f} %",
-                                style={"color": "#1b75bc", "font-weight": "bold",},
+                                style={"color": "#00cc66", "font-weight": "bold",},
                             ),
-                            html.H4("de ces coûts sont liés au bébé"),
+                            html.P("de ces coûts sont liés au bébé"),
                         ]
             ),
         ],

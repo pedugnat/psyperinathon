@@ -21,7 +21,7 @@ from model import process_values
 
 
 # DASH AND APP SETTINGS
-external_stylesheets = [dbc.themes.DARKLY]
+external_stylesheets = [dbc.themes.BOOTSTRAP]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
@@ -161,12 +161,13 @@ pie_maladies = px.pie(
     df_pie,
     values="Coût total",
     names=df_pie.index,
-    title="Répartition des coûts par maladie (en %)",
-    width=800,
-    height=400,
+    #title="Répartition des coûts par maladie (en %)",
+    width=250,
+    height=500,
 )
 
 pie_maladies.update_traces(textposition="inside", textinfo="percent+label")
+pie_maladies.update(layout=go.Layout(margin=dict(t=20,r=20,b=20,l=20)))
 
 random_cost = np.random.randint(5, 10) + np.random.random()
 charts_coll = dbc.Collapse(
@@ -181,8 +182,10 @@ charts_coll = dbc.Collapse(
                         html.H2(f"\n\n{random_cost: .2f} milliards d'€"),
                     ]
                 ),
-                dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),
-            ]
+                #dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),
+                html.Div(" "),
+                dbc.Col([html.Div(id="draw1")]),
+            ], justify='around'
         ),
     ],
     id="collapsed-graphs",
@@ -198,12 +201,15 @@ app.layout = dbc.Container(
         charts_coll,
         html.Hr(),
         html.H3("Tableaux récapitulatifs"),
-        html.Div(id="table1"),
-        html.Div(id="table2"),
-        html.Div(id="draw1"),
+        dbc.Row([dbc.Col([html.Div(id="table1")]),
+        	dbc.Col([html.Div(id="table2")])
+        	])
+        ,
+        #html.Div(id="table2"),
+        #html.Div(id="draw1"),
     ]
     + generate_popovers()
-    + generate_hidden_divs()
+    + generate_hidden_divs(),
 )
 
 global slider_values
