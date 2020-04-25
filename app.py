@@ -16,7 +16,7 @@ import time
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
-from utils import make_card_repartition
+from utils import make_card_repartition, generate_hidden_divs, make_row
 from model import process_values
 
 
@@ -34,11 +34,6 @@ global df_variables
 col_types = {"maxi": float, "mini": int, "val": float, "step": float}
 df_variables = pd.read_csv("variables_bauer - Feuille 1.csv", dtype=col_types)
 nb_variables_total = df_variables.shape[0]
-
-
-def make_row(it):
-    return (dbc.Row([dbc.Col(html.Label(it)), 
-                     dbc.Col(question_mark)]))
 
 
 def marker(num):
@@ -77,12 +72,6 @@ def generate_item(df_variables, category):
     }
 
     return dict_items
-
-
-def generate_hidden_divs():
-    return [
-        html.Div(id=f"hidden-div-{i}", hidden=True) for i in range(nb_variables_total)
-    ]
 
 
 # DEPRESSION
@@ -160,12 +149,13 @@ charts_coll = dbc.Collapse(
                 dbc.Col(
                     [
                         html.H4(
-                            f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: "
+                            f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: ",
+                            style={"text-align": "center"},
                         ),
                         html.H2(id="total-couts", style={"text-align": "center"}),
                     ]
                 ),
-                html.Div(" "),
+                html.Div(" ", style={"width": "10%"}),
                 dbc.Col([html.Div(id="draw1")]),
             ],
         ),
@@ -190,6 +180,7 @@ navbar = dbc.Navbar(
             ),
             href="http://alliance-psyperinat.org/",
             target="_blank",
+            style={"float": "left"},
         ),
         html.Div(alliance, style={"float": "right"})
     ],
@@ -198,8 +189,6 @@ navbar = dbc.Navbar(
     sticky="top",
     className="container",
 )
-
-
 
 
 app.layout = dbc.Container(
@@ -225,7 +214,7 @@ app.layout = dbc.Container(
     + generate_hidden_divs(),
 )
 
-global slider_values
+"""global slider_values
 slider_values = list()
 
 def update_output(n_clicks, inp):
@@ -239,7 +228,7 @@ for i in range(nb_variables_total):
         Output(f"hidden-div-{i}", "children"),
         [Input("button-generate", "n_clicks")],
         [State(f"slider-{i}", "value")],
-    )(update_output)
+    )(update_output)"""
 
 
 @app.callback(
@@ -250,31 +239,22 @@ for i in range(nb_variables_total):
         Output("total-couts", "children"),
     ],
     [Input("button-generate", "n_clicks")],
+    [State(f'slider-{i}', "value") for i in range(nb_variables_total)],
 )
-def compute_costs(n):
-    time.sleep(1)
-    try:
-        print(f"\nupdated values, len = {len(slider_values)}\n")
-        df_variables["upd_variables"] = slider_values[-nb_variables_total:]
-    except ValueError:
-        print(f"\n did not update, len = {len(slider_values)}\n")
-        df_variables["upd_variables"] = df_variables["val"]
+def compute_costs(n, inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9, inp10, 
+    inp11, inp12, inp13, inp14, inp15, inp16, inp17, inp18, inp19, inp20, inp21, inp22, 
+    inp23, inp24, inp25, inp26, inp27, inp28, inp29, inp30, inp31, inp32, inp33, inp34, 
+    inp35, inp36, inp37, inp38, inp39, inp40, inp41, inp42, inp43, inp44, inp45, inp46, 
+    inp47, inp48, inp49, inp50, inp51, inp52, inp53, inp54, inp55, inp56, inp57, inp58, 
+    inp59, inp60, inp61, inp62, inp63):
 
-    print(
-        df_variables.set_index("nom_variable")
-        .loc[
-            [
-                "Prix d'une vie",
-                "Valeur d'une année de QALY",
-                "Indice de perte de qualité de vie",
-                "Perte de qualité de vie pour une psychose",
-                "Proba suppl. de naissance prématurée si dépression",
-            ]
-        ]
-        .iloc[:, -1]
-    )
+    sliders = eval(str([f'inp{i}' for i in range(df_variables.shape[0])]).replace("'", ''))
+
+    df_variables["upd_variables"] = sliders
 
     df_par_cas = process_values(df_variables).reset_index()
+    print(df_par_cas)
+
 
     prevalences = (
         df_variables.set_index("nom_variable")
@@ -289,7 +269,7 @@ def compute_costs(n):
         .values
         / 100
     )
-    # print(prevalences)
+
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 

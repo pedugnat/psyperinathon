@@ -112,6 +112,18 @@ def generate_popovers():
     return popovers
 
 
+def generate_hidden_divs():
+    return [
+        html.Div(id=f"hidden-div-{i}", hidden=True) for i in range(df_variables.shape[0])
+    ]
+
+
+def make_row(it):
+    return (dbc.Row([dbc.Col(html.Label(it)), 
+                     dbc.Col(question_mark)]))
+
+
+
 def make_card_repartition(df_par_naissance):
 
     total_mere = df_par_naissance["Mère"].sum()
@@ -152,7 +164,7 @@ def make_card_repartition(df_par_naissance):
         ],
         justify="center",
         align="center",
-        no_gutters=True,
+        no_gutters=False,
     )
 
     return card
