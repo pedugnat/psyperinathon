@@ -108,12 +108,12 @@ items_medical = generate_item(df_variables, "medical")
 tabs = dbc.Tabs(
     [
         dbc.Tab(
-            make_group("Variables économiques", items_economique, is_maladie=False),
+            make_group("Variables économiques", items_economique),
             label="Variables économiques",
             tab_style=eq_width,
         ),
         dbc.Tab(
-            make_group("Variables médicales", items_medical, is_maladie=False),
+            make_group("Variables médicales", items_medical),
             label="Variables médicales",
             tab_style=eq_width,
         ),
@@ -152,23 +152,6 @@ button_generate = dbc.Button(
     "Générer l'estimation !", color="primary", block=True, id="button-generate",
 )
 
-df_final = generate_random_df()
-
-
-# PIE CHART
-df_pie = df_final.iloc[:-1, :-1]
-pie_maladies = px.pie(
-    df_pie,
-    values="Coût total",
-    names=df_pie.index,
-    #title="Répartition des coûts par maladie (en %)",
-    width=250,
-    height=500,
-)
-
-pie_maladies.update_traces(textposition="inside", textinfo="percent+label")
-pie_maladies.update(layout=go.Layout(margin=dict(t=20,r=20,b=20,l=20)))
-
 random_cost = np.random.randint(5, 10) + np.random.random()
 charts_coll = dbc.Collapse(
     [
@@ -179,21 +162,51 @@ charts_coll = dbc.Collapse(
                         html.H4(
                             f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: "
                         ),
-                        html.H2(f"\n\n{random_cost: .2f} milliards d'€"),
+                        html.H2(id="total-couts", style={"text-align": "center"}),
                     ]
                 ),
-                #dbc.Col([dcc.Graph(id="example-graph-pie", figure=pie_maladies)]),
                 html.Div(" "),
                 dbc.Col([html.Div(id="draw1")]),
-            ], justify='around'
+            ],
         ),
     ],
     id="collapsed-graphs",
 )
 
+
+logo_alliance = "http://alliancefrancophonepourlasantementaleperinatale.com/wp-content/uploads/2020/03/cropped-cropped-cropped-alliance-francaise-AFSMP-2-1-300x246.png"
+alliance = "Alliance francophone pour la santé mentale périnatale"
+
+navbar = dbc.Navbar(
+    [
+        html.A(
+            dbc.Row(
+                [
+                    dbc.Col(html.Img(src=logo_alliance, height="60px")),
+                    dbc.Col(dbc.NavbarBrand("Outil AFSMP")),
+                ],
+                align="center",
+                no_gutters=False,
+            ),
+            href="http://alliance-psyperinat.org/",
+            target="_blank",
+        ),
+        html.Div(alliance, style={"float": "right"})
+    ],
+    color="light",
+    light=True,
+    sticky="top",
+    className="container",
+)
+
+
+
+
 app.layout = dbc.Container(
     [
+    	navbar,
         html.H1("Estimer le coût des maladies psypérinatales en France"),
+        html.Hr(),
         tabs,
         html.Hr(),
         button_generate,
@@ -215,7 +228,6 @@ app.layout = dbc.Container(
 global slider_values
 slider_values = list()
 
-
 def update_output(n_clicks, inp):
     time.sleep(0.01)
     slider_values.append(inp)
@@ -223,9 +235,6 @@ def update_output(n_clicks, inp):
 
 
 for i in range(nb_variables_total):
-    if i % 10 == 0:
-        print(slider_values)
-
     app.callback(
         Output(f"hidden-div-{i}", "children"),
         [Input("button-generate", "n_clicks")],
@@ -238,16 +247,17 @@ for i in range(nb_variables_total):
         Output("table1", "children"),
         Output("table2", "children"),
         Output("draw1", "children"),
+        Output("total-couts", "children"),
     ],
     [Input("button-generate", "n_clicks")],
 )
 def compute_costs(n):
-    time.sleep(0.6)
+    time.sleep(1)
     try:
-        print("\nupdated values\n")
+        print(f"\nupdated values, len = {len(slider_values)}\n")
         df_variables["upd_variables"] = slider_values[-nb_variables_total:]
     except ValueError:
-        print("\n did not update\n")
+        print(f"\n did not update, len = {len(slider_values)}\n")
         df_variables["upd_variables"] = df_variables["val"]
 
     print(
@@ -283,18 +293,21 @@ def compute_costs(n):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
+
+    cout_total = df_par_naissance['Total'].sum() * 753000
+    cout_total_str = f"\n\n{cout_total / int(1e9): .1f} milliards d'euros par an", 
+
+
     card_repartition = make_card_repartition(df_par_naissance)
+
 
     def formating(x):
         return "{:,} €".format(x).replace(",", " ")
 
-    for c in df_par_cas.columns:
-        if df_par_cas[c].dtype != "object":
-            df_par_cas[c] = df_par_cas[c].astype(int).apply(formating)
-
-    for c in df_par_naissance.columns:
-        if df_par_naissance[c].dtype != "object":
-            df_par_naissance[c] = df_par_naissance[c].astype(int).apply(formating)
+    for df in [df_par_cas, df_par_naissance]:    # formatte les 2 tableaux en euros 
+	    for c in df.columns:
+	        if df[c].dtype != "object":
+	            df[c] = df[c].astype(int).apply(formating)
 
     df_par_cas.columns = [
         c if i > 0 else "Coût par cas" for i, c in enumerate(df_par_cas.columns)
@@ -310,7 +323,8 @@ def compute_costs(n):
     table_naissance = dbc.Table.from_dataframe(
         df_par_naissance, striped=True, bordered=True, hover=True
     )
-    return table_cas, table_naissance, card_repartition
+
+    return table_cas, table_naissance, card_repartition, cout_total_str
 
 
 # CALLBACK GRAPHS

@@ -43,18 +43,29 @@ def generate_random_df():
     return df_final
 
 
-def make_group(title, items, is_maladie=True):
+def make_group(title, items):
     """items est un dict sous forme : key = nom var ; value = widget"""
-    rd_cost_maladie = np.random.randint(0, 100000)
+    # rd_cost_maladie = np.random.randint(0, 100000)
 
-    if is_maladie:
+    dict_cost = {
+        "Depression Mère": 24290,
+        "Depression Bébé": 65641,
+        "Anxiété Mère": 22073,
+        "Anxiété Bébé": 14824,
+        "Psychose Mère": 55335,
+        "Psychose Bébé": 8893,
+    }
+
+    if title in ["Variables économiques", "Variables médicales"]:
+        badge = html.Div("")
+
+    else:
         badge = dbc.Badge(
-            "{:,} € par cas".format(rd_cost_maladie).replace(",", " "),
+            "{:,} € par cas".format(dict_cost[title]).replace(",", " "),
             color="secondary",
             className="ml-1",
+            style={"float": "right"},
         )
-    else:
-        badge = html.Div("")
 
     card_header = dbc.CardHeader(
         [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([badge]),], align="start",)]
@@ -118,29 +129,30 @@ def make_card_repartition(df_par_naissance):
                     html.Img(
                         src="data:image/png;base64,{}".format(encoded_image.decode()),
                         alt="Image non disponible",
-                        width=100,
+                        width=130,
                     ),
-                ]
+                ],
+                width=3,
             ),
             dbc.Col(
                 [
-                            html.H1(
-                                f"{proportion_mere: .0f} %",
-                                style={
-                                    "color": "#1b75bc",
-                                    "font-weight": "bold",
-                                },
-                            ),
-                            html.P("de ces coûts sont liés à la mère"),
-                            html.H1(
-                                f"{100 - proportion_mere: .0f} %",
-                                style={"color": "#00cc66", "font-weight": "bold",},
-                            ),
-                            html.P("de ces coûts sont liés au bébé"),
-                        ]
+                    html.H1(
+                        f"{proportion_mere: .0f} %",
+                        style={"color": "#1b75bc", "font-weight": "bold",},
+                    ),
+                    html.P("de ces coûts sont liés à la mère"),
+                    html.H1(
+                        f"{100 - proportion_mere: .0f} %",
+                        style={"color": "#00cc66", "font-weight": "bold",},
+                    ),
+                    html.P("de ces coûts sont liés au bébé"),
+                ],
+                width=4,
             ),
         ],
-        justify="center", align="center",
+        justify="center",
+        align="center",
+        no_gutters=True,
     )
 
     return card
