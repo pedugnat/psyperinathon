@@ -64,7 +64,6 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
         cdbsoc_qaly = (
             -0
             - 0
-            - 0
             + val(
                 df_variables,
                 "Perte de qualité vie due à un poblème de conduite (en QALY)",
@@ -78,11 +77,11 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
             + val(df_variables, "Probabilité supplémentaire de mort de l'enfant")
             / 100
             * val(df_variables, "Prix d'une vie")
+            * int(1e6)
         )
 
-        # cdbsoc_perte_prod = #val(df_variables,"Coût en perte de productivité des problèmes émotionnels")
         cdbsoc_perte_prod = (
-            1
+            val(df_variables, "Coût en perte de productivité des problèmes émotionnels")
             + val(
                 df_variables,
                 "Coût en perte de productivité des problèmes de conduite par cas",
@@ -201,7 +200,7 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
 
         cpmsoc_qaly = val(
             df_variables, "Risque supplémentaire de suicide en cas de psychose"
-        ) / 100 * val(df_variables, "Prix d'une vie") + val(
+        ) / 100 * val(df_variables, "Prix d'une vie") * int(1e6) + val(
             df_variables, "Perte de qualité de vie pour une psychose"
         ) * val(
             df_variables, "Durée moyenne d'une psychose"
@@ -234,6 +233,7 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
             val(df_variables, "Risque supplémentaire de mort de l'enfant")
             / 100
             * val(df_variables, "Prix d'une vie")
+            * int(1e6)
             * val(df_variables, "Pourcentage de schizophrènes parmi psychose")
             / 100
         )
@@ -293,20 +293,5 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
         columns=["Mère", "Bébé", "Total"],
         index=["Dépression périnatale", "Anxiété périnatale", "Psychose périnatale"],
     )
-    """
-    upd_prevalences = (
-        df_variables.loc[
-            [
-                "Prévalence de la dépression",
-                "Prévalence de l'anxiété",
-                "Prévalence de la psychose",
-            ]
-        ]
-        .iloc[:, -1]
-        .values
-        / 100
-    )
-    df_par_naissance = df_par_cas.mul(upd_prevalences, axis=0)"""
 
-    # return df_par_cas, df_par_naissance
     return df_par_cas

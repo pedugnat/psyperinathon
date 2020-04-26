@@ -18,7 +18,7 @@ tt = {"always_visible": False, "placement": "topLeft"}
 
 # VARIABLES
 global df_variables
-df_variables = pd.read_csv("variables_bauer - Feuille 1.csv")
+df_variables = pd.read_csv("bdd_variables.csv")
 
 
 def generate_random_df():
@@ -112,16 +112,8 @@ def generate_popovers():
     return popovers
 
 
-def generate_hidden_divs():
-    return [
-        html.Div(id=f"hidden-div-{i}", hidden=True) for i in range(df_variables.shape[0])
-    ]
-
-
 def make_row(it):
-    return (dbc.Row([dbc.Col(html.Label(it)), 
-                     dbc.Col(question_mark)]))
-
+    return dbc.Row([dbc.Col(html.Label(it)), dbc.Col(question_mark)])
 
 
 def make_card_repartition(df_par_naissance):

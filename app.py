@@ -16,7 +16,7 @@ import time
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
-from utils import make_card_repartition, generate_hidden_divs, make_row
+from utils import make_card_repartition, make_row
 from model import process_values
 
 
@@ -32,7 +32,7 @@ tt = {"always_visible": False, "placement": "topLeft"}
 # VARIABLES
 global df_variables
 col_types = {"maxi": float, "mini": int, "val": float, "step": float}
-df_variables = pd.read_csv("variables_bauer - Feuille 1.csv", dtype=col_types)
+df_variables = pd.read_csv("bdd_variables.csv", dtype=col_types)
 nb_variables_total = df_variables.shape[0]
 
 
@@ -97,13 +97,13 @@ items_medical = generate_item(df_variables, "medical")
 tabs = dbc.Tabs(
     [
         dbc.Tab(
-            make_group("Variables économiques", items_economique),
-            label="Variables économiques",
+            make_group("Variables médicales", items_medical),
+            label="Variables médicales",
             tab_style=eq_width,
         ),
         dbc.Tab(
-            make_group("Variables médicales", items_medical),
-            label="Variables médicales",
+            make_group("Variables économiques", items_economique),
+            label="Variables économiques",
             tab_style=eq_width,
         ),
         dbc.Tab(
@@ -138,10 +138,13 @@ tabs = dbc.Tabs(
 
 
 button_generate = dbc.Button(
-    "Générer l'estimation !", color="primary", block=True, id="button-generate",
+    "Générer l'estimation !",
+    color="primary",
+    block=True,
+    id="button-generate",
 )
 
-random_cost = np.random.randint(5, 10) + np.random.random()
+
 charts_coll = dbc.Collapse(
     [
         dbc.Row(
@@ -149,30 +152,32 @@ charts_coll = dbc.Collapse(
                 dbc.Col(
                     [
                         html.H4(
-                            f"Les coûts associés aux problèmes de santé mentale périnatale chaque année représentent: ",
+                            f"Avec ces paramètres, les coûts associés aux problèmes de santé mentale périnatale représentent chaque année :",
                             style={"text-align": "center"},
                         ),
-                        html.H2(id="total-couts", style={"text-align": "center"}),
+                        html.H1(id="total-couts", style={"text-align": "center"}),
                     ]
                 ),
-                html.Div(" ", style={"width": "10%"}),
+                html.Div(" ", style={"width": "5%"}),
                 dbc.Col([html.Div(id="draw1")]),
             ],
         ),
+        html.H3("Tableaux récapitulatifs"),
+        dbc.Row([dbc.Col([html.Div(id="table1")]), dbc.Col([html.Div(id="table2")])]),
+        html.Hr(),
     ],
     id="collapsed-graphs",
 )
 
 
 logo_alliance = "http://alliancefrancophonepourlasantementaleperinatale.com/wp-content/uploads/2020/03/cropped-cropped-cropped-alliance-francaise-AFSMP-2-1-300x246.png"
-alliance = "Alliance francophone pour la santé mentale périnatale"
 
 navbar = dbc.Navbar(
     [
         html.A(
             dbc.Row(
                 [
-                    dbc.Col(html.Img(src=logo_alliance, height="60px")),
+                    dbc.Col(html.Img(src=logo_alliance, height="90px")),
                     dbc.Col(dbc.NavbarBrand("Outil AFSMP")),
                 ],
                 align="center",
@@ -182,7 +187,10 @@ navbar = dbc.Navbar(
             target="_blank",
             style={"float": "left"},
         ),
-        html.Div(alliance, style={"float": "right"})
+        html.Div(
+            "Alliance francophone pour la santé mentale périnatale",
+            style={"float": "right"},
+        ),
     ],
     color="light",
     light=True,
@@ -193,7 +201,7 @@ navbar = dbc.Navbar(
 
 app.layout = dbc.Container(
     [
-    	navbar,
+        navbar,
         html.H1("Estimer le coût des maladies psypérinatales en France"),
         html.Hr(),
         tabs,
@@ -201,34 +209,10 @@ app.layout = dbc.Container(
         button_generate,
         html.Hr(),
         charts_coll,
-        html.Hr(),
-        html.H3("Tableaux récapitulatifs"),
-        dbc.Row([dbc.Col([html.Div(id="table1")]),
-        	dbc.Col([html.Div(id="table2")])
-        	])
-        ,
-        #html.Div(id="table2"),
-        #html.Div(id="draw1"),
     ]
-    + generate_popovers()
-    + generate_hidden_divs(),
+    + generate_popovers(),
+     #style={"margin": "1em"}, 
 )
-
-"""global slider_values
-slider_values = list()
-
-def update_output(n_clicks, inp):
-    time.sleep(0.01)
-    slider_values.append(inp)
-    return "Input is {}".format(inp)
-
-
-for i in range(nb_variables_total):
-    app.callback(
-        Output(f"hidden-div-{i}", "children"),
-        [Input("button-generate", "n_clicks")],
-        [State(f"slider-{i}", "value")],
-    )(update_output)"""
 
 
 @app.callback(
@@ -239,30 +223,22 @@ for i in range(nb_variables_total):
         Output("total-couts", "children"),
     ],
     [Input("button-generate", "n_clicks")],
-    [State(f'slider-{i}', "value") for i in range(nb_variables_total)],
+    [State(f"slider-{i}", "value") for i in range(nb_variables_total)],
 )
-def compute_costs(n, inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9, inp10, 
-    inp11, inp12, inp13, inp14, inp15, inp16, inp17, inp18, inp19, inp20, inp21, inp22, 
-    inp23, inp24, inp25, inp26, inp27, inp28, inp29, inp30, inp31, inp32, inp33, inp34, 
-    inp35, inp36, inp37, inp38, inp39, inp40, inp41, inp42, inp43, inp44, inp45, inp46, 
-    inp47, inp48, inp49, inp50, inp51, inp52, inp53, inp54, inp55, inp56, inp57, inp58, 
-    inp59, inp60, inp61, inp62, inp63):
+def compute_costs(n, *sliders):
+    df_variables_upd = df_variables.copy()
 
-    sliders = eval(str([f'inp{i}' for i in range(df_variables.shape[0])]).replace("'", ''))
+    df_variables_upd["upd_variables"] = sliders
 
-    df_variables["upd_variables"] = sliders
-
-    df_par_cas = process_values(df_variables).reset_index()
+    df_par_cas = process_values(df_variables_upd).reset_index()
     print(df_par_cas)
 
-
     prevalences = (
-        df_variables.set_index("nom_variable")
+        df_variables_upd.set_index("nom_variable")
         .loc[
             [
-                "Prévalence de la dépression",
-                "Prévalence de l'anxiété",
-                "Prévalence de la psychose",
+                "Prévalence de " + mal
+                for mal in ["la dépression", "l'anxiété", "la psychose"]
             ]
         ]
         .iloc[:, -1]
@@ -273,21 +249,23 @@ def compute_costs(n, inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9,
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
+    n_naissances = df_variables_upd.set_index("nom_variable").loc["Nombre de naissances"][
+        -1
+    ]
+    total_par_cas = df_par_naissance["Total"].sum()
 
-    cout_total = df_par_naissance['Total'].sum() * 753000
-    cout_total_str = f"\n\n{cout_total / int(1e9): .1f} milliards d'euros par an", 
-
+    cout_total = total_par_cas * n_naissances
+    cout_total_str = f"\n\n{cout_total / int(1e9): .1f} milliards d'euros"
 
     card_repartition = make_card_repartition(df_par_naissance)
-
 
     def formating(x):
         return "{:,} €".format(x).replace(",", " ")
 
-    for df in [df_par_cas, df_par_naissance]:    # formatte les 2 tableaux en euros 
-	    for c in df.columns:
-	        if df[c].dtype != "object":
-	            df[c] = df[c].astype(int).apply(formating)
+    for df in [df_par_cas, df_par_naissance]:  # formatte les 2 tableaux en euros
+        for c in df.columns:
+            if df[c].dtype != "object":
+                df[c] = df[c].astype(int).apply(formating)
 
     df_par_cas.columns = [
         c if i > 0 else "Coût par cas" for i, c in enumerate(df_par_cas.columns)
@@ -315,7 +293,7 @@ def compute_costs(n, inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9,
 )
 def toggle_collapse(n, is_open):
     if n:
-        return not is_open
+        return True
     return is_open
 
 
@@ -324,7 +302,6 @@ def toggle_popover(n, is_open):
     if n:
         return not is_open
     return is_open
-
 
 for i in range(nb_variables_total):
     app.callback(
