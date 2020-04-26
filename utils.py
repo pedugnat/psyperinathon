@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import math
 
 import dash
 import dash_core_components as dcc
@@ -77,7 +78,13 @@ def make_group(title, items):
             chain(
                 *[
                     [
-                        dbc.Row([html.Li(it), generate_qm(it)], justify="start"),
+                        dbc.Row(
+                            [
+                                html.Li(it, style={"padding": "5px 5px 5px 40px"}),
+                                generate_qm(it),
+                            ],
+                            justify="start",
+                        ),
                         items[it][0],
                     ]
                     for it in items
@@ -86,6 +93,7 @@ def make_group(title, items):
         ),
         color="dark",
         outline=True,
+        style={"padding": "0 0 1em 0"},
     )
 
 
@@ -93,7 +101,7 @@ def generate_qm(item):
     id_hash = df_variables[df_variables["nom_variable"] == item].index.values[0]
     question_mark = dbc.Badge("?", pill=True, color="light", id="badge_" + str(id_hash))
 
-    return dbc.Col(question_mark, width=1)
+    return dbc.Col(question_mark, width=1, style={"padding": "5px"})
 
 
 def generate_popovers():
@@ -126,37 +134,55 @@ def make_card_repartition(df_par_naissance):
     image_filename = "card_image.png"
     encoded_image = base64.b64encode(open(image_filename, "rb").read())
 
-    card = dbc.Row(
+    card = html.Div(
         [
-            dbc.Col(
+            dbc.Row(
                 [
-                    html.Img(
-                        src="data:image/png;base64,{}".format(encoded_image.decode()),
-                        alt="Image non disponible",
-                        width=130,
+                    dbc.Col(
+                        [
+                            html.Img(
+                                src="data:image/png;base64,{}".format(
+                                    encoded_image.decode()
+                                ),
+                                alt="Image non disponible",
+                                width=130,
+                            ),
+                        ],
+                        width=5,
+                    ),
+                    dbc.Col(
+                        [
+                            html.H1(
+                                f"{proportion_mere: .0f} %",
+                                style={"color": "#1b75bc", "font-weight": "bold",},
+                            ),
+                            html.P("de ces coûts sont liés à la mère"),
+                            html.H1(
+                                f"{100 - proportion_mere: .0f} %",
+                                style={"color": "#00cc66", "font-weight": "bold",},
+                            ),
+                            html.P("de ces coûts sont liés au bébé"),
+                        ],
+                        width={"size": 6, "order": "last"},
                     ),
                 ],
-                width=3,
-            ),
-            dbc.Col(
-                [
-                    html.H1(
-                        f"{proportion_mere: .0f} %",
-                        style={"color": "#1b75bc", "font-weight": "bold",},
-                    ),
-                    html.P("de ces coûts sont liés à la mère"),
-                    html.H1(
-                        f"{100 - proportion_mere: .0f} %",
-                        style={"color": "#00cc66", "font-weight": "bold",},
-                    ),
-                    html.P("de ces coûts sont liés au bébé"),
-                ],
-                width=4,
-            ),
+                no_gutters=True,
+            )
         ],
-        justify="center",
-        align="center",
-        no_gutters=False,
+        style={"vertical-align": "middle"},
     )
 
     return card
+
+
+def millify(n):
+    millnames = ["", " mille €", " millions d'€", " milliards d'€"]
+    n = float(n)
+    millidx = max(
+        0,
+        min(
+            len(millnames) - 1, int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3))
+        ),
+    )
+
+    return "{:.1f}{}".format(n / 10 ** (3 * millidx), millnames[millidx])

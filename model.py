@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
 def val(df, col):
     return df.loc[col][-1]
 
@@ -294,4 +293,41 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
         index=["Dépression périnatale", "Anxiété périnatale", "Psychose périnatale"],
     )
 
-    return df_par_cas
+    # Calcul de la répartition des dépenses en fonction du secteur
+    total_sante_social = sum(
+        [
+            cdmsp_sante_social,
+            cdbsp_sante_social,
+            camsp_sante_social,
+            cabsp_sante_social,
+            cpmsp_sante_social,
+            cpbsp_sante_social,
+        ]
+    )
+    total_autre_servicepublic = sum(
+        [cdbsp_educ, cdbsp_justice, cabsp_educ, cabsp_justice]
+    )
+    total_societe_entiere = sum(
+        [
+            cout_depression_mere_SOC,
+            cout_depression_bebe_SOC,
+            cout_anxiete_mere_SOC,
+            cout_anxiete_bebe_SOC,
+            cout_psychose_mere_SOC,
+            cout_psychose_bebe_SOC,
+        ]
+    )
+
+    total_secteurs = (
+        total_sante_social + total_autre_servicepublic + total_societe_entiere
+    )
+
+    repartition = {
+        "Santé et social": int(total_sante_social) / total_secteurs,
+        "Secteur public (autre)": int(total_autre_servicepublic) / total_secteurs,
+        "Société entière": int(total_societe_entiere) / total_secteurs,
+    }
+
+    df_repartition_secteur = pd.DataFrame(repartition, index=["Répartition des coûts par secteur"]).T
+
+    return df_par_cas, df_repartition_secteur

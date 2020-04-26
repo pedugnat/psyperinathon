@@ -13,10 +13,11 @@ import numpy as np
 from itertools import chain
 import pandas as pd
 import time
+import math
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
-from utils import make_card_repartition, make_row
+from utils import make_card_repartition, make_row, millify
 from model import process_values
 
 
@@ -48,24 +49,29 @@ def generate_item(df_variables, category):
 
     dict_items = {
         row["nom_variable"]: [
-            dcc.Slider(
-                min=row.mini,
-                max=row.maxi,
-                value=row.val,
-                step=row.step,
-                tooltip=tt,
-                marks={
-                    marker(row.mini): {
-                        "label": "{} {}".format(round(row.mini, 2), row.unit)
-                    },
-                    marker(row.val): {
-                        "label": "{} {}".format(round(row.val, 2), row.unit)
-                    },
-                    marker(row.maxi): {
-                        "label": "{} {}".format(round(row.maxi, 2), row.unit)
-                    },
-                },
-                id=f"slider-{idx}",
+            html.Div(
+                [
+                    dcc.Slider(
+                        min=row.mini,
+                        max=row.maxi,
+                        value=row.val,
+                        step=row.step,
+                        tooltip=tt,
+                        marks={
+                            marker(row.mini): {
+                                "label": "{}\xa0{}".format(round(row.mini, 2), row.unit)
+                            },
+                            marker(row.val): {
+                                "label": "{}\xa0{}".format(round(row.val, 2), row.unit)
+                            },
+                            marker(row.maxi): {
+                                "label": "{}\xa0{}".format(round(row.maxi, 2), row.unit)
+                            },
+                        },
+                        id=f"slider-{idx}",
+                    ),
+                ],
+                style={"padding": "0 1em 0 1em"},
             )
         ]
         for idx, row in df_categ.iterrows()
@@ -142,11 +148,12 @@ button_generate = dbc.Button(
     color="primary",
     block=True,
     id="button-generate",
+    size="lg",
 )
 
 
 charts_coll = dbc.Collapse(
-    [
+    [   html.H3("Principaux enseignements"), 
         dbc.Row(
             [
                 dbc.Col(
@@ -156,10 +163,18 @@ charts_coll = dbc.Collapse(
                             style={"text-align": "center"},
                         ),
                         html.H1(id="total-couts", style={"text-align": "center"}),
-                    ]
+                    ],
+                    style={"border": "0px solid black", "padding": "10% 2% 0 0"},
                 ),
-                html.Div(" ", style={"width": "5%"}),
-                dbc.Col([html.Div(id="draw1")]),
+                # html.Div(" ", style={"width": "5%"}),
+                dbc.Col(
+                    [html.Div(id="draw1")],
+                    style={"border": "0px solid black", "padding": "5% 0 0 2%"},
+                ),
+                dbc.Col(
+                    [dcc.Graph(id="example-graph-pie")],
+                    style={"border": "0px solid black", "padding": "5% 0 0 0"},
+                ),
             ],
         ),
         html.H3("Tableaux récapitulatifs"),
@@ -177,8 +192,8 @@ navbar = dbc.Navbar(
         html.A(
             dbc.Row(
                 [
-                    dbc.Col(html.Img(src=logo_alliance, height="90px")),
-                    dbc.Col(dbc.NavbarBrand("Outil AFSMP")),
+                    dbc.Col(html.Img(src=logo_alliance, height="70px")),
+                    dbc.Col(dbc.NavbarBrand("Outil Psython")),
                 ],
                 align="center",
                 no_gutters=False,
@@ -187,9 +202,9 @@ navbar = dbc.Navbar(
             target="_blank",
             style={"float": "left"},
         ),
-        html.Div(
+        html.P(
             "Alliance francophone pour la santé mentale périnatale",
-            style={"float": "right"},
+            style={"margin-left": "auto", "margin-right": "0", "vertical-align": "bottom"}
         ),
     ],
     color="light",
@@ -199,10 +214,19 @@ navbar = dbc.Navbar(
 )
 
 
+mode_demploi = html.Div(
+    [
+        html.H3("Mode d'emploi"),
+        html.Div("Ceci est le mode d'emploi d'utilisation de cet outil"),
+    ],
+    style={"border": "1px solid black"},
+)
+
 app.layout = dbc.Container(
     [
         navbar,
         html.H1("Estimer le coût des maladies psypérinatales en France"),
+        mode_demploi,
         html.Hr(),
         tabs,
         html.Hr(),
@@ -210,8 +234,7 @@ app.layout = dbc.Container(
         html.Hr(),
         charts_coll,
     ]
-    + generate_popovers(),
-     #style={"margin": "1em"}, 
+    + generate_popovers()
 )
 
 
@@ -221,6 +244,7 @@ app.layout = dbc.Container(
         Output("table2", "children"),
         Output("draw1", "children"),
         Output("total-couts", "children"),
+        Output("example-graph-pie", "figure"),
     ],
     [Input("button-generate", "n_clicks")],
     [State(f"slider-{i}", "value") for i in range(nb_variables_total)],
@@ -230,7 +254,8 @@ def compute_costs(n, *sliders):
 
     df_variables_upd["upd_variables"] = sliders
 
-    df_par_cas = process_values(df_variables_upd).reset_index()
+    df_par_cas, df_repartition = process_values(df_variables_upd)
+    df_par_cas = df_par_cas.reset_index()
     print(df_par_cas)
 
     prevalences = (
@@ -249,13 +274,39 @@ def compute_costs(n, *sliders):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
-    n_naissances = df_variables_upd.set_index("nom_variable").loc["Nombre de naissances"][
-        -1
-    ]
+    n_naissances = df_variables_upd.set_index("nom_variable").loc[
+        "Nombre de naissances"
+    ][-1]
     total_par_cas = df_par_naissance["Total"].sum()
 
     cout_total = total_par_cas * n_naissances
     cout_total_str = f"\n\n{cout_total / int(1e9): .1f} milliards d'euros"
+
+    df_repartition["couts_totaux"] = (
+        df_repartition["Répartition des coûts par secteur"] * cout_total
+    )
+    df_repartition["couts_lisibles"] = df_repartition["couts_totaux"].apply(millify)
+
+    pie_maladies = px.pie(
+        df_repartition,
+        values="couts_totaux",
+        names=df_repartition.index,
+        title="<b>Répartition des coûts par secteur</b>",
+        width=350,
+        height=350,
+        color="couts_totaux",
+        color_discrete_sequence=["#d91b5c", "#f7a5ab", "#00cc66"],
+    )
+
+    pie_maladies.update_traces(
+        textposition="auto",
+        textinfo="label+percent",
+        insidetextorientation="horizontal",
+        sort=False,
+        customdata=df_repartition["couts_lisibles"],
+        hovertemplate="<b>%{label}</b><br>Coût : %{customdata[0]}",
+    )
+    pie_maladies.update_layout(showlegend=False)
 
     card_repartition = make_card_repartition(df_par_naissance)
 
@@ -282,7 +333,7 @@ def compute_costs(n, *sliders):
         df_par_naissance, striped=True, bordered=True, hover=True
     )
 
-    return table_cas, table_naissance, card_repartition, cout_total_str
+    return table_cas, table_naissance, card_repartition, cout_total_str, pie_maladies
 
 
 # CALLBACK GRAPHS
@@ -302,6 +353,7 @@ def toggle_popover(n, is_open):
     if n:
         return not is_open
     return is_open
+
 
 for i in range(nb_variables_total):
     app.callback(
