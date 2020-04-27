@@ -204,7 +204,7 @@ navbar = dbc.Navbar(
         ),
         html.P(
             "Alliance francophone pour la santé mentale périnatale",
-            style={"margin-left": "auto", "margin-right": "0", "vertical-align": "bottom"}
+            style={"margin-left": "auto", "margin-right": "0"}
         ),
     ],
     color="light",
@@ -225,7 +225,7 @@ mode_demploi = html.Div(
 app.layout = dbc.Container(
     [
         navbar,
-        html.H1("Estimer le coût des maladies psypérinatales en France"),
+        html.H1("Estimer le coût des maladies psypérinatales en France", style={"padding": "1em 0 1em 0", "text-align": "center"}),
         mode_demploi,
         html.Hr(),
         tabs,
@@ -233,6 +233,11 @@ app.layout = dbc.Container(
         button_generate,
         html.Hr(),
         charts_coll,
+        dcc.Dropdown(
+                    id="x-variable",
+                    options=[
+                        {"label": col, "value": col} for col in iris.columns
+                    ],)
     ]
     + generate_popovers()
 )
@@ -274,13 +279,16 @@ def compute_costs(n, *sliders):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
+    for df in [df_par_cas, df_par_naissance]:
+        df.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(df.values[:, 1:], axis=0).tolist()
+
     n_naissances = df_variables_upd.set_index("nom_variable").loc[
         "Nombre de naissances"
     ][-1]
-    total_par_cas = df_par_naissance["Total"].sum()
+    total_par_cas = df_par_naissance["Total"].iloc[:-1].sum()
 
     cout_total = total_par_cas * n_naissances
-    cout_total_str = f"\n\n{cout_total / int(1e9): .1f} milliards d'euros"
+    cout_total_str = millify(cout_total)
 
     df_repartition["couts_totaux"] = (
         df_repartition["Répartition des coûts par secteur"] * cout_total

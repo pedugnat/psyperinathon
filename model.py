@@ -324,7 +324,7 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
 
     repartition = {
         "Santé et social": int(total_sante_social) / total_secteurs,
-        "Secteur public (autre)": int(total_autre_servicepublic) / total_secteurs,
+        "Secteur public <br>(éducation, justice, etc.)": int(total_autre_servicepublic) / total_secteurs,
         "Société entière": int(total_societe_entiere) / total_secteurs,
     }
 

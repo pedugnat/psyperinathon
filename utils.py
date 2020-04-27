@@ -57,16 +57,16 @@ def make_group(title, items):
         "Psychose Bébé": 8893,
     }
 
-    if title in ["Variables économiques", "Variables médicales"]:
-        badge = html.Div("")
+    #if title in ["Variables économiques", "Variables médicales"]:
+    badge = html.Div("")
 
-    else:
+    """else:
         badge = dbc.Badge(
             "{:,} € par cas".format(dict_cost[title]).replace(",", " "),
             color="secondary",
             className="ml-1",
             style={"float": "right"},
-        )
+        )"""
 
     card_header = dbc.CardHeader(
         [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([badge]),], align="start",)]
