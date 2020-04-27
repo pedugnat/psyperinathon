@@ -1,0 +1,935 @@
+Nom de l'échelon,Nombre de naissances (2018),Echelon
+France,756663,Pays
+Île-de-France,174439,Région
+Auvergne-Rhône-Alpes,90297,Région
+Hauts-de-France,67913,Région
+Occitanie,58106,Région
+Provence-Alpes-Côte d'Azur,56506,Région
+Grand Est,55580,Région
+Nouvelle-Aquitaine,53680,Région
+Pays de la Loire,39739,Région
+Normandie,34047,Région
+Bretagne,31701,Région
+Bourgogne-Franche-Comté,26840,Région
+Centre-Val de Loire,26093,Région
+La Réunion,13364,Région
+Mayotte,9590,Région
+Guyane,7995,Région
+Guadeloupe,4249,Région
+Martinique,3670,Région
+Corse,2854,Région
+59 – Nord,31396,Département
+93 – Seine-Saint-Denis,28735,Département
+75 – Paris,27367,Département
+13 – Bouches-du-Rhône,25586,Département
+69 – Rhône,25513,Département
+92 – Hauts-de-Seine,22878,Département
+94 – Val-de-Marne,20368,Département
+95 – Val-d'Oise,19507,Département
+91 – Essonne,18618,Département
+78 – Yvelines,18548,Département
+77 – Seine-et-Marne,18418,Département
+33 – Gironde,17115,Département
+44 – Loire-Atlantique,16198,Département
+31 – Haute-Garonne,15966,Département
+62 – Pas-de-Calais,15600,Département
+76 – Seine-Maritime,14183,Département
+38 – Isère,14062,Département
+974 – La Réunion,13364,Département
+34 – Hérault,12577,Département
+67 – Bas-Rhin,12176,Département
+35 – Ille-et-Vilaine,11656,Département
+06 – Alpes-Maritimes,11631,Département
+83 – Var,10267,Département
+57 – Moselle,10189,Département
+74 – Haute-Savoie,9905,Département
+976 – Mayotte,9590,Département
+60 – Oise,9565,Département
+49 – Maine-et-Loire,8776,Département
+42 – Loire,8438,Département
+29 – Finistère,8095,Département
+68 – Haut-Rhin,8054,Département
+973 – Guyane,7995,Département
+45 – Loiret,7815,Département
+30 – Gard,7585,Département
+54 – Meurthe-et-Moselle,7139,Département
+01 – Ain,7101,Département
+14 – Calvados,6680,Département
+56 – Morbihan,6637,Département
+63 – Puy-de-Dôme,6555,Département
+27 – Eure,6434,Département
+84 – Vaucluse,6392,Département
+85 – Vendée,6106,Département
+37 – Indre-et-Loire,6104,Département
+51 – Marne,6069,Département
+25 – Doubs,5992,Département
+64 – Pyrénées-Atlantiques,5839,Département
+80 – Somme,5781,Département
+72 – Sarthe,5635,Département
+02 – Aisne,5571,Département
+26 – Drôme,5411,Département
+22 – Côtes-d'Armor,5313,Département
+21 – Côte-d'Or,5191,Département
+17 – Charente-Maritime,5061,Département
+71 – Saône-et-Loire,4854,Département
+28 – Eure-et-Loir,4730,Département
+73 – Savoie,4509,Département
+66 – Pyrénées-Orientales,4342,Département
+50 – Manche,4306,Département
+971 – Guadeloupe,4249,Département
+86 – Vienne,4044,Département
+972 – Martinique,3670,Département
+79 – Deux-Sèvres,3381,Département
+40 – Landes,3356,Département
+87 – Haute-Vienne,3318,Département
+81 – Tarn,3257,Département
+11 – Aude,3228,Département
+89 – Yonne,3216,Département
+88 – Vosges,3202,Département
+10 – Aube,3154,Département
+53 – Mayenne,3024,Département
+41 – Loir-et-Cher,3016,Département
+47 – Lot-et-Garonne,2960,Département
+16 – Charente,2955,Département
+24 – Dordogne,2942,Département
+07 – Ardèche,2891,Département
+03 – Allier,2742,Département
+18 – Cher,2662,Département
+82 – Tarn-et-Garonne,2550,Département
+08 – Ardennes,2464,Département
+61 – Orne,2444,Département
+39 – Jura,2294,Département
+12 – Aveyron,2247,Département
+70 – Haute-Saône,2112,Département
+43 – Haute-Loire,2060,Département
+19 – Corrèze,1907,Département
+65 – Hautes-Pyrénées,1802,Département
+36 – Indre,1766,Département
+58 – Nièvre,1657,Département
+55 – Meuse,1626,Département
+90 – Territoire de Belfort,1524,Département
+52 – Haute-Marne,1507,Département
+2B – Haute-Corse,1480,Département
+32 – Gers,1434,Département
+04 – Alpes-de-Haute-Provence,1395,Département
+2A – Corse-du-Sud,1374,Département
+46 – Lot,1304,Département
+05 – Hautes-Alpes,1235,Département
+09 – Ariège,1234,Département
+15 – Cantal,1110,Département
+23 – Creuse,802,Département
+48 – Lozère,580,Département
+75056 – Paris,27367,Ville
+13055 – Marseille,12789,Ville
+69123 – Lyon,7627,Ville
+31555 – Toulouse,6818,Ville
+06088 – Nice,4486,Ville
+44109 – Nantes,4214,Ville
+67482 – Strasbourg,3800,Ville
+34172 – Montpellier,3700,Ville
+33063 – Bordeaux,3224,Ville
+59350 – Lille,3147,Ville
+75118 – Paris 18e Arrondissement,3086,Ville
+75115 – Paris 15e Arrondissement,2934,Ville
+75119 – Paris 19e Arrondissement,2717,Ville
+35238 – Rennes,2659,Ville
+69266 – Villeurbanne,2477,Ville
+97411 – Saint-Denis,2435,Ville
+51454 – Reims,2395,Ville
+75117 – Paris 17e Arrondissement,2353,Ville
+42218 – Saint-Étienne,2187,Ville
+97311 – Saint-Laurent-du-Maroni,2169,Ville
+76351 – Le Havre,2159,Ville
+95018 – Argenteuil,2156,Ville
+93066 – Saint-Denis,2134,Ville
+38185 – Grenoble,2122,Ville
+83137 – Toulon,1983,Ville
+97302 – Cayenne,1942,Ville
+93048 – Montreuil,1933,Ville
+30189 – Nîmes,1919,Ville
+75113 – Paris 13e Arrondissement,1898,Ville
+45234 – Orléans,1888,Ville
+49007 – Angers,1875,Ville
+75111 – Paris 11e Arrondissement,1873,Ville
+59512 – Roubaix,1792,Ville
+75112 – Paris 12e Arrondissement,1789,Ville
+63113 – Clermont-Ferrand,1735,Ville
+68224 – Mulhouse,1735,Ville
+72181 – Le Mans,1705,Ville
+92050 – Nanterre,1659,Ville
+59599 – Tourcoing,1639,Ville
+21231 – Dijon,1628,Ville
+75114 – Paris 14e Arrondissement,1609,Ville
+92012 – Boulogne-Billancourt,1608,Ville
+37261 – Tours,1598,Ville
+80021 – Amiens,1596,Ville
+93001 – Aubervilliers,1570,Ville
+75116 – Paris 16e Arrondissement,1566,Ville
+74010 – Annecy,1562,Ville
+13001 – Aix-en-Provence,1554,Ville
+66136 – Perpignan,1550,Ville
+92004 – Asnières-sur-Seine,1547,Ville
+94081 – Vitry-sur-Seine,1512,Ville
+29019 – Brest,1498,Ville
+76540 – Rouen,1482,Ville
+69383 – Lyon 3e Arrondissement,1440,Ville
+94028 – Créteil,1435,Ville
+84007 – Avignon,1431,Ville
+69388 – Lyon 8e Arrondissement,1424,Ville
+57463 – Metz,1421,Ville
+97415 – Saint-Paul,1402,Ville
+87085 – Limoges,1399,Ville
+75110 – Paris 10e Arrondissement,1398,Ville
+95127 – Cergy,1391,Ville
+92025 – Colombes,1386,Ville
+25056 – Besançon,1385,Ville
+93005 – Aulnay-sous-Bois,1367,Ville
+13215 – Marseille 15e Arrondissement,1363,Ville
+69387 – Lyon 7e Arrondissement,1351,Ville
+93029 – Drancy,1349,Ville
+69259 – Vénissieux,1346,Ville
+91228 – Évry-Courcouronnes,1332,Ville
+13213 – Marseille 13e Arrondissement,1278,Ville
+92026 – Courbevoie,1277,Ville
+13214 – Marseille 14e Arrondissement,1268,Ville
+97416 – Saint-Pierre,1245,Ville
+97422 – Le Tampon,1213,Ville
+13203 – Marseille 3e Arrondissement,1167,Ville
+94017 – Champigny-sur-Marne,1164,Ville
+91174 – Corbeil-Essonnes,1135,Ville
+95585 – Sarcelles,1126,Ville
+93051 – Noisy-le-Grand,1112,Ville
+78646 – Versailles,1099,Ville
+14118 – Caen,1090,Ville
+54395 – Nancy,1080,Ville
+93010 – Bondy,1074,Ville
+93007 – Le Blanc-Mesnil,1045,Ville
+34032 – Béziers,1032,Ville
+94041 – Ivry-sur-Seine,1016,Ville
+92044 – Levallois-Perret,1010,Ville
+93055 – Pantin,1008,Ville
+93031 – Épinay-sur-Seine,999,Ville
+97409 – Saint-André,996,Ville
+92024 – Clichy,985,Ville
+69256 – Vaulx-en-Velin,980,Ville
+93070 – Saint-Ouen-sur-Seine,980,Ville
+77284 – Meaux,978,Ville
+93071 – Sevran,973,Ville
+86194 – Poitiers,969,Ville
+97414 – Saint-Louis,967,Ville
+91377 – Massy,964,Ville
+92040 – Issy-les-Moulineaux,957,Ville
+69389 – Lyon 9e Arrondissement,943,Ville
+59183 – Dunkerque,938,Ville
+06004 – Antibes,924,Ville
+93008 – Bobigny,917,Ville
+97307 – Matoury,914,Ville
+77108 – Chelles,912,Ville
+13208 – Marseille 8e Arrondissement,905,Ville
+92063 – Rueil-Malmaison,901,Ville
+97209 – Fort-de-France,891,Ville
+93064 – Rosny-sous-Bois,882,Ville
+78586 – Sartrouville,867,Ville
+92036 – Gennevilliers,867,Ville
+93046 – Livry-Gargan,863,Ville
+26362 – Valence,844,Ville
+77288 – Melun,842,Ville
+94022 – Choisy-le-Roi,842,Ville
+94076 – Villejuif,841,Ville
+33281 – Mérignac,836,Ville
+92002 – Antony,836,Ville
+60057 – Beauvais,827,Ville
+75109 – Paris 9e Arrondissement,820,Ville
+68066 – Colmar,815,Ville
+94046 – Maisons-Alfort,810,Ville
+13201 – Marseille 1er Arrondissement,810,Ville
+62193 – Calais,809,Ville
+78361 – Mantes-la-Jolie,807,Ville
+94068 – Saint-Maur-des-Fossés,800,Ville
+13209 – Marseille 9e Arrondissement,797,Ville
+06029 – Cannes,787,Ville
+93027 – La Courneuve,787,Ville
+95268 – Garges-lès-Gonesse,782,Ville
+93053 – Noisy-le-Sec,779,Ville
+13210 – Marseille 10e Arrondissement,778,Ville
+94078 – Villeneuve-Saint-Georges,776,Ville
+44162 – Saint-Herblain,775,Ville
+69290 – Saint-Priest,772,Ville
+73065 – Chambéry,770,Ville
+83126 – La Seyne-sur-Mer,765,Ville
+93072 – Stains,747,Ville
+64445 – Pau,743,Ville
+13204 – Marseille 4e Arrondissement,740,Ville
+10387 – Troyes,739,Ville
+44184 – Saint-Nazaire,736,Ville
+94002 – Alfortville,730,Ville
+59009 – Villeneuve-d'Ascq,722,Ville
+92062 – Puteaux,714,Ville
+50129 – Cherbourg-en-Cotentin,713,Ville
+92007 – Bagneux,712,Ville
+18033 – Bourges,705,Ville
+17300 – La Rochelle,703,Ville
+82121 – Montauban,703,Ville
+92073 – Suresnes,702,Ville
+92049 – Montrouge,690,Ville
+97101 – Les Abymes,689,Ville
+97410 – Saint-Benoît,682,Ville
+27229 – Évreux,678,Ville
+92023 – Clamart,678,Ville
+13211 – Marseille 11e Arrondissement,671,Ville
+97304 – Kourou,667,Ville
+92051 – Neuilly-sur-Seine,664,Ville
+78621 – Trappes,663,Ville
+91027 – Athis-Mons,662,Ville
+60175 – Creil,660,Ville
+94033 – Fontenay-sous-Bois,656,Ville
+94080 – Vincennes,650,Ville
+13004 – Arles,649,Ville
+69386 – Lyon 6e Arrondissement,649,Ville
+78498 – Poissy,648,Ville
+56121 – Lorient,642,Ville
+02691 – Saint-Quentin,639,Ville
+74012 – Annemasse,638,Ville
+13205 – Marseille 5e Arrondissement,638,Ville
+93078 – Villepinte,637,Ville
+95252 – Franconville,635,Ville
+13212 – Marseille 12e Arrondissement,635,Ville
+41018 – Blois,625,Ville
+06069 – Grasse,623,Ville
+69029 – Bron,622,Ville
+79191 – Niort,621,Ville
+93059 – Pierrefitte-sur-Seine,614,Ville
+95063 – Bezons,614,Ville
+95680 – Villiers-le-Bel,614,Ville
+90010 – Belfort,611,Ville
+78440 – Les Mureaux,608,Ville
+29232 – Quimper,595,Ville
+33318 – Pessac,595,Ville
+13206 – Marseille 6e Arrondissement,589,Ville
+71076 – Chalon-sur-Saône,588,Ville
+93073 – Tremblay-en-France,587,Ville
+91286 – Grigny,586,Ville
+93032 – Gagny,585,Ville
+97407 – Le Port,585,Ville
+93050 – Neuilly-sur-Marne,582,Ville
+93014 – Clichy-sous-Bois,581,Ville
+97408 – La Possession,579,Ville
+83061 – Fréjus,577,Ville
+13056 – Martigues,575,Ville
+69264 – Villefranche-sur-Saône,574,Ville
+13103 – Salon-de-Provence,572,Ville
+11262 – Narbonne,562,Ville
+53130 – Laval,558,Ville
+95280 – Goussainville,556,Ville
+97413 – Saint-Leu,554,Ville
+49099 – Cholet,547,Ville
+95277 – Gonesse,547,Ville
+44143 – Rezé,543,Ville
+91687 – Viry-Châtillon,536,Ville
+97418 – Sainte-Marie,536,Ville
+38151 – Échirolles,535,Ville
+97412 – Saint-Joseph,534,Ville
+92048 – Meudon,531,Ville
+93063 – Romainville,531,Ville
+69034 – Caluire-et-Cuire,529,Ville
+91521 – Ris-Orangis,529,Ville
+59178 – Douai,525,Ville
+69385 – Lyon 5e Arrondissement,525,Ville
+95500 – Pontoise,523,Ville
+59650 – Wattrelos,522,Ville
+91657 – Vigneux-sur-Seine,522,Ville
+94044 – Limeil-Brévannes,522,Ville
+28134 – Dreux,519,Ville
+59606 – Valenciennes,518,Ville
+56260 – Vannes,516,Ville
+91477 – Palaiseau,513,Ville
+91589 – Savigny-sur-Orge,511,Ville
+62041 – Arras,510,Ville
+64102 – Bayonne,510,Ville
+78172 – Conflans-Sainte-Honorine,510,Ville
+93006 – Bagnolet,510,Ville
+13005 – Aubagne,509,Ville
+06027 – Cagnes-sur-Mer,508,Ville
+92020 – Châtillon,507,Ville
+92019 – Châtenay-Malabry,506,Ville
+11069 – Carcassonne,505,Ville
+75105 – Paris 5e Arrondissement,463,Ville
+75107 – Paris 7e Arrondissement,447,Ville
+69382 – Lyon 2e Arrondissement,441,Ville
+13202 – Marseille 2e Arrondissement,435,Ville
+75108 – Paris 8e Arrondissement,425,Ville
+69381 – Lyon 1er Arrondissement,423,Ville
+69384 – Lyon 4e Arrondissement,423,Ville
+13207 – Marseille 7e Arrondissement,408,Ville
+75103 – Paris 3e Arrondissement,402,Ville
+75106 – Paris 6e Arrondissement,334,Ville
+13216 – Marseille 16e Arrondissement,292,Ville
+75104 – Paris 4e Arrondissement,287,Ville
+75102 – Paris 2e Arrondissement,256,Ville
+75101 – Paris 1er Arrondissement,172,Ville
+Mayotte  –  1re circonscription,4182,Circonscription
+Mayotte  –  2e circonscription,3719,Circonscription
+Guyane   –  2e circonscription,3510,Circonscription
+Guyane   –  1re circonscription,3218,Circonscription
+Seine-Saint-Denis   –  7e circonscription,2403,Circonscription
+Seine-Saint-Denis   –  4e circonscription,2398,Circonscription
+Seine-Saint-Denis   –  1re circonscription,2328,Circonscription
+Seine-Saint-Denis   –  9e circonscription,2327,Circonscription
+Seine-Saint-Denis   –  5e circonscription,2295,Circonscription
+Seine-Saint-Denis   –  6e circonscription,2243,Circonscription
+Seine-Saint-Denis   –  10e circonscription,2221,Circonscription
+Val-d’Oise   –  3e circonscription,2182,Circonscription
+Seine-Saint-Denis   –  12e circonscription,2156,Circonscription
+Seine-Saint-Denis   –  3e circonscription,2144,Circonscription
+Val-d’Oise   –  5e circonscription,2143,Circonscription
+La Réunion   –  7e circonscription,2141,Circonscription
+Seine-Saint-Denis   –  2e circonscription,2121,Circonscription
+Seine-Saint-Denis   –  11e circonscription,2044,Circonscription
+La Réunion   –  4e circonscription,2035,Circonscription
+Essonne   –  4e circonscription,2029,Circonscription
+Val-de-Marne   –  5e circonscription,2024,Circonscription
+Essonne   –  3e circonscription,2017,Circonscription
+Rhône   –  6e circonscription,2009,Circonscription
+Val-d’Oise   –  1re circonscription,1995,Circonscription
+Val-de-Marne   –  3e circonscription,1985,Circonscription
+Hauts-de-Seine   –  4e circonscription,1970,Circonscription
+La Réunion   –  2e circonscription,1965,Circonscription
+Val-de-Marne   –  2e circonscription,1948,Circonscription
+Hauts-de-Seine   –  12e circonscription,1940,Circonscription
+Essonne   –  1re circonscription,1937,Circonscription
+Rhône   –  8e circonscription,1930,Circonscription
+Val-de-Marne   –  1re circonscription,1930,Circonscription
+Seine-Saint-Denis   –  8e circonscription,1922,Circonscription
+Nouvelle-Caledonie  –  2e circonscription,1906,Circonscription
+Val-d’Oise   –  2e circonscription,1887,Circonscription
+Val-de-Marne   –  10e circonscription,1875,Circonscription
+Val-d’Oise   –  6e circonscription,1875,Circonscription
+Hauts-de-Seine   –  13e circonscription,1874,Circonscription
+Rhône   –  9e circonscription,1860,Circonscription
+Essonne   –  2e circonscription,1860,Circonscription
+Val-d’Oise   –  7e circonscription,1855,Circonscription
+Seine-et-Marne   –  8e circonscription,1842,Circonscription
+Rhône   –  14e circonscription,1837,Circonscription
+Val-de-Marne   –  6e circonscription,1835,Circonscription
+Val-d’Oise   –  9e circonscription,1822,Circonscription
+Essonne   –  6e circonscription,1807,Circonscription
+Rhône   –  4e circonscription,1797,Circonscription
+La Réunion   –  1re circonscription,1784,Circonscription
+Hauts-de-Seine   –  7e circonscription,1782,Circonscription
+La Réunion   –  3e circonscription,1781,Circonscription
+Nord   –  11e circonscription,1775,Circonscription
+Loire-Atlantique   –  5e circonscription,1772,Circonscription
+Yvelines   –  9e circonscription,1771,Circonscription
+Val-d’Oise   –  8e circonscription,1769,Circonscription
+Loire-Atlantique   –  6e circonscription,1766,Circonscription
+Val-d’Oise   –  4e circonscription,1764,Circonscription
+Haute-Savoie   –  4e circonscription,1758,Circonscription
+Rhône   –  3e circonscription,1756,Circonscription
+Haute-Garonne   –  6e circonscription,1754,Circonscription
+Hauts-de-Seine   –  3e circonscription,1754,Circonscription
+Rhône   –  11e circonscription,1749,Circonscription
+Seine-et-Marne   –  7e circonscription,1749,Circonscription
+Essonne   –  9e circonscription,1737,Circonscription
+Seine-et-Marne   –  10e circonscription,1734,Circonscription
+Bouches-du-Rhône   –  14e circonscription,1732,Circonscription
+Hauts-de-Seine   –  5e circonscription,1732,Circonscription
+Loire-Atlantique   –  9e circonscription,1731,Circonscription
+Nord   –  3e circonscription,1729,Circonscription
+Rhône   –  10e circonscription,1729,Circonscription
+Val-de-Marne   –  4e circonscription,1728,Circonscription
+Val-de-Marne   –  8e circonscription,1728,Circonscription
+Haute-Savoie   –  1re circonscription,1724,Circonscription
+Paris   –  6e circonscription,1719,Circonscription
+Essonne   –  7e circonscription,1719,Circonscription
+Val-d’Oise   –  10e circonscription,1718,Circonscription
+Loire-Atlantique   –  10e circonscription,1717,Circonscription
+Rhône   –  1re circonscription,1716,Circonscription
+Hauts-de-Seine   –  6e circonscription,1716,Circonscription
+Nord   –  4e circonscription,1711,Circonscription
+Paris   –  7e circonscription,1711,Circonscription
+Seine-et-Marne   –  6e circonscription,1711,Circonscription
+Nord   –  2e circonscription,1707,Circonscription
+Hauts-de-Seine   –  1re circonscription,1706,Circonscription
+Seine-et-Marne   –  9e circonscription,1701,Circonscription
+Paris   –  13e circonscription,1687,Circonscription
+Seine-et-Marne   –  4e circonscription,1684,Circonscription
+Essonne   –  8e circonscription,1681,Circonscription
+Paris   –  8e circonscription,1679,Circonscription
+Seine-Maritime   –  6e circonscription,1677,Circonscription
+Paris   –  1re circonscription,1670,Circonscription
+Bouches-du-Rhône   –  15e circonscription,1667,Circonscription
+Loire   –  6e circonscription,1662,Circonscription
+La Réunion   –  5e circonscription,1662,Circonscription
+Paris   –  5e circonscription,1661,Circonscription
+Val-de-Marne   –  11e circonscription,1661,Circonscription
+Haute-Garonne   –  2e circonscription,1660,Circonscription
+Seine-et-Marne   –  5e circonscription,1650,Circonscription
+Rhône   –  7e circonscription,1649,Circonscription
+Hauts-de-Seine   –  11e circonscription,1649,Circonscription
+Loire   –  5e circonscription,1646,Circonscription
+Bouches-du-Rhône   –  7e circonscription,1643,Circonscription
+Nouvelle-Caledonie  –  1re circonscription,1642,Circonscription
+Haute-Savoie   –  2e circonscription,1641,Circonscription
+Paris   –  10e circonscription,1641,Circonscription
+Paris   –  4e circonscription,1638,Circonscription
+La Réunion   –  6e circonscription,1638,Circonscription
+Haute-Savoie   –  5e circonscription,1635,Circonscription
+Seine-Maritime   –  10e circonscription,1635,Circonscription
+Val-de-Marne   –  7e circonscription,1634,Circonscription
+Paris   –  14e circonscription,1631,Circonscription
+Nord   –  5e circonscription,1630,Circonscription
+Haute-Garonne   –  1re circonscription,1625,Circonscription
+Hauts-de-Seine   –  2e circonscription,1623,Circonscription
+Bouches-du-Rhône   –  8e circonscription,1622,Circonscription
+Paris   –  15e circonscription,1617,Circonscription
+Nord   –  9e circonscription,1616,Circonscription
+Rhône   –  5e circonscription,1615,Circonscription
+Bouches-du-Rhône   –  3e circonscription,1614,Circonscription
+Essonne   –  10e circonscription,1613,Circonscription
+Loire   –  4e circonscription,1611,Circonscription
+Yvelines   –  8e circonscription,1608,Circonscription
+Bouches-du-Rhône   –  13e circonscription,1606,Circonscription
+Rhône   –  12e circonscription,1606,Circonscription
+Hauts-de-Seine   –  10e circonscription,1606,Circonscription
+Rhône   –  2e circonscription,1603,Circonscription
+Rhône   –  13e circonscription,1602,Circonscription
+Bouches-du-Rhône   –  10e circonscription,1601,Circonscription
+Paris   –  18e circonscription,1599,Circonscription
+Yvelines   –  1re circonscription,1596,Circonscription
+Bouches-du-Rhône   –  16e circonscription,1595,Circonscription
+Yvelines   –  10e circonscription,1585,Circonscription
+Paris   –  2e circonscription,1579,Circonscription
+Isère   –  10e circonscription,1570,Circonscription
+Nord   –  14e circonscription,1569,Circonscription
+Haute-Garonne   –  7e circonscription,1568,Circonscription
+Yvelines   –  2e circonscription,1568,Circonscription
+Nord   –  18e circonscription,1564,Circonscription
+Nord   –  12e circonscription,1557,Circonscription
+Paris   –  16e circonscription,1554,Circonscription
+Bouches-du-Rhône   –  4e circonscription,1551,Circonscription
+Nord   –  13e circonscription,1548,Circonscription
+Paris   –  12e circonscription,1546,Circonscription
+Loire-Atlantique   –  2e circonscription,1542,Circonscription
+Yvelines   –  7e circonscription,1541,Circonscription
+Oise  –  4e circonscription,1540,Circonscription
+Haute-Garonne   –  5e circonscription,1538,Circonscription
+Haute-Garonne   –  9e circonscription,1538,Circonscription
+Isère   –  5e circonscription,1533,Circonscription
+Nord   –  15e circonscription,1532,Circonscription
+Yvelines   –  4e circonscription,1529,Circonscription
+Ille-et-Vilaine   –  5e circonscription,1528,Circonscription
+Bouches-du-Rhône   –  12e circonscription,1525,Circonscription
+Gironde   –  5e circonscription,1522,Circonscription
+Bouches-du-Rhône   –  9e circonscription,1521,Circonscription
+Loire-Atlantique   –  3e circonscription,1521,Circonscription
+Yvelines   –  3e circonscription,1518,Circonscription
+Bouches-du-Rhône   –  5e circonscription,1517,Circonscription
+Paris   –  3e circonscription,1517,Circonscription
+Paris   –  17e circonscription,1506,Circonscription
+Seine-Maritime   –  4e circonscription,1506,Circonscription
+Seine-et-Marne   –  2e circonscription,1506,Circonscription
+Bouches-du-Rhône   –  6e circonscription,1505,Circonscription
+Ille-et-Vilaine   –  8e circonscription,1497,Circonscription
+Loiret   –  2e circonscription,1497,Circonscription
+Pas-de-Calais   –  1e circonscription,1497,Circonscription
+Yvelines   –  11e circonscription,1497,Circonscription
+Loire-Atlantique   –  7e circonscription,1495,Circonscription
+Seine-et-Marne   –  1re circonscription,1495,Circonscription
+Bouches-du-Rhône   –  11e circonscription,1490,Circonscription
+Isère   –  9e circonscription,1481,Circonscription
+Nord   –  21e circonscription,1481,Circonscription
+Paris   –  11e circonscription,1477,Circonscription
+Yvelines   –  6e circonscription,1473,Circonscription
+Val-de-Marne   –  9e circonscription,1469,Circonscription
+Alpes-Maritimes  –  1re circonscription,1466,Circonscription
+Hérault   –  4e circonscription,1466,Circonscription
+Isère   –  1re circonscription,1463,Circonscription
+Nord   –  8e circonscription,1462,Circonscription
+Var   –  6e circonscription,1461,Circonscription
+Bas-Rhin   –  5e circonscription,1459,Circonscription
+Yvelines   –  5e circonscription,1458,Circonscription
+Ille-et-Vilaine   –  2e circonscription,1457,Circonscription
+Haut-Rhin   –  6e circonscription,1457,Circonscription
+Seine-Maritime   –  9e circonscription,1456,Circonscription
+Gironde   –  6e circonscription,1452,Circonscription
+Ille-et-Vilaine   –  1re circonscription,1451,Circonscription
+Ain   –  3e circonscription,1449,Circonscription
+Hauts-de-Seine   –  9e circonscription,1446,Circonscription
+Bouches-du-Rhône   –  1re circonscription,1443,Circonscription
+Gironde   –  1re circonscription,1441,Circonscription
+Bouches-du-Rhône   –  2e circonscription,1440,Circonscription
+Drôme   –  4e circonscription,1440,Circonscription
+Isère   –  7e circonscription,1436,Circonscription
+Nord   –  19e circonscription,1436,Circonscription
+Oise  –  2e circonscription,1436,Circonscription
+Bas-Rhin   –  2e circonscription,1435,Circonscription
+Drôme   –  3e circonscription,1434,Circonscription
+Haute-Garonne   –  10e circonscription,1433,Circonscription
+Nord   –  16e circonscription,1433,Circonscription
+Hauts-de-Seine   –  8e circonscription,1432,Circonscription
+Alpes-Maritimes  –  7e circonscription,1431,Circonscription
+Seine-et-Marne   –  3e circonscription,1429,Circonscription
+Seine-Maritime   –  5e circonscription,1428,Circonscription
+Gironde   –  4e circonscription,1427,Circonscription
+Seine-Maritime   –  7e circonscription,1425,Circonscription
+Ain   –  2e circonscription,1421,Circonscription
+Maine-et-Loire     –  6e circonscription,1421,Circonscription
+Haute-Savoie   –  3e circonscription,1421,Circonscription
+Essonne   –  5e circonscription,1421,Circonscription
+Alpes-Maritimes  –  3e circonscription,1418,Circonscription
+Paris   –  9e circonscription,1414,Circonscription
+Pas-de-Calais   –  11e circonscription,1413,Circonscription
+Isère   –  2e circonscription,1410,Circonscription
+Oise  –  1re circonscription,1407,Circonscription
+Oise  –  3e circonscription,1406,Circonscription
+Gard   –  1re circonscription,1405,Circonscription
+Var   –  8e circonscription,1401,Circonscription
+Nord   –  1re circonscription,1398,Circonscription
+Seine-Maritime   –  2e circonscription,1398,Circonscription
+Loire-Atlantique   –  8e circonscription,1396,Circonscription
+Seine-et-Marne   –  11e circonscription,1396,Circonscription
+Nord   –  10e circonscription,1393,Circonscription
+Ain   –  4e circonscription,1391,Circonscription
+Pas-de-Calais   –  12e circonscription,1387,Circonscription
+Hérault   –  6e circonscription,1379,Circonscription
+Pas-de-Calais   –  7e circonscription,1379,Circonscription
+Eure-et-Loir     –  1re circonscription,1378,Circonscription
+Nord   –  6e circonscription,1378,Circonscription
+Bas-Rhin   –  1re circonscription,1375,Circonscription
+Ille-et-Vilaine   –  3e circonscription,1374,Circonscription
+Hérault   –  7e circonscription,1372,Circonscription
+Puy-de-Dôme   –  1re circonscription,1370,Circonscription
+Alpes-Maritimes  –  5e circonscription,1369,Circonscription
+Haute-Garonne   –  4e circonscription,1369,Circonscription
+Vaucluse   –  4e circonscription,1369,Circonscription
+Loire   –  3e circonscription,1368,Circonscription
+Haut-Rhin   –  4e circonscription,1367,Circonscription
+Haute-Garonne   –  3e circonscription,1365,Circonscription
+Oise  –  7e circonscription,1365,Circonscription
+Maine-et-Loire     –  1re circonscription,1364,Circonscription
+Pas-de-Calais   –  8e circonscription,1364,Circonscription
+Bas-Rhin   –  8e circonscription,1363,Circonscription
+Yvelines   –  12e circonscription,1363,Circonscription
+Puy-de-Dôme   –  4e circonscription,1361,Circonscription
+Ille-et-Vilaine   –  4e circonscription,1360,Circonscription
+Seine-Maritime   –  1re circonscription,1360,Circonscription
+Nord   –  20e circonscription,1359,Circonscription
+Moselle   –  9e circonscription,1354,Circonscription
+Pas-de-Calais   –  5e circonscription,1351,Circonscription
+Var   –  4e circonscription,1350,Circonscription
+Loire-Atlantique   –  4e circonscription,1348,Circonscription
+Bas-Rhin   –  9e circonscription,1346,Circonscription
+Marne   –  4e circonscription,1343,Circonscription
+Maine-et-Loire     –  2e circonscription,1341,Circonscription
+Isère   –  4e circonscription,1339,Circonscription
+Gironde   –  11e circonscription,1338,Circonscription
+Haute-Savoie   –  6e circonscription,1338,Circonscription
+Drôme   –  2e circonscription,1331,Circonscription
+Eure   –  1re circonscription,1331,Circonscription
+Ille-et-Vilaine   –  7e circonscription,1330,Circonscription
+Haut-Rhin   –  5e circonscription,1330,Circonscription
+Isère   –  6e circonscription,1324,Circonscription
+Gironde   –  3e circonscription,1323,Circonscription
+Puy-de-Dôme   –  5e circonscription,1322,Circonscription
+Pas-de-Calais   –  6e circonscription,1321,Circonscription
+Hérault   –  5e circonscription,1320,Circonscription
+Bas-Rhin   –  4e circonscription,1320,Circonscription
+Vaucluse   –  1re circonscription,1320,Circonscription
+Vendée     –  1re circonscription,1320,Circonscription
+Bas-Rhin   –  6e circonscription,1319,Circonscription
+Gironde   –  8e circonscription,1318,Circonscription
+Ille-et-Vilaine   –  6e circonscription,1316,Circonscription
+Hérault   –  8e circonscription,1311,Circonscription
+Seine-Maritime   –  3e circonscription,1310,Circonscription
+Pas-de-Calais   –  10e circonscription,1309,Circonscription
+Indre-et-Loire   –  3e circonscription,1308,Circonscription
+Loiret   –  1re circonscription,1306,Circonscription
+Nord   –  7e circonscription,1304,Circonscription
+Tarn-et-Garonne   –  2e circonscription,1304,Circonscription
+Gironde   –  9e circonscription,1303,Circonscription
+Eure   –  4e circonscription,1299,Circonscription
+Nord   –  17e circonscription,1297,Circonscription
+Gard   –  5e circonscription,1294,Circonscription
+Oise  –  6e circonscription,1293,Circonscription
+Meurthe-et-Moselle   –  4e circonscription,1291,Circonscription
+Var   –  7e circonscription,1289,Circonscription
+Doubs  –  1re circonscription,1286,Circonscription
+Manche   –  3e circonscription,1285,Circonscription
+Marne   –  2e circonscription,1283,Circonscription
+Eure   –  5e circonscription,1281,Circonscription
+Loiret   –  4e circonscription,1281,Circonscription
+Pas-de-Calais   –  3e circonscription,1279,Circonscription
+Var   –  3e circonscription,1279,Circonscription
+Ain   –  5e circonscription,1278,Circonscription
+Moselle   –  8e circonscription,1277,Circonscription
+Meurthe-et-Moselle   –  1re circonscription,1276,Circonscription
+Ain   –  1re circonscription,1273,Circonscription
+Moselle   –  7e circonscription,1271,Circonscription
+Pas-de-Calais   –  2e circonscription,1269,Circonscription
+Seine-Maritime   –  8e circonscription,1269,Circonscription
+Indre-et-Loire   –  4e circonscription,1266,Circonscription
+Somme   –  2e circonscription,1265,Circonscription
+Loire-Atlantique   –  1re circonscription,1263,Circonscription
+Marne   –  3e circonscription,1263,Circonscription
+Haut-Rhin   –  3e circonscription,1262,Circonscription
+Haute-Vienne   –  2e circonscription,1258,Circonscription
+Alpes-Maritimes  –  2e circonscription,1256,Circonscription
+Haute-Garonne   –  8e circonscription,1255,Circonscription
+Bas-Rhin   –  3e circonscription,1255,Circonscription
+Loiret   –  6e circonscription,1253,Circonscription
+Guadeloupe   –  2e circonscription,1252,Circonscription
+Guadeloupe   –  3e circonscription,1252,Circonscription
+Morbihan   –  4e circonscription,1250,Circonscription
+Puy-de-Dôme   –  3e circonscription,1250,Circonscription
+Vaucluse   –  5e circonscription,1250,Circonscription
+Alpes-Maritimes  –  4e circonscription,1249,Circonscription
+Alpes-Maritimes  –  8e circonscription,1248,Circonscription
+Marne   –  1re circonscription,1248,Circonscription
+Sarthe    –  2e circonscription,1248,Circonscription
+Oise  –  5e circonscription,1247,Circonscription
+Vendée     –  3e circonscription,1247,Circonscription
+Loiret   –  5e circonscription,1245,Circonscription
+Yonne   –  3e circonscription,1245,Circonscription
+Gard   –  4e circonscription,1244,Circonscription
+Loire   –  1re circonscription,1244,Circonscription
+Landes   –  2e circonscription,1243,Circonscription
+Calvados   –  6e circonscription,1242,Circonscription
+Haut-Rhin   –  2e circonscription,1241,Circonscription
+Pas-de-Calais   –  4e circonscription,1240,Circonscription
+Hérault   –  3e circonscription,1239,Circonscription
+Gironde   –  2e circonscription,1238,Circonscription
+Tarn-et-Garonne   –  1re circonscription,1238,Circonscription
+Moselle   –  1re circonscription,1237,Circonscription
+Isère   –  8e circonscription,1234,Circonscription
+Isère   –  3e circonscription,1233,Circonscription
+Gard   –  3e circonscription,1232,Circonscription
+Var   –  2e circonscription,1231,Circonscription
+Doubs  –  5e circonscription,1230,Circonscription
+Aisne  –  5e circonscription,1229,Circonscription
+Gard   –  6e circonscription,1229,Circonscription
+Calvados   –  4e circonscription,1225,Circonscription
+Doubs  –  2e circonscription,1224,Circonscription
+Vaucluse   –  2e circonscription,1223,Circonscription
+Meurthe-et-Moselle   –  3e circonscription,1222,Circonscription
+Sarthe    –  5e circonscription,1222,Circonscription
+Deux-Sèvres   –  2e circonscription,1222,Circonscription
+Var   –  5e circonscription,1221,Circonscription
+Tarn   –  2e circonscription,1220,Circonscription
+Hérault   –  1re circonscription,1216,Circonscription
+Eure-et-Loir     –  2e circonscription,1211,Circonscription
+Morbihan   –  1re circonscription,1208,Circonscription
+Aisne  –  4e circonscription,1205,Circonscription
+Sarthe    –  3e circonscription,1205,Circonscription
+Savoie   –  1re circonscription,1204,Circonscription
+Vendée     –  2e circonscription,1203,Circonscription
+Meurthe-et-Moselle   –  6e circonscription,1202,Circonscription
+Bas-Rhin   –  7e circonscription,1202,Circonscription
+Hérault   –  2e circonscription,1200,Circonscription
+Alpes-Maritimes  –  9e circonscription,1198,Circonscription
+Drôme   –  1re circonscription,1194,Circonscription
+Savoie   –  4e circonscription,1194,Circonscription
+Somme   –  1re circonscription,1194,Circonscription
+Indre-et-Loire   –  1re circonscription,1193,Circonscription
+Indre-et-Loire   –  2e circonscription,1193,Circonscription
+Tarn   –  3e circonscription,1183,Circonscription
+Vendée     –  4e circonscription,1182,Circonscription
+Aude   –  1re circonscription,1180,Circonscription
+Gironde   –  10e circonscription,1176,Circonscription
+Maine-et-Loire     –  7e circonscription,1173,Circonscription
+Eure   –  3e circonscription,1171,Circonscription
+Sarthe    –  4e circonscription,1170,Circonscription
+Guadeloupe   –  1re circonscription,1169,Circonscription
+Haut-Rhin   –  1re circonscription,1168,Circonscription
+Gard   –  2e circonscription,1167,Circonscription
+Haute-Vienne   –  1re circonscription,1167,Circonscription
+Hérault   –  9e circonscription,1166,Circonscription
+Lot-et-Garonne     –  1re circonscription,1166,Circonscription
+Maine-et-Loire     –  5e circonscription,1166,Circonscription
+Landes   –  1re circonscription,1164,Circonscription
+Marne   –  5e circonscription,1164,Circonscription
+Eure   –  2e circonscription,1163,Circonscription
+Gironde   –  12e circonscription,1161,Circonscription
+Manche   –  2e circonscription,1156,Circonscription
+Puy-de-Dôme   –  2e circonscription,1147,Circonscription
+Loiret   –  3e circonscription,1146,Circonscription
+Pas-de-Calais   –  9e circonscription,1146,Circonscription
+Deux-Sèvres   –  1re circonscription,1146,Circonscription
+Aisne  –  2e circonscription,1142,Circonscription
+Loire   –  2e circonscription,1136,Circonscription
+Saône-et-Loire   –  5e circonscription,1136,Circonscription
+Vaucluse   –  3e circonscription,1133,Circonscription
+Indre-et-Loire   –  5e circonscription,1132,Circonscription
+Manche   –  4e circonscription,1129,Circonscription
+Maine-et-Loire     –  4e circonscription,1128,Circonscription
+Pyrénées-Atlantiques     –  6e circonscription,1128,Circonscription
+Ardèche  –  2e circonscription,1126,Circonscription
+Morbihan   –  2e circonscription,1125,Circonscription
+Côtes-d’Armor   –  5e circonscription,1124,Circonscription
+Var   –  1re circonscription,1123,Circonscription
+Gironde   –  7e circonscription,1120,Circonscription
+Eure-et-Loir     –  3e circonscription,1119,Circonscription
+Sarthe    –  1re circonscription,1119,Circonscription
+Vienne   –  2e circonscription,1119,Circonscription
+Charente-Maritime   –  2e circonscription,1114,Circonscription
+Aisne  –  1re circonscription,1113,Circonscription
+Aube   –  2e circonscription,1112,Circonscription
+Finistère   –  5e circonscription,1112,Circonscription
+Meurthe-et-Moselle   –  2e circonscription,1112,Circonscription
+Charente-Maritime   –  5e circonscription,1111,Circonscription
+Cher  –  3e circonscription,1111,Circonscription
+Côtes-d’Armor   –  1re circonscription,1111,Circonscription
+Pyrénées-Atlantiques     –  5e circonscription,1111,Circonscription
+Charente-Maritime   –  1re circonscription,1110,Circonscription
+Haute-Loire     –  1re circonscription,1109,Circonscription
+Haute-Vienne   –  3e circonscription,1109,Circonscription
+Finistère   –  2e circonscription,1108,Circonscription
+Côte-d’Or  –  5e circonscription,1107,Circonscription
+Somme   –  4e circonscription,1106,Circonscription
+Vienne   –  1re circonscription,1106,Circonscription
+Calvados   –  5e circonscription,1104,Circonscription
+Calvados   –  1re circonscription,1099,Circonscription
+Charente   –  1re circonscription,1099,Circonscription
+Savoie   –  2e circonscription,1099,Circonscription
+Somme   –  5e circonscription,1098,Circonscription
+Alpes-Maritimes  –  6e circonscription,1096,Circonscription
+Morbihan   –  3e circonscription,1095,Circonscription
+Moselle   –  2e circonscription,1095,Circonscription
+Manche   –  1re circonscription,1094,Circonscription
+Mayenne   –  2e circonscription,1089,Circonscription
+Moselle   –  3e circonscription,1088,Circonscription
+Moselle   –  4e circonscription,1088,Circonscription
+Pyrénées-Orientales   –  2e circonscription,1088,Circonscription
+Aude   –  3e circonscription,1087,Circonscription
+Landes   –  3e circonscription,1087,Circonscription
+Haute-Saône   –  1re circonscription,1087,Circonscription
+Finistère   –  1re circonscription,1085,Circonscription
+Pyrénées-Orientales   –  3e circonscription,1085,Circonscription
+Aube   –  3e circonscription,1084,Circonscription
+Haute-Saône   –  2e circonscription,1083,Circonscription
+Côtes-d’Armor   –  2e circonscription,1080,Circonscription
+Deux-Sèvres   –  3e circonscription,1078,Circonscription
+Calvados   –  3e circonscription,1077,Circonscription
+Charente   –  3e circonscription,1077,Circonscription
+Finistère   –  3e circonscription,1075,Circonscription
+Pyrénées-Orientales   –  4e circonscription,1073,Circonscription
+Côte-d’Or  –  1re circonscription,1072,Circonscription
+Loir-et-Cher   –  1re circonscription,1071,Circonscription
+Yonne   –  1re circonscription,1070,Circonscription
+Côte-d’Or  –  2e circonscription,1067,Circonscription
+Somme   –  3e circonscription,1059,Circonscription
+Martinique   –  1re circonscription,1055,Circonscription
+Polynésie-Française  –  1re circonscription,1054,Circonscription
+Mayenne   –  1re circonscription,1052,Circonscription
+Moselle   –  6e circonscription,1052,Circonscription
+Maine-et-Loire     –  3e circonscription,1050,Circonscription
+Finistère   –  6e circonscription,1049,Circonscription
+Meurthe-et-Moselle   –  5e circonscription,1049,Circonscription
+Côtes-d’Armor   –  3e circonscription,1047,Circonscription
+Eure-et-Loir     –  4e circonscription,1045,Circonscription
+Allier   –  1re circonscription,1041,Circonscription
+Polynésie-Française  –  3e circonscription,1038,Circonscription
+Côte-d’Or  –  3e circonscription,1037,Circonscription
+Morbihan   –  6e circonscription,1036,Circonscription
+Doubs  –  3e circonscription,1035,Circonscription
+Calvados   –  2e circonscription,1033,Circonscription
+Doubs  –  4e circonscription,1032,Circonscription
+Yonne   –  2e circonscription,1029,Circonscription
+Ardennes  –  1re circonscription,1024,Circonscription
+Loir-et-Cher   –  3e circonscription,1023,Circonscription
+Martinique   –  4e circonscription,1021,Circonscription
+Aisne  –  3e circonscription,1020,Circonscription
+Charente   –  2e circonscription,1012,Circonscription
+Savoie   –  3e circonscription,1012,Circonscription
+Mayenne   –  3e circonscription,1007,Circonscription
+Moselle   –  5e circonscription,1003,Circonscription
+Allier   –  2e circonscription,998,Circonscription
+Lot-et-Garonne     –  2e circonscription,997,Circonscription
+Aude   –  2e circonscription,993,Circonscription
+Saône-et-Loire   –  4e circonscription,993,Circonscription
+Saône-et-Loire   –  3e circonscription,992,Circonscription
+Loir-et-Cher   –  2e circonscription,987,Circonscription
+Vendée     –  5e circonscription,985,Circonscription
+Morbihan   –  5e circonscription,984,Circonscription
+Tarn   –  1re circonscription,983,Circonscription
+Aube   –  1re circonscription,982,Circonscription
+Indre   –  2e circonscription,977,Circonscription
+Hautes-Pyrénées   –  2e circonscription,975,Circonscription
+Finistère   –  4e circonscription,970,Circonscription
+Corrèze   –  1re circonscription,966,Circonscription
+Pyrénées-Atlantiques     –  2e circonscription,964,Circonscription
+Pyrénées-Atlantiques     –  3e circonscription,963,Circonscription
+Lot-et-Garonne     –  3e circonscription,962,Circonscription
+Martinique   –  2e circonscription,958,Circonscription
+Corrèze   –  2e circonscription,954,Circonscription
+Cher  –  1re circonscription,950,Circonscription
+Vosges     –  1re circonscription,950,Circonscription
+Finistère   –  8e circonscription,949,Circonscription
+Pyrénées-Orientales   –  1re circonscription,949,Circonscription
+Côtes-d’Armor   –  4e circonscription,947,Circonscription
+Vienne   –  4e circonscription,947,Circonscription
+Guadeloupe   –  4e circonscription,947,Circonscription
+Vienne   –  3e circonscription,943,Circonscription
+Hautes-Pyrénées   –  1re circonscription,941,Circonscription
+Polynésie-Française  –  2e circonscription,941,Circonscription
+Meuse   –  1e circonscription,938,Circonscription
+Ardèche  –  1re circonscription,934,Circonscription
+Allier   –  3e circonscription,932,Circonscription
+Charente-Maritime   –  4e circonscription,930,Circonscription
+Indre   –  1re circonscription,927,Circonscription
+Ardennes  –  2e circonscription,918,Circonscription
+Saône-et-Loire   –  2e circonscription,915,Circonscription
+Jura     –  3e circonscription,913,Circonscription
+Cher  –  2e circonscription,910,Circonscription
+Ardèche  –  3e circonscription,908,Circonscription
+Saône-et-Loire   –  1re circonscription,907,Circonscription
+Haute-Loire     –  2e circonscription,902,Circonscription
+Pyrénées-Atlantiques     –  1re circonscription,899,Circonscription
+Pyrénées-Atlantiques     –  4e circonscription,896,Circonscription
+Charente-Maritime   –  3e circonscription,888,Circonscription
+Côte-d’Or  –  4e circonscription,880,Circonscription
+Vosges     –  2e circonscription,878,Circonscription
+Finistère   –  7e circonscription,873,Circonscription
+Orne     –  1re circonscription,871,Circonscription
+Dordogne  –  4e circonscription,861,Circonscription
+Haute-Marne     –  1re circonscription,855,Circonscription
+Orne     –  3e circonscription,847,Circonscription
+Nièvre   –  1re circonscription,846,Circonscription
+Nièvre   –  2e circonscription,845,Circonscription
+Martinique   –  3e circonscription,844,Circonscription
+Dordogne  –  2e circonscription,834,Circonscription
+Creuse   –  Circonscription unique,829,Circonscription
+Jura     –  1re circonscription,828,Circonscription
+Aveyron  –  1re circonscription,826,Circonscription
+Dordogne  –  1re circonscription,807,Circonscription
+Ardennes  –  3e circonscription,803,Circonscription
+Vosges     –  4e circonscription,791,Circonscription
+Orne     –  2e circonscription,786,Circonscription
+Haute-Corse   –  1re circonscription,775,Circonscription
+Meuse   –  2e circonscription,767,Circonscription
+Haute-Marne     –  2e circonscription,762,Circonscription
+Vosges     –  3e circonscription,760,Circonscription
+Territoire-de-Belfort     –  2e circonscription,756,Circonscription
+Gers     –  1re circonscription,755,Circonscription
+Jura     –  2e circonscription,750,Circonscription
+Territoire-de-Belfort     –  1re circonscription,750,Circonscription
+Aveyron  –  3e circonscription,717,Circonscription
+Aveyron  –  2e circonscription,712,Circonscription
+Gers     –  2e circonscription,707,Circonscription
+Alpes de Haute-Provence  –  2e circonscription,701,Circonscription
+Lot     –  1re circonscription,678,Circonscription
+Hautes-Alpes   –  1re circonscription,674,Circonscription
+Dordogne  –  3e circonscription,674,Circonscription
+Ariège  –  2e circonscription,668,Circonscription
+Haute-Corse   –  2e circonscription,667,Circonscription
+Alpes de Haute-Provence  –  1re circonscription,666,Circonscription
+Corse-du-Sud   –  2e circonscription,626,Circonscription
+Lot     –  2e circonscription,621,Circonscription
+Lozère   –  Circonscription unique ,621,Circonscription
+Corse-du-Sud   –  1re circonscription,617,Circonscription
+Cantal  –  1re circonscription,601,Circonscription
+Hautes-Alpes   –  2e circonscription,569,Circonscription
+Ariège  –  1re circonscription,567,Circonscription
+Saint-Barthélémy et Saint-Martin  –  Circonscription unique ,507,Circonscription
+Cantal  –  2e circonscription,468,Circonscription
+Wallis-et-Futuna  –  Circonscription unique ,142,Circonscription
+Saint-Pierre-et-Miquelon  –  Circonscription unique ,69,Circonscription

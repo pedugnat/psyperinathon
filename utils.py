@@ -186,3 +186,40 @@ def millify(n):
     )
 
     return "{:.1f}{}".format(n / 10 ** (3 * millidx), millnames[millidx])
+
+
+def generate_form_naissances(bdd_naissances):
+    form = dbc.Form(
+            [
+                dbc.Col([dbc.Label("Choisir une échelle")]), 
+                dbc.Col(
+                    [
+                        
+                        dcc.Dropdown(
+                            id="dd-echelle",
+                            options=[
+                                {
+                                    "label": r["Nom de l'échelon"],
+                                    "value": r["Nombre de naissances (2018)"],
+                                }
+                                for _, r in bdd_naissances.iterrows()
+                            ],
+                        ),
+                    ],
+                    width=4,
+                ), 
+                dbc.Col([html.Div("")], width=2),
+                dbc.FormGroup(
+                    [
+                        dbc.Label("Nombre de naissances", className="mr-2"),
+                        dbc.Input(type="number", min=0, step=1, id="nombre-naissances", value=0),
+                    ],
+                ),
+            ],
+            inline=True,
+        )
+
+
+    return html.Div([html.H2("Première étape : choix de l'échelle"),
+                        form], 
+                        style={"padding": "1em 0 1em 0"})

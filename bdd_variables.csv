@@ -52,7 +52,6 @@ Part des femmes reprenant à plein temps,0,100,20,1,economique,%,Source : INSEE 
 Prévalence de la dépression,0,25,10,0.5,medical,%,b,10
 Prévalence de l'anxiété,0,10,3,0.1,medical,%,b,3
 Prévalence de la psychose,0,2,0.2,0.01,medical,%,b,0.2
-Nombre de naissances,0,1000000,753000,1,medical,naissances,Adaptable à toutes les échelles. Source : INSEE 2019,753000
 Risque supplémentaire de naissance prématurée,0,2,0.94,0.01,psychose_bebe,%,Source : Nilsson et al. 2008,0.94
 Risque supplémentaire de mort de l'enfant,0,1,0.77,0.01,psychose_bebe,%,b,0.77
 Coût pour la Sécu d'une psychose,0,50000,22810,1,psychose_mere,€,b,22810

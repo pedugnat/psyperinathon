@@ -17,7 +17,7 @@ import math
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
-from utils import make_card_repartition, make_row, millify
+from utils import make_card_repartition, make_row, millify, generate_form_naissances
 from model import process_values
 
 
@@ -72,6 +72,7 @@ def generate_item(df_variables, category):
                     ),
                 ],
                 style={"padding": "0 1em 0 1em"},
+                hidden=bool(row["nom_variable"] == "Nombre de naissances"),
             )
         ]
         for idx, row in df_categ.iterrows()
@@ -139,7 +140,7 @@ tabs = dbc.Tabs(
             label="Psychose",
             tab_style=eq_width,
         ),
-    ]
+    ], #style={"padding": "1em 0 1em 0"}
 )
 
 
@@ -153,7 +154,8 @@ button_generate = dbc.Button(
 
 
 charts_coll = dbc.Collapse(
-    [   html.H3("Principaux enseignements"), 
+    [
+        html.H3("Principaux enseignements"),
         dbc.Row(
             [
                 dbc.Col(
@@ -204,7 +206,7 @@ navbar = dbc.Navbar(
         ),
         html.P(
             "Alliance francophone pour la santé mentale périnatale",
-            style={"margin-left": "auto", "margin-right": "0"}
+            style={"margin-left": "auto", "margin-right": "0"},
         ),
     ],
     color="light",
@@ -222,25 +224,40 @@ mode_demploi = html.Div(
     style={"border": "1px solid black"},
 )
 
+global bdd_naissances
+bdd_naissances = pd.read_csv("naissance_echelons.csv")
+
+form_naissances = generate_form_naissances(bdd_naissances)
+
+title = html.H1(
+    "Estimer le coût des maladies psypérinatales en France",
+    style={"padding": "1em 0 1em 0", "text-align": "center"},
+)
+
+tabs_and_title = html.Div([html.H2("Deuxième étape : ajustement des variables"),
+                            tabs], style={"padding": "0.5em 0 0.5em 0"})
+
 app.layout = dbc.Container(
     [
         navbar,
-        html.H1("Estimer le coût des maladies psypérinatales en France", style={"padding": "1em 0 1em 0", "text-align": "center"}),
+        title,
         mode_demploi,
+        form_naissances,
         html.Hr(),
-        tabs,
+        tabs_and_title,
         html.Hr(),
         button_generate,
         html.Hr(),
         charts_coll,
-        dcc.Dropdown(
-                    id="x-variable",
-                    options=[
-                        {"label": col, "value": col} for col in iris.columns
-                    ],)
+        html.Hr(),
     ]
     + generate_popovers()
 )
+
+
+@app.callback(Output("nombre-naissances", "value"), [Input("dd-echelle", "value")])
+def upd_input_echelle(val):
+    return val
 
 
 @app.callback(
@@ -251,12 +268,11 @@ app.layout = dbc.Container(
         Output("total-couts", "children"),
         Output("example-graph-pie", "figure"),
     ],
-    [Input("button-generate", "n_clicks")],
+    [Input("button-generate", "n_clicks"), Input("nombre-naissances", "value")],
     [State(f"slider-{i}", "value") for i in range(nb_variables_total)],
 )
-def compute_costs(n, *sliders):
+def compute_costs(n, n_naissances, *sliders):
     df_variables_upd = df_variables.copy()
-
     df_variables_upd["upd_variables"] = sliders
 
     df_par_cas, df_repartition = process_values(df_variables_upd)
@@ -280,15 +296,19 @@ def compute_costs(n, *sliders):
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
     for df in [df_par_cas, df_par_naissance]:
-        df.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(df.values[:, 1:], axis=0).tolist()
+        df.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(
+            df.values[:, 1:], axis=0
+        ).tolist()
 
-    n_naissances = df_variables_upd.set_index("nom_variable").loc[
-        "Nombre de naissances"
-    ][-1]
     total_par_cas = df_par_naissance["Total"].iloc[:-1].sum()
+
+    print(f"Nombre naissances = {n_naissances}")
+    if n_naissances is None:
+        n_naissances = 0
 
     cout_total = total_par_cas * n_naissances
     cout_total_str = millify(cout_total)
+    print(cout_total_str)
 
     df_repartition["couts_totaux"] = (
         df_repartition["Répartition des coûts par secteur"] * cout_total
