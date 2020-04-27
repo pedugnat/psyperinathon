@@ -159,7 +159,7 @@ def make_card_repartition(df_par_naissance):
                             html.P("de ces coûts sont liés à la mère"),
                             html.H1(
                                 f"{100 - proportion_mere: .0f} %",
-                                style={"color": "#00cc66", "font-weight": "bold",},
+                                style={"color": "#8ec63f", "font-weight": "bold",}, #old color #00cc66
                             ),
                             html.P("de ces coûts sont liés au bébé"),
                         ],
@@ -191,7 +191,7 @@ def millify(n):
 def generate_form_naissances(bdd_naissances):
     form = dbc.Form(
             [
-                dbc.Col([dbc.Label("Choisir une échelle")]), 
+                dbc.Col([html.Div("Choisir une échelle"), html.I("(parmi : pays, région, département, ville, circonscription)")]), 
                 dbc.Col(
                     [
                         
@@ -212,7 +212,7 @@ def generate_form_naissances(bdd_naissances):
                 dbc.FormGroup(
                     [
                         dbc.Label("Nombre de naissances", className="mr-2"),
-                        dbc.Input(type="number", min=0, step=1, id="nombre-naissances", value=0),
+                        dbc.Input(type="number", min=0, step=1, id="nombre-naissances"),
                     ],
                 ),
             ],
@@ -220,6 +220,6 @@ def generate_form_naissances(bdd_naissances):
         )
 
 
-    return html.Div([html.H2("Première étape : choix de l'échelle"),
+    return html.Div([html.H2("Première étape : choix de l'échelle", style={"color": "#8ec63f"}),
                         form], 
                         style={"padding": "1em 0 1em 0"})

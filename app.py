@@ -13,7 +13,6 @@ import numpy as np
 from itertools import chain
 import pandas as pd
 import time
-import math
 
 # LOCAL IMPORTS
 from utils import generate_random_df, make_group, generate_popovers, generate_qm
@@ -140,7 +139,7 @@ tabs = dbc.Tabs(
             label="Psychose",
             tab_style=eq_width,
         ),
-    ], #style={"padding": "1em 0 1em 0"}
+    ],  # style={"padding": "1em 0 1em 0"}
 )
 
 
@@ -209,7 +208,7 @@ navbar = dbc.Navbar(
             style={"margin-left": "auto", "margin-right": "0"},
         ),
     ],
-    color="light",
+    color="#1b75bc",
     light=True,
     sticky="top",
     className="container",
@@ -218,10 +217,10 @@ navbar = dbc.Navbar(
 
 mode_demploi = html.Div(
     [
-        html.H3("Mode d'emploi"),
-        html.Div("Ceci est le mode d'emploi d'utilisation de cet outil"),
+        html.H3("Mode d'emploi", style={"color": "#8ec63f"}),
+        html.Div("Ceci est le mode d'emploi d'utilisation de cet outil (à compléter !)"),
     ],
-    style={"border": "1px solid black"},
+    style={"border": "1px solid black", "padding": "1em 1em 1em 1em"},
 )
 
 global bdd_naissances
@@ -231,11 +230,14 @@ form_naissances = generate_form_naissances(bdd_naissances)
 
 title = html.H1(
     "Estimer le coût des maladies psypérinatales en France",
-    style={"padding": "1em 0 1em 0", "text-align": "center"},
+    style={"padding": "1em 0 1em 0", "text-align": "center", "color": "#1b75bc"},
 )
 
-tabs_and_title = html.Div([html.H2("Deuxième étape : ajustement des variables"),
-                            tabs], style={"padding": "0.5em 0 0.5em 0"})
+tabs_and_title = html.Div(
+    [html.H2("Deuxième étape : ajustement des variables", style={"color": "#8ec63f"}), 
+    tabs],
+    style={"padding": "0.5em 0 0.5em 0"},
+)
 
 app.layout = dbc.Container(
     [
@@ -304,7 +306,7 @@ def compute_costs(n, n_naissances, *sliders):
 
     print(f"Nombre naissances = {n_naissances}")
     if n_naissances is None:
-        n_naissances = 0
+        n_naissances = 1
 
     cout_total = total_par_cas * n_naissances
     cout_total_str = millify(cout_total)
@@ -323,7 +325,7 @@ def compute_costs(n, n_naissances, *sliders):
         width=350,
         height=350,
         color="couts_totaux",
-        color_discrete_sequence=["#d91b5c", "#f7a5ab", "#00cc66"],
+        color_discrete_sequence=["#d91b5c", "#f7a5ab", "#8ec63f"],
     )
 
     pie_maladies.update_traces(
