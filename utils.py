@@ -22,28 +22,6 @@ global df_variables
 df_variables = pd.read_csv("bdd_variables.csv")
 
 
-def generate_random_df():
-    df = pd.DataFrame(data={"Maladie": ["Dépression", "Anxiété", "Psychose"]})
-    df["Coût total"] = np.random.randint(0, 10) / np.arange(1, 4)
-    df["Part Mères"] = np.random.random(size=3) / 2
-    df["Part Bébés"] = 1 - df["Part Mères"]
-    df["Part Santé Social"] = np.random.random(size=3) / 5
-    df["Part Autre Secteur Public"] = np.random.random(size=3) / 5
-    df["Part Société entière"] = (
-        1 - df["Part Santé Social"] - df["Part Autre Secteur Public"]
-    )
-
-    df.set_index("Maladie")
-
-    a = pd.DataFrame(["Total"] + list(df.sum(axis=0).values[1:] / 3)).T
-    a.columns = df.columns
-    df_final = pd.concat([df, a])
-    df_final = df_final.set_index("Maladie")
-    df_final = df_final.astype(float).round(3)
-
-    return df_final
-
-
 def make_group(title, items):
     """items est un dict sous forme : key = nom var ; value = widget"""
     # rd_cost_maladie = np.random.randint(0, 100000)
@@ -71,7 +49,8 @@ def make_group(title, items):
         )
 
     card_header = dbc.CardHeader(
-        [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([button_open_tab])], align="start")]
+        [dbc.Row([dbc.Col([html.B(title)]), 
+                  dbc.Col([button_open_tab])])]
     )
 
     card_content = list(
@@ -93,14 +72,14 @@ def make_group(title, items):
         )
 
     if title not in ["Variables économiques", "Variables médicales"]:
-        card_content = [dbc.Collapse(card_content, id=f"collapsible-{item_name}")]
+        card_content = [dbc.Collapse(card_content, id=f"collapsible-{item_name}",
+        style={"padding": "0 0 1em 0"})]
 
     return dbc.Card(
         [card_header]
         + card_content,
         color="dark",
         outline=True,
-        style={"padding": "0 0 1em 0"},
     )
 
 
@@ -188,7 +167,8 @@ def millify(n):
     millidx = max(
         0,
         min(
-            len(millnames) - 1, int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3))
+            len(millnames) - 1, 
+            int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3))
         ),
     )
 
@@ -202,7 +182,7 @@ def generate_form_naissances(bdd_naissances):
                 dbc.Col(
                     [
                         
-                        dcc.Dropdown(
+                        dcc.Dropdown(value=756663,
                             id="dd-echelle",
                             options=[
                                 {

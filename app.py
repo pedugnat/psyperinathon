@@ -15,10 +15,10 @@ import pandas as pd
 import time
 
 # LOCAL IMPORTS
-from utils import generate_random_df, make_group, generate_popovers, generate_qm
+from utils import make_group, generate_popovers, generate_qm
 from utils import make_card_repartition, make_row, millify, generate_form_naissances
 from model import process_values
-
+from table_mod import generate_table_from_df
 
 # DASH AND APP SETTINGS
 external_stylesheets = [dbc.themes.BOOTSTRAP]
@@ -26,7 +26,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 # CSS SETTINGS
-eq_width = {"width": "20%", "text-align": "center", "font-weight": "bold"}
+eq_width = {"width": "25%", "text-align": "center", "font-weight": "bold"}
 tt = {"always_visible": False, "placement": "topLeft"}
 
 # VARIABLES
@@ -223,7 +223,9 @@ navbar = dbc.Navbar(
 mode_demploi = html.Div(
     [
         html.H3("Mode d'emploi", style={"color": "#8ec63f"}),
-        html.Div("Ceci est le mode d'emploi d'utilisation de cet outil (à compléter !)"),
+        html.Div(
+            "Ceci est le mode d'emploi d'utilisation de cet outil (à compléter !)"
+        ),
     ],
     style={"border": "1px solid black", "padding": "1em 1em 1em 1em"},
 )
@@ -239,14 +241,23 @@ title = html.H1(
 )
 
 tabs_and_title_variables = html.Div(
-    [html.H2("Deuxième étape : ajustement des variables principales", style={"color": "#8ec63f"}), 
-    tabs_variables],
+    [
+        html.H2(
+            "Deuxième étape : ajustement des variables principales",
+            style={"color": "#8ec63f"},
+        ),
+        tabs_variables,
+    ],
     style={"padding": "0.5em 0 0.5em 0"},
 )
 
 tabs_and_title_maladies = html.Div(
-    [html.H2("Troisième étape : pour aller plus loin...", style={"color": "#8ec63f"}), 
-    tabs_maladies],
+    [
+        html.H2(
+            "Troisième étape : pour aller plus loin...", style={"color": "#8ec63f"}
+        ),
+        tabs_maladies,
+    ],
     style={"padding": "0.5em 0 0.5em 0"},
 )
 
@@ -319,7 +330,7 @@ def compute_costs(n, n_naissances, *sliders):
 
     print(f"Nombre naissances = {n_naissances}")
     if n_naissances is None:
-        n_naissances = 1
+        n_naissances = 1  # set 1 as default to avoid problems if values is not defined
 
     cout_total = total_par_cas * n_naissances
     cout_total_str = millify(cout_total)
@@ -369,11 +380,22 @@ def compute_costs(n, n_naissances, *sliders):
         for i, c in enumerate(df_par_naissance.columns)
     ]
 
-    table_cas = dbc.Table.from_dataframe(
-        df_par_cas, striped=True, bordered=True, hover=True
+    table_cas = generate_table_from_df(
+        dbc.Table,
+        df_par_cas,
+        striped=True,
+        bordered=True,
+        hover=True,
+        italic_last=True,
     )
-    table_naissance = dbc.Table.from_dataframe(
-        df_par_naissance, striped=True, bordered=True, hover=True
+
+    table_naissance = generate_table_from_df(
+        dbc.Table,
+        df_par_naissance,
+        striped=True,
+        bordered=True,
+        hover=True,
+        italic_last=True,
     )
 
     return table_cas, table_naissance, card_repartition, cout_total_str, pie_maladies
@@ -391,17 +413,24 @@ def toggle_collapse(n, is_open):
     return is_open
 
 
-
 def toggle_collapse_maladies(n, is_open):
     if n:
         return not is_open
     return is_open
 
-for item_maladie in ["Depression-Mère", "Depression-Bébé", "Anxiété-Mère", 
-                     "Anxiété-Bébé", "Psychose-Mère", "Psychose-Bébé"]:
-    app.callback(Output(f"collapsible-{item_maladie}", "is_open"),
-    [Input(f"open-tab-{item_maladie}", "n_clicks")],
-    [State(f"collapsible-{item_maladie}", "is_open")],
+
+for item_maladie in [
+    "Depression-Mère",
+    "Depression-Bébé",
+    "Anxiété-Mère",
+    "Anxiété-Bébé",
+    "Psychose-Mère",
+    "Psychose-Bébé",
+]:
+    app.callback(
+        Output(f"collapsible-{item_maladie}", "is_open"),
+        [Input(f"open-tab-{item_maladie}", "n_clicks")],
+        [State(f"collapsible-{item_maladie}", "is_open")],
     )(toggle_collapse_maladies)
 
 # CALLBACK POPOVERS
