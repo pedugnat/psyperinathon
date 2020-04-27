@@ -100,7 +100,7 @@ items_economique = generate_item(df_variables, "economique")
 items_medical = generate_item(df_variables, "medical")
 
 
-tabs = dbc.Tabs(
+tabs_variables = dbc.Tabs(
     [
         dbc.Tab(
             make_group("Variables médicales", items_medical),
@@ -112,6 +112,11 @@ tabs = dbc.Tabs(
             label="Variables économiques",
             tab_style=eq_width,
         ),
+    ],
+)
+
+tabs_maladies = dbc.Tabs(
+    [
         dbc.Tab(
             [
                 make_group("Depression Mère", items_depression_mere),
@@ -139,7 +144,7 @@ tabs = dbc.Tabs(
             label="Psychose",
             tab_style=eq_width,
         ),
-    ],  # style={"padding": "1em 0 1em 0"}
+    ],
 )
 
 
@@ -154,7 +159,7 @@ button_generate = dbc.Button(
 
 charts_coll = dbc.Collapse(
     [
-        html.H3("Principaux enseignements"),
+        html.H3("Principaux enseignements", style={"color": "#8ec63f"}),
         dbc.Row(
             [
                 dbc.Col(
@@ -178,7 +183,7 @@ charts_coll = dbc.Collapse(
                 ),
             ],
         ),
-        html.H3("Tableaux récapitulatifs"),
+        html.H3("Tableaux récapitulatifs", style={"color": "#8ec63f"}),
         dbc.Row([dbc.Col([html.Div(id="table1")]), dbc.Col([html.Div(id="table2")])]),
         html.Hr(),
     ],
@@ -233,9 +238,15 @@ title = html.H1(
     style={"padding": "1em 0 1em 0", "text-align": "center", "color": "#1b75bc"},
 )
 
-tabs_and_title = html.Div(
-    [html.H2("Deuxième étape : ajustement des variables", style={"color": "#8ec63f"}), 
-    tabs],
+tabs_and_title_variables = html.Div(
+    [html.H2("Deuxième étape : ajustement des variables principales", style={"color": "#8ec63f"}), 
+    tabs_variables],
+    style={"padding": "0.5em 0 0.5em 0"},
+)
+
+tabs_and_title_maladies = html.Div(
+    [html.H2("Troisième étape : pour aller plus loin...", style={"color": "#8ec63f"}), 
+    tabs_maladies],
     style={"padding": "0.5em 0 0.5em 0"},
 )
 
@@ -246,7 +257,9 @@ app.layout = dbc.Container(
         mode_demploi,
         form_naissances,
         html.Hr(),
-        tabs_and_title,
+        tabs_and_title_variables,
+        html.Hr(),
+        tabs_and_title_maladies,
         html.Hr(),
         button_generate,
         html.Hr(),
@@ -377,6 +390,19 @@ def toggle_collapse(n, is_open):
         return True
     return is_open
 
+
+
+def toggle_collapse_maladies(n, is_open):
+    if n:
+        return not is_open
+    return is_open
+
+for item_maladie in ["Depression-Mère", "Depression-Bébé", "Anxiété-Mère", 
+                     "Anxiété-Bébé", "Psychose-Mère", "Psychose-Bébé"]:
+    app.callback(Output(f"collapsible-{item_maladie}", "is_open"),
+    [Input(f"open-tab-{item_maladie}", "n_clicks")],
+    [State(f"collapsible-{item_maladie}", "is_open")],
+    )(toggle_collapse_maladies)
 
 # CALLBACK POPOVERS
 def toggle_popover(n, is_open):

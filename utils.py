@@ -47,6 +47,7 @@ def generate_random_df():
 def make_group(title, items):
     """items est un dict sous forme : key = nom var ; value = widget"""
     # rd_cost_maladie = np.random.randint(0, 100000)
+    item_name = '-'.join(title.split()[:2])
 
     dict_cost = {
         "Depression Mère": 24290,
@@ -57,24 +58,23 @@ def make_group(title, items):
         "Psychose Bébé": 8893,
     }
 
-    #if title in ["Variables économiques", "Variables médicales"]:
-    badge = html.Div("")
+    if title in ["Variables économiques", "Variables médicales"]:
+        button_open_tab = html.Div("")
 
-    """else:
-        badge = dbc.Badge(
-            "{:,} € par cas".format(dict_cost[title]).replace(",", " "),
+    else:
+        button_open_tab = dbc.Button("Ouvrir l'onglet",
             color="secondary",
             className="ml-1",
+            size="sm",
             style={"float": "right"},
-        )"""
+            id=f"open-tab-{item_name}"
+        )
 
     card_header = dbc.CardHeader(
-        [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([badge]),], align="start",)]
+        [dbc.Row([dbc.Col([html.B(title)]), dbc.Col([button_open_tab])], align="start")]
     )
 
-    return dbc.Card(
-        [card_header]
-        + list(
+    card_content = list(
             chain(
                 *[
                     [
@@ -90,7 +90,14 @@ def make_group(title, items):
                     for it in items
                 ]
             )
-        ),
+        )
+
+    if title not in ["Variables économiques", "Variables médicales"]:
+        card_content = [dbc.Collapse(card_content, id=f"collapsible-{item_name}")]
+
+    return dbc.Card(
+        [card_header]
+        + card_content,
         color="dark",
         outline=True,
         style={"padding": "0 0 1em 0"},
