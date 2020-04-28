@@ -77,7 +77,7 @@ def generate_table_from_df(
     else:
         table = []
 
-    def generate_row():
+    def generate_row(df):
         row_html = list()
         for i in range(len(df)):
             if i == len(df) - 1:
@@ -89,7 +89,7 @@ def generate_table_from_df(
     if italic_last:
         table.append(
             html.Tbody(
-                generate_row()
+                generate_row(df)
             )
         )
     else:

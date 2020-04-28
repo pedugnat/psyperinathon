@@ -20,6 +20,7 @@ from utils import make_card_repartition, make_row, millify, generate_form_naissa
 from model import process_values
 from table_mod import generate_table_from_df
 
+
 # DASH AND APP SETTINGS
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -219,12 +220,34 @@ navbar = dbc.Navbar(
     className="container",
 )
 
+pitch_text = "Les Anglais ont compris dès 2014 l’importance d’investir sur les générations futures en finançant massivement la santé mentale périnatale. C’est notamment sous l’impulsion de l’article The costs of perinatal mental health problems, écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investit 300 millions de livres pour amorcer sa politique, et maintient désormais un financement de 100 millions de livres annuel (source ?). Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé un simulateur qui réplique le modèle médico-économique de l’article Bauer et al. afin d’estimer le coût des maladies psychiatriques périnatales en France."
+
+pitch = html.Div(
+    [
+        html.H3("Introduction à l'outil", style={"color": "#8ec63f"}),
+        html.Div([html.Span(pitch_text)]),
+    ],
+    style={"border": "0px solid black", "padding": "1em 1em 1em 1em"},
+)
+
+mode_demploi_text = {
+    "mode_demploi_1": "Premièrement, il vous faudra choisir l’échelle à laquelle vous voulez évaluer le coût des maladies périnatales. Il est possible de choisir la France, l’une des 12 régions, l’un des 100 départements, l’une des 200 plus grandes villes ou l'une des 577 circonscriptions. Lorsque vous sélectionnez un territoire, le nombre de naissances en 2018 sur le territoire apparaît à droite. Vous pouvez toujours modifier directement ce chiffre à la main.",
+    "mode_demploi_2": "Deuxièmement, il vous faudra ajuster les principales variables qui influent sur le modèle. En effet, notre modélisation est fondée sur des hypothèses (les plus crédibles selon nous), mais il vous est possible de les ajuster pour refléter au mieux vos convictions et vos hypothèses. Par exemple, il est difficile de connaître précisément la prévalence de la dépression périnatale en France, mais les estimations communément admises sont de 10%. Libre à vous de modifier la valeur si vous pensez que cette estimation est incorrecte.",
+    "mode_demploi_3": "Troisièmement, si vous souhaitez aller plus loin dans l’utilisation de l’outil, il est possible de modifier toutes les hypothèses initiales de l'article, mais celles-ci sont plus techniques. Par exemple, vous aurez la possibilité de modifier le coût d’une hospitalisation liée à une dépression, ou encore les coûts supplémentaires pour la justice des problèmes de conduite liés à l’anxiété périnatale.",
+    "mode_demploi_4": "Une fois ces trois étapes remplies, il vous suffira de cliquer sur 'Générer l’estimation' et une interface récapitulative des coûts à votre échelle et avec vos hypothèses apparaîtra : c’est le coût lié aux maladies psychiques périnatales ! Tout au long de votre parcours, n’hésitez pas à appuyer sur les petits points d’interrogation, ils vous donneront des informations supplémentaires.",
+}
 
 mode_demploi = html.Div(
     [
         html.H3("Mode d'emploi", style={"color": "#8ec63f"}),
         html.Div(
-            "Ceci est le mode d'emploi d'utilisation de cet outil (à compléter !)"
+            html.Ul(
+                [
+                    html.Li(html.Span(parag), style={"margin": "0 0 0.7em 0"})
+                    for parag in mode_demploi_text.values()
+                ],
+                style={"list-style-position": "outside"},
+            ),
         ),
     ],
     style={"border": "1px solid black", "padding": "1em 1em 1em 1em"},
@@ -236,7 +259,7 @@ bdd_naissances = pd.read_csv("naissance_echelons.csv")
 form_naissances = generate_form_naissances(bdd_naissances)
 
 title = html.H1(
-    "Estimer le coût des maladies psypérinatales en France",
+    "Estimer le coût des maladies psypérinatales",
     style={"padding": "1em 0 1em 0", "text-align": "center", "color": "#1b75bc"},
 )
 
@@ -265,6 +288,7 @@ app.layout = dbc.Container(
     [
         navbar,
         title,
+        pitch,
         mode_demploi,
         form_naissances,
         html.Hr(),
@@ -275,7 +299,6 @@ app.layout = dbc.Container(
         button_generate,
         html.Hr(),
         charts_coll,
-        html.Hr(),
     ]
     + generate_popovers()
 )
