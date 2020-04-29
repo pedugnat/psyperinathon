@@ -220,12 +220,12 @@ navbar = dbc.Navbar(
     className="container",
 )
 
-pitch_text = "Les Anglais ont compris dès 2014 l’importance d’investir sur les générations futures en finançant massivement la santé mentale périnatale. C’est notamment sous l’impulsion de l’article The costs of perinatal mental health problems, écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investit 300 millions de livres pour amorcer sa politique, et maintient désormais un financement de 100 millions de livres annuel (source ?). Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé un simulateur qui réplique le modèle médico-économique de l’article Bauer et al. afin d’estimer le coût des maladies psychiatriques périnatales en France."
+pitch_text = "Les Anglais ont compris dès 2014 l’importance d’investir sur les générations futures en finançant massivement la santé mentale périnatale. C’est notamment sous l’impulsion de l’article The costs of perinatal mental health problems, écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investit 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres (source ?). Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé un simulateur qui réplique le modèle médico-économique de l’article Bauer et al. afin d’estimer le coût des maladies psychiatriques périnatales en France."
 
 pitch = html.Div(
     [
         html.H3("Introduction à l'outil", style={"color": "#8ec63f"}),
-        html.Div([html.Span(pitch_text)]),
+        html.Div([html.Span(pitch_text)], style={'text-align': "justify"}),
     ],
     style={"border": "0px solid black", "padding": "1em 1em 1em 1em"},
 )
@@ -246,7 +246,7 @@ mode_demploi = html.Div(
                     html.Li(html.Span(parag), style={"margin": "0 0 0.7em 0"})
                     for parag in mode_demploi_text.values()
                 ],
-                style={"list-style-position": "outside"},
+                style={"list-style-position": "outside", 'text-align': "justify"},
             ),
         ),
     ],
@@ -289,7 +289,9 @@ app.layout = dbc.Container(
         navbar,
         title,
         pitch,
+        html.Hr(),
         mode_demploi,
+        html.Hr(),
         form_naissances,
         html.Hr(),
         tabs_and_title_variables,
@@ -300,7 +302,8 @@ app.layout = dbc.Container(
         html.Hr(),
         charts_coll,
     ]
-    + generate_popovers()
+    + generate_popovers(),
+    id="main-container"
 )
 
 
