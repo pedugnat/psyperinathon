@@ -325,7 +325,7 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
     repartition = {
         "Santé et social": int(total_sante_social) / total_secteurs,
         "Secteur public <br>(éducation, justice, etc.)": int(total_autre_servicepublic) / total_secteurs,
-        "Société entière": int(total_societe_entiere) / total_secteurs,
+        "Société entière<br>(perte de chance, <br>de qualité de vie, <br>de productivité, etc.)": int(total_societe_entiere) / total_secteurs,
     }
 
     df_repartition_secteur = pd.DataFrame(repartition, index=["Répartition des coûts par secteur"]).T

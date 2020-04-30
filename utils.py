@@ -228,3 +228,59 @@ def generate_form_naissances(bdd_naissances):
         ],
         style={"padding": "1em 0 1em 0"},
     )
+
+
+def get_pitch():
+
+    lien_article_site = (
+        "http://alliance-psyperinat.org/2020/04/28/rapport-da-bauer-lse/"
+    )
+    lien_nhs = (
+        "https://www.england.nhs.uk/2018/02/funding-boost-for-new-mums-mental-health/"
+    )
+    lien_nhs_2 = "https://www.england.nhs.uk/2016/02/fyfv-mh/"
+    lien_nhs_3 = "https://www.england.nhs.uk/wp-content/uploads/2016/02/Mental-Health-Taskforce-FYFV-final.pdf"
+    lien_govuk = (
+        "https://www.gov.uk/government/news/new-investment-in-mental-health-services"
+    )
+
+    pitch = html.Div(
+        [
+            html.Div(
+                [
+                    html.Span(
+                        "Le Royaume-Uni a compris dès 2014 l’importance d’investir sur les générations futures en finançant massivement la santé mentale périnatale. "
+                    ),
+                    html.Span("C’est notamment sous l’impulsion de l’article "),
+                    html.A(
+                        html.Span(
+                            "The costs of perinatal mental health problems",
+                            style={"font-style": "italic", "color": "black"},
+                        ),
+                        href=lien_article_site,
+                        target="_blank",
+                    ),
+                    html.Span(
+                        ", écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investi plus de 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres (source ?). "
+                    ),
+                    html.Span(
+                        "Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé ce "
+                    ),
+                    html.Span("simulateur", style={"font-weight": "bold"}),
+                    html.Span(
+                        " qui réplique le modèle médico-économique de l’article Bauer "
+                    ),
+                    html.Span("et al.", style={"font-style": "italic"}),
+                    html.Span(
+                        " afin d’estimer le coût des maladies psychiatriques périnatales à toutes les échelles en France. "
+                    ),
+                    html.Span(
+                        "Une partie significative de ces coûts peut être économisée par une politique ambitieuse de prévention."
+                    ),
+                ],
+                style={"text-align": "justify", "font-size": "1.2em"},
+            ),
+        ],
+        style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"},
+    )
+    return pitch

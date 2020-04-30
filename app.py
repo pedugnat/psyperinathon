@@ -17,6 +17,7 @@ import time
 # LOCAL IMPORTS
 from utils import make_group, generate_popovers, generate_qm
 from utils import make_card_repartition, make_row, millify, generate_form_naissances
+from utils import get_pitch
 from model import process_values
 from table_mod import generate_table_from_df
 
@@ -149,11 +150,75 @@ tabs_maladies = dbc.Tabs(
 )
 
 
+lien_article_site = "http://alliance-psyperinat.org/2020/04/28/rapport-da-bauer-lse/"
+lien_nhs = (
+    "https://www.england.nhs.uk/2018/02/funding-boost-for-new-mums-mental-health/"
+)
+lien_nhs_2 = "https://www.england.nhs.uk/2016/02/fyfv-mh/"
+lien_nhs_3 = "https://www.england.nhs.uk/wp-content/uploads/2016/02/Mental-Health-Taskforce-FYFV-final.pdf"
+lien_govuk = (
+    "https://www.gov.uk/government/news/new-investment-in-mental-health-services"
+)
+
+
+pitch = get_pitch()
+
+mode_demploi_text = {
+    "mode_demploi_1": "Premièrement, il vous faudra choisir l’échelle à laquelle vous voulez évaluer le coût des maladies périnatales. Il est possible de choisir la France, l’une des 12 régions, l’un des 100 départements, l’une des 200 plus grandes villes ou l'une des 577 circonscriptions. Lorsque vous sélectionnez un territoire, le nombre de naissances en 2018 sur le territoire apparaît à droite. Vous pouvez toujours modifier directement ce chiffre à la main.",
+    "mode_demploi_2": "Deuxièmement, il vous faudra ajuster les principales variables qui influent sur le résultat final. En effet, notre modélisation est fondée sur des hypothèses (les plus crédibles selon nous), mais il vous est possible de les ajuster pour refléter au mieux vos convictions et vos questions. Par exemple, il est difficile de connaître précisément la prévalence de la dépression périnatale en France, mais les estimations communément admises sont de 10%. Libre à vous de modifier la valeur si vous pensez que cette estimation est différente de la votre.",
+    "mode_demploi_3": "Troisièmement, si vous souhaitez aller plus loin dans l’utilisation de l’outil, il est possible de modifier toutes les hypothèses initiales de l'article, mais celles-ci sont plus techniques. Par exemple, vous aurez la possibilité de modifier le coût d’une hospitalisation liée à une dépression, ou encore les coûts supplémentaires pour la santé, l'éducation voire la justice des troubles du comportement liés à l’anxiété périnatale.",
+    "mode_demploi_4": "Une fois ces trois étapes remplies, il vous suffira de cliquer sur 'Générer l'analyse et une interface récapitulative des coûts à votre échelle et avec vos hypothèses apparaîtra : c’est le coût engendré par les maladies psychiques périnatales ! Tout au long de votre parcours, n’hésitez pas à cliquer sur les petits points d’interrogation, ils vous donneront des informations supplémentaires.",
+}
+
+mode_demploi = html.Div(
+    [
+        html.Div(
+            html.Ul(
+                [
+                    html.Li(html.Span(parag), style={"margin": "0 0 0.7em 0"})
+                    for parag in mode_demploi_text.values()
+                ],
+                style={"list-style-position": "outside", "text-align": "justify", "font-size": "1.2em"},
+            ),
+        ),
+    ],
+    style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"},
+)
+
+
+qui_sommes_nous = html.Div([html.Span("L'Alliance Francophone de Santé Mentale Périnatale est BLABLA", 
+    style={"font-size": "1.2em"})],
+    style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"})
+
+tabs_intro = dbc.Tabs(
+    [
+        dbc.Tab(pitch, label="Raison d'être", tab_style=eq_width,),
+        dbc.Tab(mode_demploi, label="Mode d'emploi", tab_style=eq_width,),
+        dbc.Tab(qui_sommes_nous,
+            label="Qui sommes-nous ?",
+            tab_style=eq_width,
+        ),
+    ],
+)
+
+tabs_intro_title = html.Div(
+    [html.H3("Introduction à l'outil", style={"color": "#8ec63f"}), tabs_intro]
+)
+
+
 button_generate = dbc.Button(
-    "Générer l'estimation !",
+    "Générer l'analyse !",
     color="primary",
     block=True,
     id="button-generate",
+    size="lg",
+)
+
+button_adjust = dbc.Button(
+    "Ajuster l'analyse !",
+    color="primary",
+    block=True,
+    id="button-adjust",
     size="lg",
 )
 
@@ -209,49 +274,19 @@ navbar = dbc.Navbar(
             target="_blank",
             style={"float": "left"},
         ),
-        html.P(
+        html.A(
             "Alliance francophone pour la santé mentale périnatale",
-            style={"margin-left": "auto", "margin-right": "0"},
+            href="http://alliance-psyperinat.org/",
+            style={"margin-left": "auto", "margin-right": "0", "color": "black"},
         ),
     ],
     color="#1b75bc",
     light=True,
     sticky="top",
     className="container",
+    style={"width": "150vw"}
 )
 
-pitch_text = "Les Anglais ont compris dès 2014 l’importance d’investir sur les générations futures en finançant massivement la santé mentale périnatale. C’est notamment sous l’impulsion de l’article The costs of perinatal mental health problems, écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investit 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres (source ?). Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé un simulateur qui réplique le modèle médico-économique de l’article Bauer et al. afin d’estimer le coût des maladies psychiatriques périnatales en France."
-
-pitch = html.Div(
-    [
-        html.H3("Introduction à l'outil", style={"color": "#8ec63f"}),
-        html.Div([html.Span(pitch_text)], style={'text-align': "justify"}),
-    ],
-    style={"border": "0px solid black", "padding": "1em 1em 1em 1em"},
-)
-
-mode_demploi_text = {
-    "mode_demploi_1": "Premièrement, il vous faudra choisir l’échelle à laquelle vous voulez évaluer le coût des maladies périnatales. Il est possible de choisir la France, l’une des 12 régions, l’un des 100 départements, l’une des 200 plus grandes villes ou l'une des 577 circonscriptions. Lorsque vous sélectionnez un territoire, le nombre de naissances en 2018 sur le territoire apparaît à droite. Vous pouvez toujours modifier directement ce chiffre à la main.",
-    "mode_demploi_2": "Deuxièmement, il vous faudra ajuster les principales variables qui influent sur le modèle. En effet, notre modélisation est fondée sur des hypothèses (les plus crédibles selon nous), mais il vous est possible de les ajuster pour refléter au mieux vos convictions et vos hypothèses. Par exemple, il est difficile de connaître précisément la prévalence de la dépression périnatale en France, mais les estimations communément admises sont de 10%. Libre à vous de modifier la valeur si vous pensez que cette estimation est incorrecte.",
-    "mode_demploi_3": "Troisièmement, si vous souhaitez aller plus loin dans l’utilisation de l’outil, il est possible de modifier toutes les hypothèses initiales de l'article, mais celles-ci sont plus techniques. Par exemple, vous aurez la possibilité de modifier le coût d’une hospitalisation liée à une dépression, ou encore les coûts supplémentaires pour la justice des problèmes de conduite liés à l’anxiété périnatale.",
-    "mode_demploi_4": "Une fois ces trois étapes remplies, il vous suffira de cliquer sur 'Générer l’estimation' et une interface récapitulative des coûts à votre échelle et avec vos hypothèses apparaîtra : c’est le coût lié aux maladies psychiques périnatales ! Tout au long de votre parcours, n’hésitez pas à appuyer sur les petits points d’interrogation, ils vous donneront des informations supplémentaires.",
-}
-
-mode_demploi = html.Div(
-    [
-        html.H3("Mode d'emploi", style={"color": "#8ec63f"}),
-        html.Div(
-            html.Ul(
-                [
-                    html.Li(html.Span(parag), style={"margin": "0 0 0.7em 0"})
-                    for parag in mode_demploi_text.values()
-                ],
-                style={"list-style-position": "outside", 'text-align': "justify"},
-            ),
-        ),
-    ],
-    style={"border": "1px solid black", "padding": "1em 1em 1em 1em"},
-)
 
 global bdd_naissances
 bdd_naissances = pd.read_csv("naissance_echelons.csv")
@@ -288,22 +323,27 @@ app.layout = dbc.Container(
     [
         navbar,
         title,
-        pitch,
         html.Hr(),
-        mode_demploi,
+        tabs_intro_title,
+        # pitch,
+        html.Hr(),
+        # mode_demploi,
         html.Hr(),
         form_naissances,
+        html.Hr(),
+        button_generate,
+        html.Hr(),
+        charts_coll,
         html.Hr(),
         tabs_and_title_variables,
         html.Hr(),
         tabs_and_title_maladies,
         html.Hr(),
-        button_generate,
+        button_adjust,
         html.Hr(),
-        charts_coll,
     ]
     + generate_popovers(),
-    id="main-container"
+    id="main-container",
 )
 
 
@@ -320,10 +360,14 @@ def upd_input_echelle(val):
         Output("total-couts", "children"),
         Output("example-graph-pie", "figure"),
     ],
-    [Input("button-generate", "n_clicks"), Input("nombre-naissances", "value")],
+    [
+        Input("button-generate", "n_clicks"),
+        Input("button-adjust", "n_clicks"),
+        Input("nombre-naissances", "value"),
+    ],
     [State(f"slider-{i}", "value") for i in range(nb_variables_total)],
 )
-def compute_costs(n, n_naissances, *sliders):
+def compute_costs(n_generate, n_adjust, n_naissances, *sliders):
     df_variables_upd = df_variables.copy()
     df_variables_upd["upd_variables"] = sliders
 
@@ -347,7 +391,7 @@ def compute_costs(n, n_naissances, *sliders):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
-    for df in [df_par_cas, df_par_naissance]:
+    for df in [df_par_naissance]:
         df.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(
             df.values[:, 1:], axis=0
         ).tolist()
@@ -412,7 +456,7 @@ def compute_costs(n, n_naissances, *sliders):
         striped=True,
         bordered=True,
         hover=True,
-        italic_last=True,
+        italic_last=False,
     )
 
     table_naissance = generate_table_from_df(
@@ -430,11 +474,11 @@ def compute_costs(n, n_naissances, *sliders):
 # CALLBACK GRAPHS
 @app.callback(
     Output("collapsed-graphs", "is_open"),
-    [Input("button-generate", "n_clicks")],
+    [Input("button-generate", "n_clicks"), Input("button-adjust", "n_clicks")],
     [State("collapsed-graphs", "is_open")],
 )
-def toggle_collapse(n, is_open):
-    if n:
+def toggle_collapse(n_generate, n_adjust, is_open):
+    if n_generate or n_adjust:
         return True
     return is_open
 
