@@ -178,26 +178,41 @@ mode_demploi = html.Div(
                     html.Li(html.Span(parag), style={"margin": "0 0 0.7em 0"})
                     for parag in mode_demploi_text.values()
                 ],
-                style={"list-style-position": "outside", "text-align": "justify", "font-size": "1.2em"},
+                style={
+                    "list-style-position": "outside",
+                    "text-align": "justify",
+                    "font-size": "1.2em",
+                },
             ),
         ),
     ],
-    style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"},
+    style={
+        "border": "1px solid black",
+        "padding": "1.5em 1.5em 1.5em 1.5em",
+        "border-radius": "3px",
+    },
 )
 
 
-qui_sommes_nous = html.Div([html.Span("L'Alliance Francophone de Santé Mentale Périnatale est BLABLA", 
-    style={"font-size": "1.2em"})],
-    style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"})
+qui_sommes_nous = html.Div(
+    [
+        html.Span(
+            "L'Alliance Francophone de Santé Mentale Périnatale est ",
+            style={"font-size": "1.2em"},
+        )
+    ],
+    style={
+        "border": "1px solid black",
+        "padding": "1.5em 1.5em 1.5em 1.5em",
+        "border-radius": "3px",
+    },
+)
 
 tabs_intro = dbc.Tabs(
     [
         dbc.Tab(pitch, label="Raison d'être", tab_style=eq_width,),
         dbc.Tab(mode_demploi, label="Mode d'emploi", tab_style=eq_width,),
-        dbc.Tab(qui_sommes_nous,
-            label="Qui sommes-nous ?",
-            tab_style=eq_width,
-        ),
+        dbc.Tab(qui_sommes_nous, label="Qui sommes-nous ?", tab_style=eq_width,),
     ],
 )
 
@@ -207,21 +222,14 @@ tabs_intro_title = html.Div(
 
 
 button_generate = dbc.Button(
-    "Générer l'analyse !",
-    color="primary",
-    block=True,
-    id="button-generate",
-    size="lg",
+    "Générer l'analyse !", color="primary", block=True, id="button-generate", size="lg",
 )
 
 button_adjust = dbc.Button(
-    "Ajuster l'analyse !",
-    color="primary",
-    block=True,
-    id="button-adjust",
-    size="lg",
+    "Ajuster l'analyse !", color="primary", block=True, id="button-adjust", size="lg",
 )
 
+question_mark = dbc.Badge([html.Div("?", style={"font-weight": "bold"})], pill=True, color="light", id="badge-cout-cas")
 
 charts_coll = dbc.Collapse(
     [
@@ -231,7 +239,7 @@ charts_coll = dbc.Collapse(
                 dbc.Col(
                     [
                         html.H4(
-                            f"Avec ces paramètres, les coûts associés aux problèmes de santé mentale périnatale représentent chaque année :",
+                            f"A l'échelle de ce territoire, les coûts associés aux problèmes de santé mentale périnatale représentent chaque année :",
                             style={"text-align": "center"},
                         ),
                         html.H1(id="total-couts", style={"text-align": "center"}),
@@ -249,7 +257,10 @@ charts_coll = dbc.Collapse(
                 ),
             ],
         ),
-        html.H3("Tableaux récapitulatifs", style={"color": "#8ec63f"}),
+        html.H3(
+            ["Tableaux récapitulatifs", question_mark],
+            style={"color": "#8ec63f", "padding": "0 0 1em 0"},
+        ),
         dbc.Row([dbc.Col([html.Div(id="table1")]), dbc.Col([html.Div(id="table2")])]),
         html.Hr(),
     ],
@@ -283,8 +294,8 @@ navbar = dbc.Navbar(
     color="#1b75bc",
     light=True,
     sticky="top",
-    className="container",
-    style={"width": "150vw"}
+    # className="container",
+    style={"width": "100%", "float": "left"},
 )
 
 
@@ -295,7 +306,7 @@ form_naissances = generate_form_naissances(bdd_naissances)
 
 title = html.H1(
     "Estimer le coût des maladies psypérinatales",
-    style={"padding": "1em 0 1em 0", "text-align": "center", "color": "#1b75bc"},
+    style={"padding": "3em 0 0.5em 0", "text-align": "center", "color": "#1b75bc"},
 )
 
 tabs_and_title_variables = html.Div(
@@ -319,31 +330,35 @@ tabs_and_title_maladies = html.Div(
     style={"padding": "0.5em 0 0.5em 0"},
 )
 
-app.layout = dbc.Container(
+app.layout = html.Div(
     [
         navbar,
-        title,
-        html.Hr(),
-        tabs_intro_title,
-        # pitch,
-        html.Hr(),
-        # mode_demploi,
-        html.Hr(),
-        form_naissances,
-        html.Hr(),
-        button_generate,
-        html.Hr(),
-        charts_coll,
-        html.Hr(),
-        tabs_and_title_variables,
-        html.Hr(),
-        tabs_and_title_maladies,
-        html.Hr(),
-        button_adjust,
-        html.Hr(),
+        dbc.Container(
+            [
+                title,
+                html.Hr(),
+                tabs_intro_title,
+                # pitch,
+                html.Hr(),
+                # mode_demploi,
+                html.Hr(),
+                form_naissances,
+                html.Hr(),
+                button_generate,
+                html.Hr(),
+                charts_coll,
+                html.Hr(),
+                tabs_and_title_variables,
+                html.Hr(),
+                tabs_and_title_maladies,
+                html.Hr(),
+                button_adjust,
+                html.Hr(),
+            ]
+            + generate_popovers(),
+            id="main-container",
+        ),
     ]
-    + generate_popovers(),
-    id="main-container",
 )
 
 
