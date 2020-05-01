@@ -17,7 +17,7 @@ import time
 # LOCAL IMPORTS
 from utils import make_group, generate_popovers, generate_qm
 from utils import make_card_repartition, make_row, millify, generate_form_naissances
-from utils import get_pitch
+from utils import get_pitch, generate_item
 from model import process_values
 from table_mod import generate_table_from_df
 
@@ -36,50 +36,6 @@ global df_variables
 col_types = {"maxi": float, "mini": int, "val": float, "step": float}
 df_variables = pd.read_csv("bdd_variables.csv", dtype=col_types)
 nb_variables_total = df_variables.shape[0]
-
-
-def marker(num):
-    return int(num) if num % 1 == 0 else num
-
-
-def generate_item(df_variables, category):
-    """df_variables : df avec les infos sur les variables
-    category : str"""
-
-    df_categ = df_variables[df_variables["category"] == category]
-
-    dict_items = {
-        row["nom_variable"]: [
-            html.Div(
-                [
-                    dcc.Slider(
-                        min=row.mini,
-                        max=row.maxi,
-                        value=row.val,
-                        step=row.step,
-                        tooltip=tt,
-                        marks={
-                            marker(row.mini): {
-                                "label": "{}\xa0{}".format(round(row.mini, 2), row.unit)
-                            },
-                            marker(row.val): {
-                                "label": "{}\xa0{}".format(round(row.val, 2), row.unit)
-                            },
-                            marker(row.maxi): {
-                                "label": "{}\xa0{}".format(round(row.maxi, 2), row.unit)
-                            },
-                        },
-                        id=f"slider-{idx}",
-                    ),
-                ],
-                style={"padding": "0 1em 0 1em"},
-                hidden=bool(row["nom_variable"] == "Nombre de naissances"),
-            )
-        ]
-        for idx, row in df_categ.iterrows()
-    }
-
-    return dict_items
 
 
 # DEPRESSION
@@ -105,12 +61,12 @@ items_medical = generate_item(df_variables, "medical")
 tabs_variables = dbc.Tabs(
     [
         dbc.Tab(
-            make_group("Variables médicales", items_medical),
+            make_group("Variables médicales", items_medical, "Variables-Médicales"),
             label="Variables médicales",
             tab_style=eq_width,
         ),
         dbc.Tab(
-            make_group("Variables économiques", items_economique),
+            make_group("Variables économiques", items_economique, "Variables-Economiques"),
             label="Variables économiques",
             tab_style=eq_width,
         ),
@@ -121,29 +77,29 @@ tabs_maladies = dbc.Tabs(
     [
         dbc.Tab(
             [
-                make_group("Depression Mère", items_depression_mere),
+                make_group("Coûts pour la mère", items_depression_mere, "Dépression-Mère"),
                 html.Hr(),
-                make_group("Depression Bébé", items_depression_bebe),
+                make_group("Coûts pour le bébé", items_depression_bebe, "Dépression-Bébé"),
             ],
-            label="Dépression",
+            label="Dépression de la mère",
             tab_style=eq_width,
         ),
         dbc.Tab(
             [
-                make_group("Anxiété Mère", items_anxiete_mere),
+                make_group("Coûts pour la mère", items_anxiete_mere, "Anxiété-Mère"),
                 html.Hr(),
-                make_group("Anxiété Bébé", items_anxiete_bebe),
+                make_group("Coûts pour le bébé", items_anxiete_bebe, "Anxiété-Bébé"),
             ],
-            label="Anxiété",
+            label="Anxiété de la mère",
             tab_style=eq_width,
         ),
         dbc.Tab(
             [
-                make_group("Psychose Mère", items_psychose_mere),
+                make_group("Coûts pour la mère", items_psychose_mere, "Psychose-Mère"),
                 html.Hr(),
-                make_group("Psychose Bébé", items_psychose_bebe),
+                make_group("Coûts pour le bébé", items_psychose_bebe, "Psychose-Bébé"),
             ],
-            label="Psychose",
+            label="Psychose de la mère",
             tab_style=eq_width,
         ),
     ],
@@ -229,44 +185,6 @@ button_adjust = dbc.Button(
     "Ajuster l'analyse !", color="primary", block=True, id="button-adjust", size="lg",
 )
 
-question_mark = dbc.Badge([html.Div("?", style={"font-weight": "bold"})], pill=True, color="light", id="badge-cout-cas")
-
-charts_coll = dbc.Collapse(
-    [
-        html.H3("Principaux enseignements", style={"color": "#8ec63f"}),
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H4(
-                            f"A l'échelle de ce territoire, les coûts associés aux problèmes de santé mentale périnatale représentent chaque année :",
-                            style={"text-align": "center"},
-                        ),
-                        html.H1(id="total-couts", style={"text-align": "center"}),
-                    ],
-                    style={"border": "0px solid black", "padding": "10% 2% 0 0"},
-                ),
-                # html.Div(" ", style={"width": "5%"}),
-                dbc.Col(
-                    [html.Div(id="draw1")],
-                    style={"border": "0px solid black", "padding": "5% 0 0 2%"},
-                ),
-                dbc.Col(
-                    [dcc.Graph(id="example-graph-pie")],
-                    style={"border": "0px solid black", "padding": "5% 0 0 0"},
-                ),
-            ],
-        ),
-        html.H3(
-            ["Tableaux récapitulatifs", question_mark],
-            style={"color": "#8ec63f", "padding": "0 0 1em 0"},
-        ),
-        dbc.Row([dbc.Col([html.Div(id="table1")]), dbc.Col([html.Div(id="table2")])]),
-        html.Hr(),
-    ],
-    id="collapsed-graphs",
-)
-
 
 logo_alliance = "http://alliancefrancophonepourlasantementaleperinatale.com/wp-content/uploads/2020/03/cropped-cropped-cropped-alliance-francaise-AFSMP-2-1-300x246.png"
 
@@ -288,13 +206,13 @@ navbar = dbc.Navbar(
         html.A(
             "Alliance francophone pour la santé mentale périnatale",
             href="http://alliance-psyperinat.org/",
+            target="_blank",
             style={"margin-left": "auto", "margin-right": "0", "color": "black"},
         ),
     ],
     color="#1b75bc",
     light=True,
     sticky="top",
-    # className="container",
     style={"width": "100%", "float": "left"},
 )
 
@@ -330,6 +248,78 @@ tabs_and_title_maladies = html.Div(
     style={"padding": "0.5em 0 0.5em 0"},
 )
 
+pp_tableaux = dbc.Popover(
+    [
+        dbc.PopoverHeader("Coût par cas / coût par naissance"),
+        dbc.PopoverBody(
+            [
+                html.Span("Le "),
+                html.Span("coût par cas", style={"font-weight": "bold"}),
+                html.Span(
+                    " désigne l’ensemble des coûts inhérents à l’occurence chez une mère d’une des trois maladies. "
+                ),
+                html.Br(),
+                html.Span("Le "),
+                html.Span("coût par naissance", style={"font-weight": "bold"}),
+                html.Span(
+                    " désigne le coût total rapporté au nombre de naissances, c’est-à-dire combien coûte "
+                ),
+                html.Span("en moyenne", style={"font-style": 'italic'}),
+                html.Span(" les maladies. ")
+            ]
+        ),
+    ],
+    id=f"popover-cout-cas",
+    target=f"badge-cout-cas",
+    is_open=False,
+)
+
+question_mark_tableaux = dbc.Badge("?", pill=True, color="light", id="badge-cout-cas")
+
+graphiques = dbc.Row(
+    [
+        dbc.Col(
+            [
+                html.H4(
+                    f"A l'échelle de ce territoire, les coûts associés aux problèmes de santé mentale périnatale représentent chaque année :",
+                    style={"text-align": "center"},
+                ),
+                html.H1(id="total-couts", style={"text-align": "center"}),
+            ],
+            style={"border": "0px solid black", "padding": "10% 2% 0 0"},
+        ),
+        dbc.Col(
+            [html.Div(id="draw1")],
+            style={"border": "0px solid black", "padding": "5% 0 0 2%"},
+        ),
+        dbc.Col(
+            [dcc.Graph(id="example-graph-pie")],
+            style={"border": "0px solid black", "padding": "5% 0 0 0"},
+        ),
+    ],
+)
+
+charts_coll = dbc.Collapse(
+    [
+        html.H3("Principaux enseignements", style={"color": "#8ec63f"}),
+        graphiques,
+        html.H3(
+            ["Tableaux récapitulatifs  ", question_mark_tableaux],
+            style={"color": "#8ec63f"},
+        ),
+        dbc.Row([dbc.Col([html.Div(id="table1")]), dbc.Col([html.Div(id="table2")])]),
+        html.Hr(),
+        tabs_and_title_variables,
+        html.Hr(),
+        tabs_and_title_maladies,
+        html.Hr(),
+        button_adjust,
+        html.Hr(),
+    ],
+    id="collapsed-graphs",
+)
+
+
 app.layout = html.Div(
     [
         navbar,
@@ -348,14 +338,9 @@ app.layout = html.Div(
                 html.Hr(),
                 charts_coll,
                 html.Hr(),
-                tabs_and_title_variables,
-                html.Hr(),
-                tabs_and_title_maladies,
-                html.Hr(),
-                button_adjust,
-                html.Hr(),
             ]
-            + generate_popovers(),
+            + generate_popovers()
+            + [pp_tableaux],
             id="main-container",
         ),
     ]
@@ -406,14 +391,14 @@ def compute_costs(n_generate, n_adjust, n_naissances, *sliders):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
-    for df in [df_par_naissance]:
-        df.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(
-            df.values[:, 1:], axis=0
-        ).tolist()
+    #for df in [df_par_naissance]:
+    df_par_naissance.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(
+        df_par_naissance.values[:, 1:], axis=0
+    ).tolist()
 
     total_par_cas = df_par_naissance["Total"].iloc[:-1].sum()
 
-    print(f"Nombre naissances = {n_naissances}")
+    print(f"Nombre naissances = {n_naissances}\n")
     if n_naissances is None:
         n_naissances = 1  # set 1 as default to avoid problems if values is not defined
 
@@ -505,8 +490,8 @@ def toggle_collapse_maladies(n, is_open):
 
 
 for item_maladie in [
-    "Depression-Mère",
-    "Depression-Bébé",
+    "Dépression-Mère",
+    "Dépression-Bébé",
     "Anxiété-Mère",
     "Anxiété-Bébé",
     "Psychose-Mère",
@@ -525,15 +510,15 @@ def toggle_popover(n, is_open):
     return is_open
 
 
-for i in range(nb_variables_total):
+for i in list(range(nb_variables_total)) + ["cout-cas"]:
     app.callback(
         Output(f"popover-{i}", "is_open"),
-        [Input(f"badge_{i}", "n_clicks")],
+        [Input(f"badge-{i}", "n_clicks")],
         [State(f"popover-{i}", "is_open")],
     )(toggle_popover)
 
 
 if __name__ == "__main__":
     app.run_server(
-        debug=False, port=8890,
+        debug=False, port=1234,
     )

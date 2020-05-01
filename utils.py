@@ -21,20 +21,54 @@ tt = {"always_visible": False, "placement": "topLeft"}
 global df_variables
 df_variables = pd.read_csv("bdd_variables.csv")
 
+def marker(num):
+    return int(num) if num % 1 == 0 else num
 
-def make_group(title, items):
+
+def generate_item(df_variables, category):
+    """df_variables : df avec les infos sur les variables
+    category : str"""
+
+    df_categ = df_variables[df_variables["category"] == category]
+
+    dict_items = {
+        row["nom_variable"]: [
+            html.Div(
+                [
+                    dcc.Slider(
+                        min=row.mini,
+                        max=row.maxi,
+                        value=row.val,
+                        step=row.step,
+                        tooltip=tt,
+                        marks={
+                            marker(row.mini): {
+                                "label": "{}\xa0{}".format(round(row.mini, 2), row.unit)
+                            },
+                            marker(row.val): {
+                                "label": "{}\xa0{}".format(round(row.val, 2), row.unit)
+                            },
+                            marker(row.maxi): {
+                                "label": "{}\xa0{}".format(round(row.maxi, 2), row.unit)
+                            },
+                        },
+                        id=f"slider-{idx}",
+                    ),
+                ],
+                style={"padding": "0 1em 0 1em"},
+                hidden=bool(row["nom_variable"] == "Nombre de naissances"),
+            )
+        ]
+        for idx, row in df_categ.iterrows()
+    }
+
+    return dict_items
+
+
+def make_group(title, items, item_name):
     """items est un dict sous forme : key = nom var ; value = widget"""
     # rd_cost_maladie = np.random.randint(0, 100000)
-    item_name = "-".join(title.split()[:2])
-
-    dict_cost = {
-        "Depression Mère": 24290,
-        "Depression Bébé": 65641,
-        "Anxiété Mère": 22073,
-        "Anxiété Bébé": 14824,
-        "Psychose Mère": 55335,
-        "Psychose Bébé": 8893,
-    }
+    #item_name = "-".join(title.split()[:2])
 
     if title in ["Variables économiques", "Variables médicales"]:
         button_open_tab = html.Div("")
@@ -85,7 +119,7 @@ def make_group(title, items):
 
 def generate_qm(item):
     id_hash = df_variables[df_variables["nom_variable"] == item].index.values[0]
-    question_mark = dbc.Badge("?", pill=True, color="light", id="badge_" + str(id_hash))
+    question_mark = dbc.Badge("?", pill=True, color="light", id="badge-" + str(id_hash))
 
     return dbc.Col(question_mark, width=1, style={"padding": "5px"})
 
@@ -99,7 +133,7 @@ def generate_popovers():
                 dbc.PopoverBody(df_variables.iloc[i, :]["explication"]),
             ],
             id=f"popover-{i}",
-            target=f"badge_{i}",
+            target=f"badge-{i}",
             is_open=False,
         )
         popovers.append(pp)
@@ -241,8 +275,10 @@ def get_pitch():
     lien_nhs_2 = "https://www.england.nhs.uk/2016/02/fyfv-mh/"
     lien_nhs_3 = "https://www.england.nhs.uk/wp-content/uploads/2016/02/Mental-Health-Taskforce-FYFV-final.pdf"
     lien_govuk = (
-        "https://www.gov.uk/government/news/new-investment-in-mental-health-services"
+        "https://www.gov.uk/government/news/prime-minister-pledges-a-revolution-in-mental-health-treatment"
     )
+
+
 
     pitch = html.Div(
         [
@@ -261,10 +297,12 @@ def get_pitch():
                         target="_blank",
                     ),
                     html.Span(
-                        ", écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investi plus de 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres (source ?). "
+                        ", écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investi plus de 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres "
                     ),
+                    html.A(html.Span("[1]", style={"color": "black"}), href=lien_govuk, target="_blank"),
+                    html.A(html.Span("[2]", style={"color": "black"}), href=lien_nhs, target="_blank"),
                     html.Span(
-                        "Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé ce "
+                        ". Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé ce "
                     ),
                     html.Span("simulateur", style={"font-weight": "bold"}),
                     html.Span(
