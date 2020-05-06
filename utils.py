@@ -291,7 +291,7 @@ def get_pitch():
                     html.A(
                         html.Span(
                             "The costs of perinatal mental health problems",
-                            style={"font-style": "italic", "color": "black"},
+                            style={"font-style": "italic"},
                         ),
                         href=lien_article_site,
                         target="_blank",
