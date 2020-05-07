@@ -150,11 +150,18 @@ mode_demploi = html.Div(
 )
 
 
+presentation_alliance_1 = "L’Alliance francophone pour la santé mentale périnatale ambitionne de regrouper le plus grand nombre d’associations nationales d’usager.e.s et de sociétés savantes pour plaider à tout moment et en tout lieu pour une authentique priorisation dans toutes les politiques publiques de la période périnatale, et plus particulièrement de sa dimension psychique. "
+
+presentation_alliance_2 = "Elle n’est, à ce jour, ni une société scientifique de plus, ni une association, ni une fédération. "
+
+presentation_alliance_3 = "Les (futurs) bébés et les (futurs) parents méritent une attention soutenue, au-delà de leurs proches, de la part de toute la société, attention qui commence par celle de l’ensemble des professionnels actifs dans cette période. Rassemblant des personnes morales, elle est rendue possible par l’engagement citoyen de tout membre de ses associations et sociétés. "
+
 qui_sommes_nous = html.Div(
     [
-        html.Span(
-            "L'Alliance Francophone de Santé Mentale Périnatale est ",
-            style={"font-size": "1.2em"},
+        html.Div(
+            #"L'Alliance Francophone de Santé Mentale Périnatale est ",
+            [html.Div(txt, style={"padding": "0 0 0.6em 0"}) for txt in [presentation_alliance_1, presentation_alliance_2, presentation_alliance_3]],
+            style={"font-size": "1.2em", "text-align": "justify"},
         )
     ],
     style={
@@ -194,7 +201,7 @@ navbar = dbc.Navbar(
             dbc.Row(
                 [
                     dbc.Col(html.Img(src=logo_alliance, height="70px")),
-                    dbc.Col(dbc.NavbarBrand("Outil Psython")),
+                    dbc.Col(dbc.NavbarBrand("Outil Psypérinathon")),
                 ],
                 align="center",
                 no_gutters=False,
