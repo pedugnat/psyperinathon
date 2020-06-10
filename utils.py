@@ -1,16 +1,16 @@
 import pandas as pd
 import numpy as np
+import base64
 import math
-
 import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
 import plotly.express as px
 import plotly.graph_objs as go
+
 from itertools import chain
-import base64
+from dash.dependencies import Input, Output, State
 
 
 # CSS SETTINGS
@@ -231,7 +231,7 @@ def generate_form_naissances(bdd_naissances):
             dbc.Col(
                 [
                     dcc.Dropdown(
-                        value=756663,
+                        value=756662,
                         id="dd-echelle",
                         options=[
                             {

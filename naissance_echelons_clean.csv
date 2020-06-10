@@ -1,0 +1,935 @@
+,Nom de l'échelon,Nombre de naissances (2018),Echelon,Salaire horaire des femmes
+0,France,756662.9942470988,Pays,13.0
+1,Île-de-France,174439.00308662414,Région,16.48
+2,Auvergne-Rhône-Alpes,90296.98381692382,Région,12.41
+3,Hauts-de-France,67913.01413982788,Région,11.94
+4,Occitanie,58105.99867736717,Région,12.01
+5,Provence-Alpes-Côte d'Azur,56505.99167454305,Région,12.31
+6,Grand Est,55579.98798581483,Région,11.69
+7,Nouvelle-Aquitaine,53679.99560382604,Région,11.79
+8,Pays de la Loire,39739.00398698806,Région,11.64
+9,Normandie,34046.995537688934,Région,11.82
+10,Bretagne,31700.990403378728,Région,11.54
+11,Bourgogne-Franche-Comté,26839.99381505704,Région,11.46
+12,Centre-Val de Loire,26093.001673325944,Région,12.05
+13,La Réunion,13364.00398403155,Région,12.16
+14,Mayotte,9590.025395097533,Région,13.0
+15,Guyane,7995.0255216139585,Région,13.63
+16,Guadeloupe,4249.01691599919,Région,13.08
+17,Martinique,3669.9961090446086,Région,12.91
+18,Corse,2853.9769522397805,Région,11.45
+19,59 – Nord,31396.000859314572,Département,12.18
+20,93 – Seine-Saint-Denis,28735.005452891422,Département,12.99
+21,75 – Paris,27367.01661356757,Département,19.72
+22,13 – Bouches-du-Rhône,25585.997018686834,Département,12.68
+23,69 – Rhône,25512.991015330437,Département,13.6
+24,92 – Hauts-de-Seine,22878.013402148328,Département,19.49
+25,94 – Val-de-Marne,20368.002043591743,Département,15.39
+26,95 – Val-d'Oise,19507.00648489269,Département,14.18
+27,91 – Essonne,18617.989756499108,Département,14.69
+28,78 – Yvelines,18547.992513369332,Département,17.06
+29,77 – Seine-et-Marne,18418.009108660255,Département,13.64
+30,33 – Gironde,17114.983518202516,Département,12.49
+31,44 – Loire-Atlantique,16197.991688263983,Département,12.27
+32,31 – Haute-Garonne,15966.005214246898,Département,13.4
+33,62 – Pas-de-Calais,15599.99225364045,Département,11.17
+34,76 – Seine-Maritime,14183.005907544288,Département,12.1
+35,38 – Isère,14062.013163258454,Département,12.76
+36,974 – La Réunion,13363.99750388384,Département,12.16
+37,34 – Hérault,12577.001936307142,Département,12.0
+38,67 – Bas-Rhin,12175.992061140549,Département,12.18
+39,35 – Ille-et-Vilaine,11656.01407952569,Département,11.97
+40,06 – Alpes-Maritimes,11630.987595226681,Département,12.76
+41,83 – Var,10267.016328804655,Département,11.68
+42,57 – Moselle,10188.992151013135,Département,11.3
+43,74 – Haute-Savoie,9905.018261504181,Département,12.15
+44,976 – Mayotte,9590.009682107484,Département,13.0
+45,60 – Oise,9565.010670800048,Département,12.85
+46,49 – Maine-et-Loire,8776.01353194927,Département,11.34
+47,42 – Loire,8437.988435681818,Département,11.39
+48,29 – Finistère,8094.994254178648,Département,11.41
+49,68 – Haut-Rhin,8054.009456179713,Département,11.59
+50,973 – Guyane,7995.002482225779,Département,13.63
+51,45 – Loiret,7815.004066891041,Département,12.4
+52,30 – Gard,7585.014134420842,Département,11.64
+53,54 – Meurthe-et-Moselle,7139.000239727186,Département,11.89
+54,01 – Ain,7101.000555263403,Département,12.01
+55,14 – Calvados,6680.002155441849,Département,11.68
+56,56 – Morbihan,6637.000422446478,Département,11.29
+57,63 – Puy-de-Dôme,6554.994673986678,Département,12.38
+58,27 – Eure,6434.0179163933935,Département,12.22
+59,84 – Vaucluse,6391.993859097663,Département,11.54
+60,85 – Vendée,6105.9845512111615,Département,10.92
+61,37 – Indre-et-Loire,6104.0005395751805,Département,12.11
+62,51 – Marne,6068.9968676412345,Département,12.21
+63,25 – Doubs,5992.001166888782,Département,11.39
+64,64 – Pyrénées-Atlantiques,5839.014006298509,Département,11.84
+65,80 – Somme,5780.986457693711,Département,11.5
+66,72 – Sarthe,5635.000430641225,Département,11.54
+67,02 – Aisne,5571.003173790393,Département,11.38
+68,26 – Drôme,5411.026510840528,Département,11.58
+69,22 – Côtes-d'Armor,5313.0040772615785,Département,11.19
+70,21 – Côte-d'Or,5190.997549922635,Département,12.07
+71,17 – Charente-Maritime,5061.002179453267,Département,11.32
+72,71 – Saône-et-Loire,4854.010886467889,Département,11.22
+73,28 – Eure-et-Loir,4730.002510784221,Département,12.51
+74,73 – Savoie,4509.000000905844,Département,12.1
+75,66 – Pyrénées-Orientales,4342.002929300159,Département,11.16
+76,50 – Manche,4305.98584530218,Département,11.21
+77,971 – Guadeloupe,4249.003913137523,Département,13.08
+78,86 – Vienne,4044.016346204841,Département,11.53
+79,972 – Martinique,3670.0021275039594,Département,12.91
+80,79 – Deux-Sèvres,3381.0131606897703,Département,12.22
+81,40 – Landes,3355.9989664498485,Département,11.19
+82,87 – Haute-Vienne,3317.9995518250676,Département,11.72
+83,81 – Tarn,3256.9964305082485,Département,11.44
+84,11 – Aude,3227.9934452135944,Département,10.97
+85,89 – Yonne,3215.991532020814,Département,11.37
+86,88 – Vosges,3202.0021289427377,Département,11.03
+87,10 – Aube,3154.0065288989863,Département,11.27
+88,53 – Mayenne,3023.99724878699,Département,11.05
+89,41 – Loir-et-Cher,3015.9957507300924,Département,11.71
+90,47 – Lot-et-Garonne,2960.0041837076596,Département,11.06
+91,16 – Charente,2954.9989978685426,Département,11.45
+92,24 – Dordogne,2941.983600909038,Département,11.04
+93,07 – Ardèche,2891.0021931179576,Département,11.18
+94,03 – Allier,2741.994411646795,Département,10.97
+95,18 – Cher,2662.015907892337,Département,11.36
+96,82 – Tarn-et-Garonne,2549.9986166194835,Département,11.26
+97,08 – Ardennes,2463.9842433233152,Département,11.24
+98,61 – Orne,2444.0142880575913,Département,10.96
+99,39 – Jura,2293.9962011724333,Département,11.14
+100,12 – Aveyron,2246.9958036293165,Département,11.01
+101,70 – Haute-Saône,2111.9975001385033,Département,11.07
+102,43 – Haute-Loire,2059.9989869892856,Département,10.85
+103,19 – Corrèze,1907.0051836381008,Département,11.22
+104,65 – Hautes-Pyrénées,1802.0010740751284,Département,10.9
+105,36 – Indre,1765.9931975336315,Département,11.06
+106,58 – Nièvre,1657.021719838526,Département,11.1
+107,55 – Meuse,1625.9945380877484,Département,10.95
+108,90 – Territoire de Belfort,1523.9946850243125,Département,12.02
+109,52 – Haute-Marne,1506.9936409922454,Département,10.94
+110,2B – Haute-Corse,1480.0051718213076,Département,13.0
+111,32 – Gers,1434.0113636622777,Département,11.43
+112,04 – Alpes-de-Haute-Provence,1394.9942800563908,Département,11.3
+113,2A – Corse-du-Sud,1374.0014355537476,Département,13.0
+114,46 – Lot,1303.9894461466517,Département,11.11
+115,05 – Hautes-Alpes,1234.98778333949,Département,10.96
+116,09 – Ariège,1234.0002104774912,Département,10.92
+117,15 – Cantal,1110.0131116198152,Département,10.61
+118,23 – Creuse,802.0056160631289,Département,10.72
+119,48 – Lozère,580.011482317882,Département,10.76
+120,75056 – Paris,27366.99534891377,Ville,19.72
+121,13055 – Marseille,12789.003527737386,Ville,12.56
+122,69123 – Lyon,7626.997806966954,Ville,14.21
+123,31555 – Toulouse,6818.003920482491,Ville,13.24
+124,06088 – Nice,4486.0042912030185,Ville,12.2
+125,44109 – Nantes,4213.988040476605,Ville,13.1
+126,67482 – Strasbourg,3799.995628109372,Ville,12.12
+127,34172 – Montpellier,3699.9976191886385,Ville,12.08
+128,33063 – Bordeaux,3224.00676082598,Ville,13.31
+129,59350 – Lille,3146.9981464308166,Ville,13.04
+130,75118 – Paris 18e Arrondissement,3086.008738908011,Ville,17.38
+131,75115 – Paris 15e Arrondissement,2933.9847025926565,Ville,20.09
+132,75119 – Paris 19e Arrondissement,2716.9961606251677,Ville,15.52
+133,35238 – Rennes,2659.002222074328,Ville,12.74
+134,69266 – Villeurbanne,2477.018481121532,Ville,12.67
+135,97411 – Saint-Denis,2434.983315596619,Ville,13.33
+136,51454 – Reims,2395.0070314144805,Ville,12.17
+137,75117 – Paris 17e Arrondissement,2352.999380661221,Ville,22.01
+138,42218 – Saint-Étienne,2187.0178828933617,Ville,11.27
+139,97311 – Saint-Laurent-du-Maroni,2168.98054177731,Ville,11.14
+140,76351 – Le Havre,2158.988996457036,Ville,11.77
+141,95018 – Argenteuil,2155.9912398666083,Ville,13.28
+142,93066 – Saint-Denis,2133.9988544060725,Ville,12.17
+143,38185 – Grenoble,2121.984015511216,Ville,12.89
+144,83137 – Toulon,1982.99993026276,Ville,11.35
+145,97302 – Cayenne,1941.9947007886853,Ville,12.52
+146,93048 – Montreuil,1932.9984285939615,Ville,14.88
+147,30189 – Nîmes,1919.012567898327,Ville,11.63
+148,75113 – Paris 13e Arrondissement,1898.0007136510055,Ville,16.67
+149,45234 – Orléans,1888.009115102014,Ville,12.53
+150,49007 – Angers,1875.000142539197,Ville,12.08
+151,75111 – Paris 11e Arrondissement,1872.9994081957113,Ville,18.45
+152,59512 – Roubaix,1791.9978553159697,Ville,10.95
+153,75112 – Paris 12e Arrondissement,1788.9943674774438,Ville,18.55
+154,63113 – Clermont-Ferrand,1735.0056777660413,Ville,12.45
+155,68224 – Mulhouse,1734.9932896073537,Ville,10.85
+156,72181 – Le Mans,1705.0098808731725,Ville,12.29
+157,92050 – Nanterre,1659.0083440277056,Ville,15.29
+158,59599 – Tourcoing,1639.0016864982929,Ville,11.19
+159,21231 – Dijon,1627.99379660312,Ville,12.31
+160,75114 – Paris 14e Arrondissement,1609.0091911770435,Ville,19.06
+161,92012 – Boulogne-Billancourt,1607.9897755099012,Ville,21.49
+162,37261 – Tours,1598.0022589450791,Ville,12.09
+163,80021 – Amiens,1595.9979882355385,Ville,11.85
+164,93001 – Aubervilliers,1570.007719062136,Ville,11.1
+165,75116 – Paris 16e Arrondissement,1565.9706076044818,Ville,25.83
+166,74010 – Annecy,1561.99530900203,Ville,12.58
+167,13001 – Aix-en-Provence,1553.979492453183,Ville,13.65
+168,66136 – Perpignan,1549.999413627651,Ville,11.25
+169,92004 – Asnières-sur-Seine,1547.000550174574,Ville,18.39
+170,94081 – Vitry-sur-Seine,1512.0093634199372,Ville,12.74
+171,29019 – Brest,1498.019750745331,Ville,11.43
+172,76540 – Rouen,1481.9874817922976,Ville,12.88
+173,69383 – Lyon 3e Arrondissement,1439.9955106566595,Ville,14.67
+174,94028 – Créteil,1434.9770198465064,Ville,13.43
+175,84007 – Avignon,1431.0187041150532,Ville,11.31
+176,69388 – Lyon 8e Arrondissement,1423.9775040365962,Ville,12.83
+177,57463 – Metz,1421.000516341116,Ville,11.73
+178,97415 – Saint-Paul,1401.9959407388876,Ville,12.73
+179,87085 – Limoges,1399.0062064876138,Ville,11.85
+180,75110 – Paris 10e Arrondissement,1398.0040147899306,Ville,18.49
+181,95127 – Cergy,1390.9976811569265,Ville,12.98
+182,92025 – Colombes,1386.0075983055156,Ville,17.46
+183,25056 – Besançon,1384.9864560253563,Ville,11.67
+184,93005 – Aulnay-sous-Bois,1366.998029324743,Ville,12.63
+185,13215 – Marseille 15e Arrondissement,1363.0066010622218,Ville,10.39
+186,69387 – Lyon 7e Arrondissement,1351.0065073190005,Ville,13.23
+187,93029 – Drancy,1348.9951634294493,Ville,12.18
+188,69259 – Vénissieux,1345.9902802542267,Ville,11.0
+189,91228 – Évry-Courcouronnes,1331.9913918021275,Ville,11.95
+190,13213 – Marseille 13e Arrondissement,1277.9772586308206,Ville,11.74
+191,92026 – Courbevoie,1276.9940077502652,Ville,20.18
+192,13214 – Marseille 14e Arrondissement,1267.9943898365182,Ville,10.53
+193,97416 – Saint-Pierre,1244.9942788182923,Ville,11.53
+194,97422 – Le Tampon,1213.004828476134,Ville,11.32
+195,13203 – Marseille 3e Arrondissement,1167.0102262745656,Ville,10.14
+196,94017 – Champigny-sur-Marne,1163.9961709574075,Ville,13.77
+197,91174 – Corbeil-Essonnes,1134.991269825429,Ville,11.6
+198,95585 – Sarcelles,1125.9829937068253,Ville,11.11
+199,93051 – Noisy-le-Grand,1111.9966276175267,Ville,14.26
+200,78646 – Versailles,1099.0174501842187,Ville,19.46
+201,14118 – Caen,1090.022812746379,Ville,12.05
+202,54395 – Nancy,1079.9690729142042,Ville,12.88
+203,93010 – Bondy,1073.9959973076077,Ville,12.22
+204,93007 – Le Blanc-Mesnil,1045.0104381736123,Ville,11.78
+205,34032 – Béziers,1031.9885153689615,Ville,11.02
+206,94041 – Ivry-sur-Seine,1015.9900938577471,Ville,13.61
+207,92044 – Levallois-Perret,1009.9816731484563,Ville,21.63
+208,93055 – Pantin,1008.0014295360025,Ville,13.29
+209,93031 – Épinay-sur-Seine,999.00991337126,Ville,11.95
+210,97409 – Saint-André,995.9904627766927,Ville,11.25
+211,92024 – Clichy,985.0076566750645,Ville,15.35
+212,69256 – Vaulx-en-Velin,979.9965583055191,Ville,10.55
+213,93070 – Saint-Ouen-sur-Seine,979.9927771512483,Ville,14.29
+214,77284 – Meaux,978.013979729142,Ville,11.95
+215,93071 – Sevran,973.0024977197538,Ville,11.59
+216,86194 – Poitiers,969.0042408887748,Ville,11.57
+217,97414 – Saint-Louis,966.9883256970296,Ville,10.45
+218,91377 – Massy,964.0046714247011,Ville,14.83
+219,92040 – Issy-les-Moulineaux,957.013777901827,Ville,20.45
+220,69389 – Lyon 9e Arrondissement,942.9875220649101,Ville,12.8
+221,59183 – Dunkerque,937.9969180987938,Ville,11.32
+222,06004 – Antibes,924.006578709763,Ville,13.4
+223,93008 – Bobigny,917.0119293379843,Ville,10.79
+224,97307 – Matoury,913.9889513070855,Ville,13.22
+225,77108 – Chelles,911.9949813747112,Ville,13.9
+226,13208 – Marseille 8e Arrondissement,904.9974593993749,Ville,15.35
+227,92063 – Rueil-Malmaison,900.9854519790092,Ville,21.92
+228,97209 – Fort-de-France,891.0055211075043,Ville,13.23
+229,93064 – Rosny-sous-Bois,881.9954014529633,Ville,13.7
+230,78586 – Sartrouville,866.9950927929764,Ville,14.97
+231,92036 – Gennevilliers,866.9911441448113,Ville,12.49
+232,93046 – Livry-Gargan,863.0122837387024,Ville,13.42
+233,26362 – Valence,843.9953779762433,Ville,11.67
+234,77288 – Melun,841.9874031067734,Ville,12.04
+235,94022 – Choisy-le-Roi,842.0043091256166,Ville,13.5
+236,94076 – Villejuif,840.9804615584551,Ville,13.97
+237,33281 – Mérignac,836.0039409891139,Ville,12.86
+238,92002 – Antony,835.9996407376278,Ville,18.56
+239,60057 – Beauvais,827.0005213566149,Ville,11.33
+240,75109 – Paris 9e Arrondissement,820.000071267809,Ville,21.72
+241,68066 – Colmar,814.9859478623287,Ville,11.41
+242,94046 – Maisons-Alfort,810.0046159037348,Ville,16.07
+243,13201 – Marseille 1er Arrondissement,810.011620295658,Ville,11.53
+244,62193 – Calais,808.9881437590388,Ville,10.83
+245,78361 – Mantes-la-Jolie,806.9965383469739,Ville,12.12
+246,94068 – Saint-Maur-des-Fossés,800.0214873851049,Ville,18.25
+247,13209 – Marseille 9e Arrondissement,797.0090250074057,Ville,13.69
+248,06029 – Cannes,786.9982512028278,Ville,12.22
+249,93027 – La Courneuve,787.003993299824,Ville,10.4
+250,95268 – Garges-lès-Gonesse,781.9942781534996,Ville,10.83
+251,93053 – Noisy-le-Sec,778.9983126599192,Ville,12.61
+252,13210 – Marseille 10e Arrondissement,777.9997086484209,Ville,11.67
+253,94078 – Villeneuve-Saint-Georges,776.002489746383,Ville,11.27
+254,44162 – Saint-Herblain,775.0217850637748,Ville,12.2
+255,69290 – Saint-Priest,771.9897688617458,Ville,12.11
+256,73065 – Chambéry,770.0075392827555,Ville,11.94
+257,83126 – La Seyne-sur-Mer,765.0010658700371,Ville,11.01
+258,93072 – Stains,746.9914483730746,Ville,10.92
+259,64445 – Pau,743.0021709448262,Ville,12.03
+260,13204 – Marseille 4e Arrondissement,740.021538683735,Ville,11.9
+261,10387 – Troyes,738.9928968545101,Ville,10.97
+262,44184 – Saint-Nazaire,736.0006932096352,Ville,11.49
+263,94002 – Alfortville,729.9952300711552,Ville,14.45
+264,59009 – Villeneuve-d'Ascq,721.9941202915792,Ville,13.42
+265,92062 – Puteaux,714.0027056985479,Ville,19.44
+266,50129 – Cherbourg-en-Cotentin,712.9975050370439,Ville,11.73
+267,92007 – Bagneux,712.0231326378594,Ville,14.05
+268,18033 – Bourges,704.9902638044111,Ville,11.78
+269,17300 – La Rochelle,703.0093753036277,Ville,11.91
+270,82121 – Montauban,702.9885202382794,Ville,11.63
+271,92073 – Suresnes,702.0090318081254,Ville,20.73
+272,92049 – Montrouge,689.974907115042,Ville,17.93
+273,97101 – Les Abymes,688.9961759320374,Ville,12.52
+274,97410 – Saint-Benoît,682.0067808780371,Ville,11.2
+275,27229 – Évreux,677.9916118367601,Ville,11.62
+276,92023 – Clamart,677.987054742234,Ville,18.55
+277,13211 – Marseille 11e Arrondissement,671.0202569239983,Ville,12.18
+278,97304 – Kourou,666.9971204536268,Ville,15.52
+279,92051 – Neuilly-sur-Seine,664.0052692852918,Ville,28.03
+280,78621 – Trappes,662.9892484945661,Ville,11.32
+281,91027 – Athis-Mons,662.0087645163534,Ville,13.59
+282,60175 – Creil,660.010872459389,Ville,10.99
+283,94033 – Fontenay-sous-Bois,656.0106655737648,Ville,16.8
+284,94080 – Vincennes,650.0132067463675,Ville,19.84
+285,13004 – Arles,648.9783140759204,Ville,11.17
+286,69386 – Lyon 6e Arrondissement,649.0007420621887,Ville,16.95
+287,78498 – Poissy,647.9963665284413,Ville,15.27
+288,56121 – Lorient,641.9956673254753,Ville,11.18
+289,02691 – Saint-Quentin,638.9949114868118,Ville,11.3
+290,74012 – Annemasse,637.9982569024376,Ville,10.59
+291,13205 – Marseille 5e Arrondissement,638.002427821088,Ville,12.14
+292,93078 – Villepinte,636.9752905760581,Ville,12.25
+293,95252 – Franconville,635.007794097295,Ville,14.2
+294,13212 – Marseille 12e Arrondissement,634.9859072855684,Ville,13.39
+295,41018 – Blois,624.9960660898203,Ville,11.79
+296,06069 – Grasse,623.0044614401389,Ville,12.74
+297,69029 – Bron,621.9963919785938,Ville,12.85
+298,79191 – Niort,620.9927802710223,Ville,14.4
+299,93059 – Pierrefitte-sur-Seine,614.000273443167,Ville,11.02
+300,95063 – Bezons,614.0085747689343,Ville,13.52
+301,95680 – Villiers-le-Bel,613.9905157084929,Ville,10.79
+302,90010 – Belfort,610.9984630910342,Ville,11.75
+303,78440 – Les Mureaux,607.984168886957,Ville,11.6
+304,29232 – Quimper,595.0010139953794,Ville,11.63
+305,33318 – Pessac,594.9936488919362,Ville,13.35
+306,13206 – Marseille 6e Arrondissement,588.996840446411,Ville,13.75
+307,71076 – Chalon-sur-Saône,588.0104077886269,Ville,11.19
+308,93073 – Tremblay-en-France,587.0084708505494,Ville,12.91
+309,91286 – Grigny,586.0008823984278,Ville,10.45
+310,93032 – Gagny,585.0111471108644,Ville,14.04
+311,97407 – Le Port,585.0072338222859,Ville,10.62
+312,93050 – Neuilly-sur-Marne,581.9940718667063,Ville,13.24
+313,93014 – Clichy-sous-Bois,580.9952874827234,Ville,10.93
+314,97408 – La Possession,578.9698854251625,Ville,13.61
+315,83061 – Fréjus,576.9939802917926,Ville,11.39
+316,13056 – Martigues,575.0001900812675,Ville,12.34
+317,69264 – Villefranche-sur-Saône,573.9833778132049,Ville,11.41
+318,13103 – Salon-de-Provence,571.9894975370001,Ville,12.14
+319,11262 – Narbonne,561.9900902314608,Ville,11.32
+320,53130 – Laval,557.9995158936018,Ville,11.66
+321,95280 – Goussainville,555.9909400603296,Ville,11.48
+322,97413 – Saint-Leu,553.9977040464639,Ville,11.81
+323,49099 – Cholet,547.0009786116042,Ville,11.39
+324,95277 – Gonesse,546.9927227573019,Ville,11.96
+325,44143 – Rezé,543.0033128532725,Ville,12.35
+326,91687 – Viry-Châtillon,536.0100690183449,Ville,13.47
+327,97418 – Sainte-Marie,536.0014065988205,Ville,12.61
+328,38151 – Échirolles,535.0200496648238,Ville,11.74
+329,97412 – Saint-Joseph,533.9922303384733,Ville,10.71
+330,92048 – Meudon,530.9956580142456,Ville,20.01
+331,93063 – Romainville,531.0036259672759,Ville,13.44
+332,69034 – Caluire-et-Cuire,529.0015470286996,Ville,15.34
+333,91521 – Ris-Orangis,528.9921004875935,Ville,12.74
+334,59178 – Douai,525.0108928652751,Ville,11.54
+335,69385 – Lyon 5e Arrondissement,525.0073127260008,Ville,14.28
+336,95500 – Pontoise,523.010503107184,Ville,13.56
+337,59650 – Wattrelos,521.9765180907781,Ville,10.6
+338,91657 – Vigneux-sur-Seine,521.9955730811494,Ville,12.95
+339,94044 – Limeil-Brévannes,521.9931252171477,Ville,13.3
+340,28134 – Dreux,519.0033277472374,Ville,11.08
+341,59606 – Valenciennes,517.9972800578072,Ville,12.24
+342,56260 – Vannes,515.9983965024273,Ville,12.22
+343,91477 – Palaiseau,512.9911300669635,Ville,16.2
+344,91589 – Savigny-sur-Orge,511.00739196444755,Ville,15.0
+345,62041 – Arras,510.00449610628226,Ville,12.09
+346,64102 – Bayonne,509.9869241293074,Ville,11.43
+347,78172 – Conflans-Sainte-Honorine,509.98651658412876,Ville,15.74
+348,93006 – Bagnolet,509.99762995289905,Ville,13.58
+349,13005 – Aubagne,509.01550817603004,Ville,12.24
+350,06027 – Cagnes-sur-Mer,507.99980789406,Ville,12.93
+351,92020 – Châtillon,506.9970940622215,Ville,18.08
+352,92019 – Châtenay-Malabry,505.993720812348,Ville,16.67
+353,11069 – Carcassonne,504.9968114269464,Ville,10.9
+354,75105 – Paris 5e Arrondissement,462.9849778779526,Ville,22.03
+355,75107 – Paris 7e Arrondissement,446.99616964420807,Ville,26.64
+356,69382 – Lyon 2e Arrondissement,440.9948239318132,Ville,14.81
+357,13202 – Marseille 2e Arrondissement,435.0077766123031,Ville,11.82
+358,75108 – Paris 8e Arrondissement,425.00115349899824,Ville,25.81
+359,69381 – Lyon 1er Arrondissement,423.01200316382176,Ville,13.91
+360,69384 – Lyon 4e Arrondissement,423.0004905560523,Ville,15.44
+361,13207 – Marseille 7e Arrondissement,408.006429727563,Ville,15.17
+362,75103 – Paris 3e Arrondissement,401.99561494414826,Ville,21.44
+363,75106 – Paris 6e Arrondissement,334.0006240750561,Ville,24.92
+364,13216 – Marseille 16e Arrondissement,291.99645072020064,Ville,11.69
+365,75104 – Paris 4e Arrondissement,287.0117709198995,Ville,20.79
+366,75102 – Paris 2e Arrondissement,256.00214455582324,Ville,20.96
+367,75101 – Paris 1er Arrondissement,171.98748047282385,Ville,21.72
+368,Mayotte  –  1re circonscription,4181.999550863261,Circonscription,13.0
+369,Mayotte  –  2e circonscription,3719.000869752751,Circonscription,13.0
+370,Guyane   –  2e circonscription,3509.9985246122487,Circonscription,13.63
+371,Guyane   –  1re circonscription,3217.995612742117,Circonscription,13.63
+372,Seine-Saint-Denis   –  7e circonscription,2402.995915956463,Circonscription,12.99
+373,Seine-Saint-Denis   –  4e circonscription,2398.0128888050644,Circonscription,12.99
+374,Seine-Saint-Denis   –  1re circonscription,2328.00238003116,Circonscription,12.99
+375,Seine-Saint-Denis   –  9e circonscription,2326.98576650772,Circonscription,12.99
+376,Seine-Saint-Denis   –  5e circonscription,2295.005470133294,Circonscription,12.99
+377,Seine-Saint-Denis   –  6e circonscription,2242.9960094761027,Circonscription,12.99
+378,Seine-Saint-Denis   –  10e circonscription,2221.0191031223258,Circonscription,12.99
+379,Val-d’Oise   –  3e circonscription,2181.9996257610237,Circonscription,13.0
+380,Seine-Saint-Denis   –  12e circonscription,2156.004763709701,Circonscription,12.99
+381,Seine-Saint-Denis   –  3e circonscription,2143.987319454309,Circonscription,12.99
+382,Val-d’Oise   –  5e circonscription,2142.9904154463516,Circonscription,13.0
+383,La Réunion   –  7e circonscription,2141.006775893039,Circonscription,12.16
+384,Seine-Saint-Denis   –  2e circonscription,2121.008762728761,Circonscription,12.99
+385,Seine-Saint-Denis   –  11e circonscription,2044.0063765572618,Circonscription,12.99
+386,La Réunion   –  4e circonscription,2035.0031050281561,Circonscription,12.16
+387,Essonne   –  4e circonscription,2028.9869817722033,Circonscription,14.69
+388,Val-de-Marne   –  5e circonscription,2023.9993180064453,Circonscription,15.39
+389,Essonne   –  3e circonscription,2016.9899733351315,Circonscription,14.69
+390,Rhône   –  6e circonscription,2008.9895732576495,Circonscription,13.6
+391,Val-d’Oise   –  1re circonscription,1995.0088220724501,Circonscription,13.0
+392,Val-de-Marne   –  3e circonscription,1985.0053882026002,Circonscription,15.39
+393,Hauts-de-Seine   –  4e circonscription,1970.000084316481,Circonscription,19.49
+394,La Réunion   –  2e circonscription,1964.9826928659425,Circonscription,12.16
+395,Val-de-Marne   –  2e circonscription,1948.022647940552,Circonscription,15.39
+396,Hauts-de-Seine   –  12e circonscription,1939.9998499263847,Circonscription,19.49
+397,Essonne   –  1re circonscription,1936.999678348745,Circonscription,14.69
+398,Rhône   –  8e circonscription,1930.0037700294124,Circonscription,13.6
+399,Val-de-Marne   –  1re circonscription,1929.977678529226,Circonscription,15.39
+400,Seine-Saint-Denis   –  8e circonscription,1922.005343441409,Circonscription,12.99
+401,Nouvelle-Caledonie  –  2e circonscription,1905.9934544158014,Circonscription,13.0
+402,Val-d’Oise   –  2e circonscription,1887.0046962314075,Circonscription,13.0
+403,Val-de-Marne   –  10e circonscription,1874.9972329074374,Circonscription,15.39
+404,Val-d’Oise   –  6e circonscription,1874.983608986783,Circonscription,13.0
+405,Hauts-de-Seine   –  13e circonscription,1873.991184277667,Circonscription,19.49
+406,Rhône   –  9e circonscription,1859.9891656308218,Circonscription,13.6
+407,Essonne   –  2e circonscription,1860.0018093839988,Circonscription,14.69
+408,Val-d’Oise   –  7e circonscription,1855.0012050622604,Circonscription,13.0
+409,Seine-et-Marne   –  8e circonscription,1841.9764988516777,Circonscription,13.64
+410,Rhône   –  14e circonscription,1837.0099625270298,Circonscription,13.6
+411,Val-de-Marne   –  6e circonscription,1834.9899683099525,Circonscription,15.39
+412,Val-d’Oise   –  9e circonscription,1822.0010039985088,Circonscription,13.0
+413,Essonne   –  6e circonscription,1807.005890977527,Circonscription,14.69
+414,Rhône   –  4e circonscription,1796.9966465615146,Circonscription,13.6
+415,La Réunion   –  1re circonscription,1784.0085546971252,Circonscription,12.16
+416,Hauts-de-Seine   –  7e circonscription,1782.0071574889168,Circonscription,19.49
+417,La Réunion   –  3e circonscription,1781.0041313986983,Circonscription,12.16
+418,Nord   –  11e circonscription,1774.994517476672,Circonscription,12.18
+419,Loire-Atlantique   –  5e circonscription,1771.9913829039524,Circonscription,12.27
+420,Yvelines   –  9e circonscription,1770.9905414398454,Circonscription,17.06
+421,Val-d’Oise   –  8e circonscription,1769.001740425477,Circonscription,13.0
+422,Loire-Atlantique   –  6e circonscription,1766.0032336721622,Circonscription,12.27
+423,Val-d’Oise   –  4e circonscription,1763.993874573179,Circonscription,13.0
+424,Haute-Savoie   –  4e circonscription,1758.011853028422,Circonscription,12.15
+425,Rhône   –  3e circonscription,1756.0013290343788,Circonscription,13.6
+426,Haute-Garonne   –  6e circonscription,1754.0038573635306,Circonscription,13.4
+427,Hauts-de-Seine   –  3e circonscription,1754.0223544454527,Circonscription,19.49
+428,Rhône   –  11e circonscription,1748.9951877796902,Circonscription,13.6
+429,Seine-et-Marne   –  7e circonscription,1749.0168081491142,Circonscription,13.64
+430,Essonne   –  9e circonscription,1737.0134274806467,Circonscription,14.69
+431,Seine-et-Marne   –  10e circonscription,1734.0110681240997,Circonscription,13.64
+432,Bouches-du-Rhône   –  14e circonscription,1732.0032954727474,Circonscription,12.68
+433,Hauts-de-Seine   –  5e circonscription,1732.0088006940362,Circonscription,19.49
+434,Loire-Atlantique   –  9e circonscription,1731.0042469568214,Circonscription,12.27
+435,Nord   –  3e circonscription,1728.9923448169968,Circonscription,12.18
+436,Rhône   –  10e circonscription,1729.001018986129,Circonscription,13.6
+437,Val-de-Marne   –  4e circonscription,1727.996840158791,Circonscription,15.39
+438,Val-de-Marne   –  8e circonscription,1728.028349685227,Circonscription,15.39
+439,Haute-Savoie   –  1re circonscription,1724.014319618927,Circonscription,12.15
+440,Paris   –  6e circonscription,1718.987325112604,Circonscription,19.72
+441,Essonne   –  7e circonscription,1718.9944210818692,Circonscription,14.69
+442,Val-d’Oise   –  10e circonscription,1718.0032605569627,Circonscription,13.0
+443,Loire-Atlantique   –  10e circonscription,1717.0237254366427,Circonscription,12.27
+444,Rhône   –  1re circonscription,1715.9815920080232,Circonscription,13.6
+445,Hauts-de-Seine   –  6e circonscription,1716.0049451335447,Circonscription,19.49
+446,Nord   –  4e circonscription,1710.9986408219368,Circonscription,12.18
+447,Paris   –  7e circonscription,1711.0174558661486,Circonscription,19.72
+448,Seine-et-Marne   –  6e circonscription,1711.0128315830484,Circonscription,13.64
+449,Nord   –  2e circonscription,1707.0028490977938,Circonscription,12.18
+450,Hauts-de-Seine   –  1re circonscription,1705.9959727574856,Circonscription,19.49
+451,Seine-et-Marne   –  9e circonscription,1701.013313332241,Circonscription,13.64
+452,Paris   –  13e circonscription,1686.9981265405368,Circonscription,19.72
+453,Seine-et-Marne   –  4e circonscription,1683.995903884172,Circonscription,13.64
+454,Essonne   –  8e circonscription,1681.0064865190218,Circonscription,14.69
+455,Paris   –  8e circonscription,1678.9976723444966,Circonscription,19.72
+456,Seine-Maritime   –  6e circonscription,1676.9940053496223,Circonscription,12.1
+457,Paris   –  1re circonscription,1670.0051518566554,Circonscription,19.72
+458,Bouches-du-Rhône   –  15e circonscription,1666.9951358091937,Circonscription,12.68
+459,Loire   –  6e circonscription,1662.009389042592,Circonscription,11.39
+460,La Réunion   –  5e circonscription,1661.9956982833762,Circonscription,12.16
+461,Paris   –  5e circonscription,1661.0011288575085,Circonscription,19.72
+462,Val-de-Marne   –  11e circonscription,1661.0131725703584,Circonscription,15.39
+463,Haute-Garonne   –  2e circonscription,1660.0126374979925,Circonscription,13.4
+464,Seine-et-Marne   –  5e circonscription,1649.9905774095873,Circonscription,13.64
+465,Rhône   –  7e circonscription,1649.0141317879795,Circonscription,13.6
+466,Hauts-de-Seine   –  11e circonscription,1649.0178369896405,Circonscription,19.49
+467,Loire   –  5e circonscription,1646.0062662959315,Circonscription,11.39
+468,Bouches-du-Rhône   –  7e circonscription,1642.9977169120136,Circonscription,12.68
+469,Nouvelle-Caledonie  –  1re circonscription,1642.0007855578758,Circonscription,13.0
+470,Haute-Savoie   –  2e circonscription,1640.9909893391618,Circonscription,12.15
+471,Paris   –  10e circonscription,1641.0107504718335,Circonscription,19.72
+472,Paris   –  4e circonscription,1638.0119509290193,Circonscription,19.72
+473,La Réunion   –  6e circonscription,1637.9854567929365,Circonscription,12.16
+474,Haute-Savoie   –  5e circonscription,1635.008281153988,Circonscription,12.15
+475,Seine-Maritime   –  10e circonscription,1635.0051736118608,Circonscription,12.1
+476,Val-de-Marne   –  7e circonscription,1633.983397022171,Circonscription,15.39
+477,Paris   –  14e circonscription,1631.0047355198492,Circonscription,19.72
+478,Nord   –  5e circonscription,1630.0167546445687,Circonscription,12.18
+479,Haute-Garonne   –  1re circonscription,1624.9883269520187,Circonscription,13.4
+480,Hauts-de-Seine   –  2e circonscription,1622.9849203417323,Circonscription,19.49
+481,Bouches-du-Rhône   –  8e circonscription,1621.9869708682584,Circonscription,12.68
+482,Paris   –  15e circonscription,1617.0152910207787,Circonscription,19.72
+483,Nord   –  9e circonscription,1615.9900696295388,Circonscription,12.18
+484,Rhône   –  5e circonscription,1614.9802603679716,Circonscription,13.6
+485,Bouches-du-Rhône   –  3e circonscription,1614.0032097888186,Circonscription,12.68
+486,Essonne   –  10e circonscription,1613.0066014163665,Circonscription,14.69
+487,Loire   –  4e circonscription,1611.0109497585986,Circonscription,11.39
+488,Yvelines   –  8e circonscription,1608.0025099986306,Circonscription,17.06
+489,Bouches-du-Rhône   –  13e circonscription,1606.007115464073,Circonscription,12.68
+490,Rhône   –  12e circonscription,1605.9992269459915,Circonscription,13.6
+491,Hauts-de-Seine   –  10e circonscription,1606.0006009912292,Circonscription,19.49
+492,Rhône   –  2e circonscription,1602.9832976854668,Circonscription,13.6
+493,Rhône   –  13e circonscription,1602.0013850603048,Circonscription,13.6
+494,Bouches-du-Rhône   –  10e circonscription,1600.9983467267261,Circonscription,12.68
+495,Paris   –  18e circonscription,1599.0101544451068,Circonscription,19.72
+496,Yvelines   –  1re circonscription,1596.0090588875626,Circonscription,17.06
+497,Bouches-du-Rhône   –  16e circonscription,1595.0022197281326,Circonscription,12.68
+498,Yvelines   –  10e circonscription,1584.994939076812,Circonscription,17.06
+499,Paris   –  2e circonscription,1579.0049026596137,Circonscription,19.72
+500,Isère   –  10e circonscription,1570.009198069209,Circonscription,12.76
+501,Nord   –  14e circonscription,1568.9972675640154,Circonscription,12.18
+502,Haute-Garonne   –  7e circonscription,1568.0085204175316,Circonscription,13.4
+503,Yvelines   –  2e circonscription,1567.9927203875727,Circonscription,17.06
+504,Nord   –  18e circonscription,1564.0085449102637,Circonscription,12.18
+505,Nord   –  12e circonscription,1556.99791974296,Circonscription,12.18
+506,Paris   –  16e circonscription,1553.9941163507815,Circonscription,19.72
+507,Bouches-du-Rhône   –  4e circonscription,1550.9941431927164,Circonscription,12.68
+508,Nord   –  13e circonscription,1547.9992055453686,Circonscription,12.18
+509,Paris   –  12e circonscription,1545.9948115342938,Circonscription,19.72
+510,Loire-Atlantique   –  2e circonscription,1541.997477029408,Circonscription,12.27
+511,Yvelines   –  7e circonscription,1540.988292328962,Circonscription,17.06
+512,Oise  –  4e circonscription,1539.9901961989506,Circonscription,12.85
+513,Haute-Garonne   –  5e circonscription,1538.0357931107512,Circonscription,13.4
+514,Haute-Garonne   –  9e circonscription,1538.023440438485,Circonscription,13.4
+515,Isère   –  5e circonscription,1533.0156453204374,Circonscription,12.76
+516,Nord   –  15e circonscription,1532.001331753355,Circonscription,12.18
+517,Yvelines   –  4e circonscription,1529.0021615400287,Circonscription,17.06
+518,Ille-et-Vilaine   –  5e circonscription,1528.0137762792963,Circonscription,11.97
+519,Bouches-du-Rhône   –  12e circonscription,1525.0130501373683,Circonscription,12.68
+520,Gironde   –  5e circonscription,1521.9920403530682,Circonscription,12.49
+521,Bouches-du-Rhône   –  9e circonscription,1521.012155224911,Circonscription,12.68
+522,Loire-Atlantique   –  3e circonscription,1521.0051438320004,Circonscription,12.27
+523,Yvelines   –  3e circonscription,1517.9877719141246,Circonscription,17.06
+524,Bouches-du-Rhône   –  5e circonscription,1517.0113234972237,Circonscription,12.68
+525,Paris   –  3e circonscription,1517.0042583288594,Circonscription,19.72
+526,Paris   –  17e circonscription,1505.982365956604,Circonscription,19.72
+527,Seine-Maritime   –  4e circonscription,1505.9977612536247,Circonscription,12.1
+528,Seine-et-Marne   –  2e circonscription,1506.0048213856974,Circonscription,13.64
+529,Bouches-du-Rhône   –  6e circonscription,1504.9985780730228,Circonscription,12.68
+530,Ille-et-Vilaine   –  8e circonscription,1497.0023292557905,Circonscription,11.97
+531,Loiret   –  2e circonscription,1497.0129156873634,Circonscription,12.4
+532,Pas-de-Calais   –  1e circonscription,1496.9956964773849,Circonscription,11.17
+533,Yvelines   –  11e circonscription,1497.0064790950048,Circonscription,17.06
+534,Loire-Atlantique   –  7e circonscription,1494.999350450651,Circonscription,12.27
+535,Seine-et-Marne   –  1re circonscription,1495.0087193557888,Circonscription,13.64
+536,Bouches-du-Rhône   –  11e circonscription,1490.0014098509114,Circonscription,12.68
+537,Isère   –  9e circonscription,1480.9875370199575,Circonscription,12.76
+538,Nord   –  21e circonscription,1481.016829179619,Circonscription,12.18
+539,Paris   –  11e circonscription,1477.0038917694346,Circonscription,19.72
+540,Yvelines   –  6e circonscription,1472.9943448162194,Circonscription,17.06
+541,Val-de-Marne   –  9e circonscription,1469.0114959138612,Circonscription,15.39
+542,Alpes-Maritimes  –  1re circonscription,1466.0270137137966,Circonscription,12.76
+543,Hérault   –  4e circonscription,1465.9840544648184,Circonscription,12.0
+544,Isère   –  1re circonscription,1462.9863039502998,Circonscription,12.76
+545,Nord   –  8e circonscription,1461.9999840274775,Circonscription,12.18
+546,Var   –  6e circonscription,1461.0055222651092,Circonscription,11.68
+547,Bas-Rhin   –  5e circonscription,1458.987441912633,Circonscription,12.18
+548,Yvelines   –  5e circonscription,1457.9893533998093,Circonscription,17.06
+549,Ille-et-Vilaine   –  2e circonscription,1456.9967150372495,Circonscription,11.97
+550,Haut-Rhin   –  6e circonscription,1456.9976616604606,Circonscription,11.59
+551,Seine-Maritime   –  9e circonscription,1456.0060292581147,Circonscription,12.1
+552,Gironde   –  6e circonscription,1451.9966912837897,Circonscription,12.49
+553,Ille-et-Vilaine   –  1re circonscription,1450.987451085626,Circonscription,11.97
+554,Ain   –  3e circonscription,1449.0047050092862,Circonscription,12.01
+555,Hauts-de-Seine   –  9e circonscription,1445.9870208743378,Circonscription,19.49
+556,Bouches-du-Rhône   –  1re circonscription,1443.016933654242,Circonscription,12.68
+557,Gironde   –  1re circonscription,1441.0001643989722,Circonscription,12.49
+558,Bouches-du-Rhône   –  2e circonscription,1440.010485079959,Circonscription,12.68
+559,Drôme   –  4e circonscription,1439.98530264674,Circonscription,11.58
+560,Isère   –  7e circonscription,1435.9930795729729,Circonscription,12.76
+561,Nord   –  19e circonscription,1435.9965288531332,Circonscription,12.18
+562,Oise  –  2e circonscription,1435.9982571873402,Circonscription,12.85
+563,Bas-Rhin   –  2e circonscription,1434.9980385677156,Circonscription,12.18
+564,Drôme   –  3e circonscription,1433.9788777711472,Circonscription,11.58
+565,Haute-Garonne   –  10e circonscription,1432.9761902826085,Circonscription,13.4
+566,Nord   –  16e circonscription,1433.0057979784615,Circonscription,12.18
+567,Hauts-de-Seine   –  8e circonscription,1431.997013882696,Circonscription,19.49
+568,Alpes-Maritimes  –  7e circonscription,1430.9894246322676,Circonscription,12.76
+569,Seine-et-Marne   –  3e circonscription,1428.9958494456037,Circonscription,13.64
+570,Seine-Maritime   –  5e circonscription,1428.0106207953118,Circonscription,12.1
+571,Gironde   –  4e circonscription,1427.010275453234,Circonscription,12.49
+572,Seine-Maritime   –  7e circonscription,1425.0046024389815,Circonscription,12.1
+573,Ain   –  2e circonscription,1420.9944401127939,Circonscription,12.01
+574,Maine-et-Loire     –  6e circonscription,1420.9936592825425,Circonscription,11.34
+575,Haute-Savoie   –  3e circonscription,1421.0105577202232,Circonscription,12.15
+576,Essonne   –  5e circonscription,1421.0039243126048,Circonscription,14.69
+577,Alpes-Maritimes  –  3e circonscription,1417.9965825255563,Circonscription,12.76
+578,Paris   –  9e circonscription,1414.0188864913139,Circonscription,19.72
+579,Pas-de-Calais   –  11e circonscription,1413.0069047962038,Circonscription,11.17
+580,Isère   –  2e circonscription,1409.996430043542,Circonscription,12.76
+581,Oise  –  1re circonscription,1407.006136275038,Circonscription,12.85
+582,Oise  –  3e circonscription,1405.9853625767776,Circonscription,12.85
+583,Gard   –  1re circonscription,1405.0267307782965,Circonscription,11.64
+584,Var   –  8e circonscription,1400.9843786739752,Circonscription,11.68
+585,Nord   –  1re circonscription,1397.9969614871052,Circonscription,12.18
+586,Seine-Maritime   –  2e circonscription,1398.004163913553,Circonscription,12.1
+587,Loire-Atlantique   –  8e circonscription,1395.9923223991843,Circonscription,12.27
+588,Seine-et-Marne   –  11e circonscription,1396.0120957559589,Circonscription,13.64
+589,Nord   –  10e circonscription,1392.9840340187063,Circonscription,12.18
+590,Ain   –  4e circonscription,1391.0145572132135,Circonscription,12.01
+591,Pas-de-Calais   –  12e circonscription,1387.001333877785,Circonscription,11.17
+592,Hérault   –  6e circonscription,1378.9906226346952,Circonscription,12.0
+593,Pas-de-Calais   –  7e circonscription,1379.0034610285995,Circonscription,11.17
+594,Eure-et-Loir     –  1re circonscription,1378.006140806943,Circonscription,12.51
+595,Nord   –  6e circonscription,1377.991286922684,Circonscription,12.18
+596,Bas-Rhin   –  1re circonscription,1375.005179084344,Circonscription,12.18
+597,Ille-et-Vilaine   –  3e circonscription,1374.0108079888828,Circonscription,11.97
+598,Hérault   –  7e circonscription,1371.992325594439,Circonscription,12.0
+599,Puy-de-Dôme   –  1re circonscription,1370.0036828690552,Circonscription,12.38
+600,Alpes-Maritimes  –  5e circonscription,1368.9959720026266,Circonscription,12.76
+601,Haute-Garonne   –  4e circonscription,1369.0018828533944,Circonscription,13.4
+602,Vaucluse   –  4e circonscription,1369.0170379707265,Circonscription,11.54
+603,Loire   –  3e circonscription,1368.007545635549,Circonscription,11.39
+604,Haut-Rhin   –  4e circonscription,1367.0053385008443,Circonscription,11.59
+605,Haute-Garonne   –  3e circonscription,1365.0169872627273,Circonscription,13.4
+606,Oise  –  7e circonscription,1364.9997307203578,Circonscription,12.85
+607,Maine-et-Loire     –  1re circonscription,1364.0025911644536,Circonscription,11.34
+608,Pas-de-Calais   –  8e circonscription,1364.0053766367878,Circonscription,11.17
+609,Bas-Rhin   –  8e circonscription,1362.998515487368,Circonscription,12.18
+610,Yvelines   –  12e circonscription,1363.004221968265,Circonscription,17.06
+611,Puy-de-Dôme   –  4e circonscription,1360.9908339519513,Circonscription,12.38
+612,Ille-et-Vilaine   –  4e circonscription,1359.999434512287,Circonscription,11.97
+613,Seine-Maritime   –  1re circonscription,1360.0105408524005,Circonscription,12.1
+614,Nord   –  20e circonscription,1358.998810014583,Circonscription,12.18
+615,Moselle   –  9e circonscription,1354.0086197417309,Circonscription,11.3
+616,Pas-de-Calais   –  5e circonscription,1350.9945979576496,Circonscription,11.17
+617,Var   –  4e circonscription,1349.9703523473677,Circonscription,11.68
+618,Loire-Atlantique   –  4e circonscription,1347.987125702934,Circonscription,12.27
+619,Bas-Rhin   –  9e circonscription,1346.0049563162827,Circonscription,12.18
+620,Marne   –  4e circonscription,1342.9955448209023,Circonscription,12.21
+621,Maine-et-Loire     –  2e circonscription,1340.9810834582966,Circonscription,11.34
+622,Isère   –  4e circonscription,1339.0098752397682,Circonscription,12.76
+623,Gironde   –  11e circonscription,1338.00776985183,Circonscription,12.49
+624,Haute-Savoie   –  6e circonscription,1337.9973099406043,Circonscription,12.15
+625,Drôme   –  2e circonscription,1330.9914412506387,Circonscription,11.58
+626,Eure   –  1re circonscription,1330.9977470366882,Circonscription,12.22
+627,Ille-et-Vilaine   –  7e circonscription,1329.9859273775203,Circonscription,11.97
+628,Haut-Rhin   –  5e circonscription,1330.0020555922035,Circonscription,11.59
+629,Isère   –  6e circonscription,1324.0057375679714,Circonscription,12.76
+630,Gironde   –  3e circonscription,1322.9946741891547,Circonscription,12.49
+631,Puy-de-Dôme   –  5e circonscription,1321.985274380038,Circonscription,12.38
+632,Pas-de-Calais   –  6e circonscription,1320.9954781988135,Circonscription,11.17
+633,Hérault   –  5e circonscription,1320.0025739705363,Circonscription,12.0
+634,Bas-Rhin   –  4e circonscription,1320.0017012067901,Circonscription,12.18
+635,Vaucluse   –  1re circonscription,1319.9803552549947,Circonscription,11.54
+636,Vendée     –  1re circonscription,1319.9948776762315,Circonscription,10.92
+637,Bas-Rhin   –  6e circonscription,1319.0153296226954,Circonscription,12.18
+638,Gironde   –  8e circonscription,1318.0057066987745,Circonscription,12.49
+639,Ille-et-Vilaine   –  6e circonscription,1315.998929083254,Circonscription,11.97
+640,Hérault   –  8e circonscription,1311.001752515176,Circonscription,12.0
+641,Seine-Maritime   –  3e circonscription,1310.0081963298048,Circonscription,12.1
+642,Pas-de-Calais   –  10e circonscription,1309.0110875140479,Circonscription,11.17
+643,Indre-et-Loire   –  3e circonscription,1308.0069016508037,Circonscription,12.11
+644,Loiret   –  1re circonscription,1306.0062568075175,Circonscription,12.4
+645,Nord   –  7e circonscription,1304.0000437835454,Circonscription,12.18
+646,Tarn-et-Garonne   –  2e circonscription,1304.005026070345,Circonscription,11.26
+647,Gironde   –  9e circonscription,1303.0102073219416,Circonscription,12.49
+648,Eure   –  4e circonscription,1298.9955583014978,Circonscription,12.22
+649,Nord   –  17e circonscription,1296.9595216754824,Circonscription,12.18
+650,Gard   –  5e circonscription,1294.001970501821,Circonscription,11.64
+651,Oise  –  6e circonscription,1293.0136897368452,Circonscription,12.85
+652,Meurthe-et-Moselle   –  4e circonscription,1291.0169964304741,Circonscription,11.89
+653,Var   –  7e circonscription,1288.9990511590186,Circonscription,11.68
+654,Doubs  –  1re circonscription,1285.9904636104318,Circonscription,11.39
+655,Manche   –  3e circonscription,1285.0123308606096,Circonscription,11.21
+656,Marne   –  2e circonscription,1282.9930165793683,Circonscription,12.21
+657,Eure   –  5e circonscription,1280.995698134856,Circonscription,12.22
+658,Loiret   –  4e circonscription,1281.0178298502788,Circonscription,12.4
+659,Pas-de-Calais   –  3e circonscription,1279.0205041942925,Circonscription,11.17
+660,Var   –  3e circonscription,1279.0055723677644,Circonscription,11.68
+661,Ain   –  5e circonscription,1278.0026414471283,Circonscription,12.01
+662,Moselle   –  8e circonscription,1277.0091077178017,Circonscription,11.3
+663,Meurthe-et-Moselle   –  1re circonscription,1275.9992544126214,Circonscription,11.89
+664,Ain   –  1re circonscription,1273.0034510943979,Circonscription,12.01
+665,Moselle   –  7e circonscription,1270.998013164853,Circonscription,11.3
+666,Pas-de-Calais   –  2e circonscription,1268.9990920792666,Circonscription,11.17
+667,Seine-Maritime   –  8e circonscription,1268.9977965075482,Circonscription,12.1
+668,Indre-et-Loire   –  4e circonscription,1266.0126737503042,Circonscription,12.11
+669,Somme   –  2e circonscription,1265.0181969132648,Circonscription,11.5
+670,Loire-Atlantique   –  1re circonscription,1263.0021649141634,Circonscription,12.27
+671,Marne   –  3e circonscription,1262.9919791234652,Circonscription,12.21
+672,Haut-Rhin   –  3e circonscription,1262.0085481568615,Circonscription,11.59
+673,Haute-Vienne   –  2e circonscription,1258.0011250106263,Circonscription,11.72
+674,Alpes-Maritimes  –  2e circonscription,1255.9998836688828,Circonscription,12.76
+675,Haute-Garonne   –  8e circonscription,1255.0093970968724,Circonscription,13.4
+676,Bas-Rhin   –  3e circonscription,1255.0097262225568,Circonscription,12.18
+677,Loiret   –  6e circonscription,1253.006341205249,Circonscription,12.4
+678,Guadeloupe   –  2e circonscription,1251.9951048514154,Circonscription,13.08
+679,Guadeloupe   –  3e circonscription,1251.9864041515032,Circonscription,13.08
+680,Morbihan   –  4e circonscription,1250.0057660721427,Circonscription,11.29
+681,Puy-de-Dôme   –  3e circonscription,1249.9869765201859,Circonscription,12.38
+682,Vaucluse   –  5e circonscription,1250.0143227259307,Circonscription,11.54
+683,Alpes-Maritimes  –  4e circonscription,1249.0017570599398,Circonscription,12.76
+684,Alpes-Maritimes  –  8e circonscription,1248.0078035636202,Circonscription,12.76
+685,Marne   –  1re circonscription,1248.0082431428564,Circonscription,12.21
+686,Sarthe    –  2e circonscription,1248.0042975464105,Circonscription,11.54
+687,Oise  –  5e circonscription,1246.9931804523658,Circonscription,12.85
+688,Vendée     –  3e circonscription,1247.0023170974525,Circonscription,10.92
+689,Loiret   –  5e circonscription,1245.0046937368368,Circonscription,12.4
+690,Yonne   –  3e circonscription,1244.999510584215,Circonscription,11.37
+691,Gard   –  4e circonscription,1243.9958762753033,Circonscription,11.64
+692,Loire   –  1re circonscription,1244.0154794285218,Circonscription,11.39
+693,Landes   –  2e circonscription,1243.015991310253,Circonscription,11.19
+694,Calvados   –  6e circonscription,1241.9913622646714,Circonscription,11.68
+695,Haut-Rhin   –  2e circonscription,1241.0011838591947,Circonscription,11.59
+696,Pas-de-Calais   –  4e circonscription,1240.0062460137704,Circonscription,11.17
+697,Hérault   –  3e circonscription,1239.0076279610337,Circonscription,12.0
+698,Gironde   –  2e circonscription,1237.9860498415517,Circonscription,12.49
+699,Tarn-et-Garonne   –  1re circonscription,1238.0131584293522,Circonscription,11.26
+700,Moselle   –  1re circonscription,1236.9999840809635,Circonscription,11.3
+701,Isère   –  8e circonscription,1233.998998910295,Circonscription,12.76
+702,Isère   –  3e circonscription,1232.9908906546402,Circonscription,12.76
+703,Gard   –  3e circonscription,1232.0127736190968,Circonscription,11.64
+704,Var   –  2e circonscription,1230.9816504271935,Circonscription,11.68
+705,Doubs  –  5e circonscription,1229.995530327207,Circonscription,11.39
+706,Aisne  –  5e circonscription,1228.9992136527878,Circonscription,11.38
+707,Gard   –  6e circonscription,1229.0052872308768,Circonscription,11.64
+708,Calvados   –  4e circonscription,1224.98907470743,Circonscription,11.68
+709,Doubs  –  2e circonscription,1223.9898382028473,Circonscription,11.39
+710,Vaucluse   –  2e circonscription,1222.996523126749,Circonscription,11.54
+711,Meurthe-et-Moselle   –  3e circonscription,1222.0027569771855,Circonscription,11.89
+712,Sarthe    –  5e circonscription,1222.0031144853172,Circonscription,11.54
+713,Deux-Sèvres   –  2e circonscription,1221.989059916857,Circonscription,12.22
+714,Var   –  5e circonscription,1221.013801479438,Circonscription,11.68
+715,Tarn   –  2e circonscription,1220.0042712415634,Circonscription,11.44
+716,Hérault   –  1re circonscription,1215.985737724871,Circonscription,12.0
+717,Eure-et-Loir     –  2e circonscription,1210.9944247882627,Circonscription,12.51
+718,Morbihan   –  1re circonscription,1208.0116296776346,Circonscription,11.29
+719,Aisne  –  4e circonscription,1204.995210902783,Circonscription,11.38
+720,Sarthe    –  3e circonscription,1205.0121838684834,Circonscription,11.54
+721,Savoie   –  1re circonscription,1204.015055413279,Circonscription,12.1
+722,Vendée     –  2e circonscription,1203.0036667008198,Circonscription,10.92
+723,Meurthe-et-Moselle   –  6e circonscription,1202.0049049247505,Circonscription,11.89
+724,Bas-Rhin   –  7e circonscription,1202.0183546982366,Circonscription,12.18
+725,Hérault   –  2e circonscription,1200.001316075896,Circonscription,12.0
+726,Alpes-Maritimes  –  9e circonscription,1197.9958874834833,Circonscription,12.76
+727,Drôme   –  1re circonscription,1193.99827828341,Circonscription,11.58
+728,Savoie   –  4e circonscription,1193.9958138818959,Circonscription,12.1
+729,Somme   –  1re circonscription,1193.9998350705343,Circonscription,11.5
+730,Indre-et-Loire   –  1re circonscription,1193.0094729101083,Circonscription,12.11
+731,Indre-et-Loire   –  2e circonscription,1192.9925341614346,Circonscription,12.11
+732,Tarn   –  3e circonscription,1183.0117177747006,Circonscription,11.44
+733,Vendée     –  4e circonscription,1182.0110807491915,Circonscription,10.92
+734,Aude   –  1re circonscription,1179.9881381644857,Circonscription,10.97
+735,Gironde   –  10e circonscription,1176.000830689813,Circonscription,12.49
+736,Maine-et-Loire     –  7e circonscription,1173.002384541411,Circonscription,11.34
+737,Eure   –  3e circonscription,1170.9903550454032,Circonscription,12.22
+738,Sarthe    –  4e circonscription,1169.9919347947848,Circonscription,11.54
+739,Guadeloupe   –  1re circonscription,1169.003183647985,Circonscription,13.08
+740,Haut-Rhin   –  1re circonscription,1167.982436429246,Circonscription,11.59
+741,Gard   –  2e circonscription,1167.0064975465514,Circonscription,11.64
+742,Haute-Vienne   –  1re circonscription,1166.9977973966913,Circonscription,11.72
+743,Hérault   –  9e circonscription,1165.9934602147193,Circonscription,12.0
+744,Lot-et-Garonne     –  1re circonscription,1165.9907405131744,Circonscription,11.06
+745,Maine-et-Loire     –  5e circonscription,1166.0015440272962,Circonscription,11.34
+746,Landes   –  1re circonscription,1163.9899063642677,Circonscription,11.19
+747,Marne   –  5e circonscription,1164.028627380096,Circonscription,12.21
+748,Eure   –  2e circonscription,1162.9995125907988,Circonscription,12.22
+749,Gironde   –  12e circonscription,1161.0053600238173,Circonscription,12.49
+750,Manche   –  2e circonscription,1156.0081395018815,Circonscription,11.21
+751,Puy-de-Dôme   –  2e circonscription,1146.986600139036,Circonscription,12.38
+752,Loiret   –  3e circonscription,1145.989804952531,Circonscription,12.4
+753,Pas-de-Calais   –  9e circonscription,1145.9870360177981,Circonscription,11.17
+754,Deux-Sèvres   –  1re circonscription,1145.9973518721274,Circonscription,12.22
+755,Aisne  –  2e circonscription,1141.9748206823563,Circonscription,11.38
+756,Loire   –  2e circonscription,1136.0076764982875,Circonscription,11.39
+757,Saône-et-Loire   –  5e circonscription,1136.018264495331,Circonscription,11.22
+758,Vaucluse   –  3e circonscription,1133.0170454528457,Circonscription,11.54
+759,Indre-et-Loire   –  5e circonscription,1131.9982481392742,Circonscription,12.11
+760,Manche   –  4e circonscription,1128.9858797643049,Circonscription,11.21
+761,Maine-et-Loire     –  4e circonscription,1127.9951339109705,Circonscription,11.34
+762,Pyrénées-Atlantiques     –  6e circonscription,1128.0054702968102,Circonscription,11.84
+763,Ardèche  –  2e circonscription,1125.9969476769188,Circonscription,11.18
+764,Morbihan   –  2e circonscription,1125.0164537931475,Circonscription,11.29
+765,Côtes-d’Armor   –  5e circonscription,1124.0057504711722,Circonscription,13.0
+766,Var   –  1re circonscription,1122.9989322079498,Circonscription,11.68
+767,Gironde   –  7e circonscription,1120.0004660918396,Circonscription,12.49
+768,Eure-et-Loir     –  3e circonscription,1118.9941852905704,Circonscription,12.51
+769,Sarthe    –  1re circonscription,1119.008419392282,Circonscription,11.54
+770,Vienne   –  2e circonscription,1118.9856390303678,Circonscription,11.53
+771,Charente-Maritime   –  2e circonscription,1113.9964959572005,Circonscription,11.32
+772,Aisne  –  1re circonscription,1113.0097610418957,Circonscription,11.38
+773,Aube   –  2e circonscription,1111.9934876033167,Circonscription,11.27
+774,Finistère   –  5e circonscription,1111.999947556893,Circonscription,11.41
+775,Meurthe-et-Moselle   –  2e circonscription,1112.004736509704,Circonscription,11.89
+776,Charente-Maritime   –  5e circonscription,1111.0076055597378,Circonscription,11.32
+777,Cher  –  3e circonscription,1111.0063476694463,Circonscription,11.36
+778,Côtes-d’Armor   –  1re circonscription,1110.9853996888517,Circonscription,13.0
+779,Pyrénées-Atlantiques     –  5e circonscription,1111.0062074487976,Circonscription,11.84
+780,Charente-Maritime   –  1re circonscription,1110.0017342612873,Circonscription,11.32
+781,Haute-Loire     –  1re circonscription,1109.0130561020435,Circonscription,10.85
+782,Haute-Vienne   –  3e circonscription,1109.0081044942929,Circonscription,11.72
+783,Finistère   –  2e circonscription,1107.991664222999,Circonscription,11.41
+784,Côte-d’Or  –  5e circonscription,1106.9873139893184,Circonscription,13.0
+785,Somme   –  4e circonscription,1106.0097424731816,Circonscription,11.5
+786,Vienne   –  1re circonscription,1106.0036912810704,Circonscription,11.53
+787,Calvados   –  5e circonscription,1103.9930675480446,Circonscription,11.68
+788,Calvados   –  1re circonscription,1098.988338301565,Circonscription,11.68
+789,Charente   –  1re circonscription,1098.9991212226885,Circonscription,11.45
+790,Savoie   –  2e circonscription,1099.0025074611444,Circonscription,12.1
+791,Somme   –  5e circonscription,1098.0140574299703,Circonscription,11.5
+792,Alpes-Maritimes  –  6e circonscription,1096.0152111928612,Circonscription,12.76
+793,Morbihan   –  3e circonscription,1094.9977339325997,Circonscription,11.29
+794,Moselle   –  2e circonscription,1094.9783127089727,Circonscription,11.3
+795,Manche   –  1re circonscription,1093.9826631509413,Circonscription,11.21
+796,Mayenne   –  2e circonscription,1089.005115900504,Circonscription,11.05
+797,Moselle   –  3e circonscription,1087.9963319157246,Circonscription,11.3
+798,Moselle   –  4e circonscription,1087.9952242342772,Circonscription,11.3
+799,Pyrénées-Orientales   –  2e circonscription,1088.0147832473415,Circonscription,11.16
+800,Aude   –  3e circonscription,1087.0064364712805,Circonscription,10.97
+801,Landes   –  3e circonscription,1086.9882214627683,Circonscription,11.19
+802,Haute-Saône   –  1re circonscription,1087.0144573505722,Circonscription,11.07
+803,Finistère   –  1re circonscription,1085.0102982395172,Circonscription,11.41
+804,Pyrénées-Orientales   –  3e circonscription,1084.9922303169935,Circonscription,11.16
+805,Aube   –  3e circonscription,1084.004893045981,Circonscription,11.27
+806,Haute-Saône   –  2e circonscription,1083.0094940639706,Circonscription,11.07
+807,Côtes-d’Armor   –  2e circonscription,1080.0239099159055,Circonscription,13.0
+808,Deux-Sèvres   –  3e circonscription,1078.0181074961793,Circonscription,12.22
+809,Calvados   –  3e circonscription,1076.9990415036525,Circonscription,11.68
+810,Charente   –  3e circonscription,1077.0107546601819,Circonscription,11.45
+811,Finistère   –  3e circonscription,1074.9928354921815,Circonscription,11.41
+812,Pyrénées-Orientales   –  4e circonscription,1073.0066805078573,Circonscription,11.16
+813,Côte-d’Or  –  1re circonscription,1071.995682387278,Circonscription,13.0
+814,Loir-et-Cher   –  1re circonscription,1071.002477081246,Circonscription,11.71
+815,Yonne   –  1re circonscription,1070.006728327008,Circonscription,11.37
+816,Côte-d’Or  –  2e circonscription,1067.0029143977313,Circonscription,13.0
+817,Somme   –  3e circonscription,1058.9865313742469,Circonscription,11.5
+818,Martinique   –  1re circonscription,1054.9934136037293,Circonscription,12.91
+819,Polynésie-Française  –  1re circonscription,1053.986383214831,Circonscription,13.0
+820,Mayenne   –  1re circonscription,1051.9862531049623,Circonscription,11.05
+821,Moselle   –  6e circonscription,1051.986855155411,Circonscription,11.3
+822,Maine-et-Loire     –  3e circonscription,1049.9891075990297,Circonscription,11.34
+823,Finistère   –  6e circonscription,1049.0057828941408,Circonscription,11.41
+824,Meurthe-et-Moselle   –  5e circonscription,1049.0062890455238,Circonscription,11.89
+825,Côtes-d’Armor   –  3e circonscription,1047.0075079890214,Circonscription,13.0
+826,Eure-et-Loir     –  4e circonscription,1044.987754061236,Circonscription,12.51
+827,Allier   –  1re circonscription,1040.9944654795613,Circonscription,10.97
+828,Polynésie-Française  –  3e circonscription,1038.0008235636392,Circonscription,13.0
+829,Côte-d’Or  –  3e circonscription,1037.0207139709075,Circonscription,13.0
+830,Morbihan   –  6e circonscription,1035.9968540829614,Circonscription,11.29
+831,Doubs  –  3e circonscription,1035.0049948496353,Circonscription,11.39
+832,Calvados   –  2e circonscription,1033.0045070112494,Circonscription,11.68
+833,Doubs  –  4e circonscription,1031.9900800969829,Circonscription,11.39
+834,Yonne   –  2e circonscription,1029.0002994590018,Circonscription,11.37
+835,Ardennes  –  1re circonscription,1023.99955985838,Circonscription,11.24
+836,Loir-et-Cher   –  3e circonscription,1023.0085577351781,Circonscription,11.71
+837,Martinique   –  4e circonscription,1020.9932926171265,Circonscription,12.91
+838,Aisne  –  3e circonscription,1020.0023303074564,Circonscription,11.38
+839,Charente   –  2e circonscription,1012.000017488164,Circonscription,11.45
+840,Savoie   –  3e circonscription,1012.0110277313655,Circonscription,12.1
+841,Mayenne   –  3e circonscription,1006.9979527122554,Circonscription,11.05
+842,Moselle   –  5e circonscription,1002.9923510490887,Circonscription,11.3
+843,Allier   –  2e circonscription,998.0058800034515,Circonscription,10.97
+844,Lot-et-Garonne     –  2e circonscription,996.9904671795288,Circonscription,11.06
+845,Aude   –  2e circonscription,992.997669859598,Circonscription,10.97
+846,Saône-et-Loire   –  4e circonscription,993.0116185946649,Circonscription,11.22
+847,Saône-et-Loire   –  3e circonscription,991.9967112458797,Circonscription,11.22
+848,Loir-et-Cher   –  2e circonscription,986.9852278753615,Circonscription,11.71
+849,Vendée     –  5e circonscription,985.0047729869432,Circonscription,10.92
+850,Morbihan   –  5e circonscription,983.9956841321585,Circonscription,11.29
+851,Tarn   –  1re circonscription,983.0053213623414,Circonscription,11.44
+852,Aube   –  1re circonscription,981.9712757790828,Circonscription,11.27
+853,Indre   –  2e circonscription,976.9853020475183,Circonscription,11.06
+854,Hautes-Pyrénées   –  2e circonscription,975.0174473761862,Circonscription,10.9
+855,Finistère   –  4e circonscription,969.9990884770426,Circonscription,11.41
+856,Corrèze   –  1re circonscription,965.98873483881,Circonscription,11.22
+857,Pyrénées-Atlantiques     –  2e circonscription,963.9993981189712,Circonscription,11.84
+858,Pyrénées-Atlantiques     –  3e circonscription,962.9985390659065,Circonscription,11.84
+859,Lot-et-Garonne     –  3e circonscription,961.9983130515001,Circonscription,11.06
+860,Martinique   –  2e circonscription,958.0099749947644,Circonscription,12.91
+861,Corrèze   –  2e circonscription,953.9703356109258,Circonscription,11.22
+862,Cher  –  1re circonscription,950.0139208776086,Circonscription,11.36
+863,Vosges     –  1re circonscription,949.9948887064013,Circonscription,11.03
+864,Finistère   –  8e circonscription,948.9999847399577,Circonscription,11.41
+865,Pyrénées-Orientales   –  1re circonscription,949.0222954667951,Circonscription,11.16
+866,Côtes-d’Armor   –  4e circonscription,946.9846750457004,Circonscription,13.0
+867,Vienne   –  4e circonscription,946.9982722157882,Circonscription,11.53
+868,Guadeloupe   –  4e circonscription,946.9990025486333,Circonscription,13.08
+869,Vienne   –  3e circonscription,943.0029434376403,Circonscription,11.53
+870,Hautes-Pyrénées   –  1re circonscription,940.9879503265321,Circonscription,10.9
+871,Polynésie-Française  –  2e circonscription,941.0124903783013,Circonscription,13.0
+872,Meuse   –  1e circonscription,937.9928354010597,Circonscription,10.95
+873,Ardèche  –  1re circonscription,934.0135444792786,Circonscription,11.18
+874,Allier   –  3e circonscription,931.9861589414277,Circonscription,10.97
+875,Charente-Maritime   –  4e circonscription,930.0114611741708,Circonscription,11.32
+876,Indre   –  1re circonscription,926.9934468005341,Circonscription,11.06
+877,Ardennes  –  2e circonscription,918.0174973135537,Circonscription,11.24
+878,Saône-et-Loire   –  2e circonscription,915.0015563050245,Circonscription,11.22
+879,Jura     –  3e circonscription,913.0032189910756,Circonscription,11.14
+880,Cher  –  2e circonscription,909.9945370926179,Circonscription,11.36
+881,Ardèche  –  3e circonscription,907.9866644527341,Circonscription,11.18
+882,Saône-et-Loire   –  1re circonscription,906.9808767885297,Circonscription,11.22
+883,Haute-Loire     –  2e circonscription,902.0000020721396,Circonscription,10.85
+884,Pyrénées-Atlantiques     –  1re circonscription,898.988561127481,Circonscription,11.84
+885,Pyrénées-Atlantiques     –  4e circonscription,896.0080898502041,Circonscription,11.84
+886,Charente-Maritime   –  3e circonscription,887.9753744323352,Circonscription,11.32
+887,Côte-d’Or  –  4e circonscription,880.0051244532812,Circonscription,13.0
+888,Vosges     –  2e circonscription,878.0039129016345,Circonscription,11.03
+889,Finistère   –  7e circonscription,872.9835575348848,Circonscription,11.41
+890,Orne     –  1re circonscription,871.0064786605501,Circonscription,10.96
+891,Dordogne  –  4e circonscription,861.0112085919202,Circonscription,11.04
+892,Haute-Marne     –  1re circonscription,854.9961835326462,Circonscription,10.94
+893,Orne     –  3e circonscription,846.9984729908053,Circonscription,10.96
+894,Nièvre   –  1re circonscription,845.9965581415522,Circonscription,11.1
+895,Nièvre   –  2e circonscription,845.0083490196041,Circonscription,11.1
+896,Martinique   –  3e circonscription,844.0054919952206,Circonscription,12.91
+897,Dordogne  –  2e circonscription,834.0019377071305,Circonscription,11.04
+898,Creuse   –  Circonscription unique,828.9809707860329,Circonscription,10.72
+899,Jura     –  1re circonscription,827.9941861933237,Circonscription,11.14
+900,Aveyron  –  1re circonscription,826.0056731064535,Circonscription,11.01
+901,Dordogne  –  1re circonscription,807.0146356993015,Circonscription,11.04
+902,Ardennes  –  3e circonscription,802.9800451671173,Circonscription,11.24
+903,Vosges     –  4e circonscription,790.9991612595524,Circonscription,11.03
+904,Orne     –  2e circonscription,785.9936998312584,Circonscription,10.96
+905,Haute-Corse   –  1re circonscription,775.0098693563228,Circonscription,13.0
+906,Meuse   –  2e circonscription,766.9773665920769,Circonscription,10.95
+907,Haute-Marne     –  2e circonscription,762.0001285720884,Circonscription,10.94
+908,Vosges     –  3e circonscription,759.9940680748974,Circonscription,11.03
+909,Territoire-de-Belfort     –  2e circonscription,755.9904507228774,Circonscription,13.0
+910,Gers     –  1re circonscription,754.9901650346748,Circonscription,11.43
+911,Jura     –  2e circonscription,749.980433145948,Circonscription,11.14
+912,Territoire-de-Belfort     –  1re circonscription,749.9905557594781,Circonscription,13.0
+913,Aveyron  –  3e circonscription,716.9793708742135,Circonscription,11.01
+914,Aveyron  –  2e circonscription,711.9995850110809,Circonscription,11.01
+915,Gers     –  2e circonscription,707.0114752717411,Circonscription,11.43
+916,Alpes de Haute-Provence  –  2e circonscription,701.0160663399694,Circonscription,13.0
+917,Lot     –  1re circonscription,677.9871859097224,Circonscription,11.11
+918,Hautes-Alpes   –  1re circonscription,674.0075770736639,Circonscription,10.96
+919,Dordogne  –  3e circonscription,674.0064467762365,Circonscription,11.04
+920,Ariège  –  2e circonscription,668.0024503510158,Circonscription,10.92
+921,Haute-Corse   –  2e circonscription,667.019695645469,Circonscription,13.0
+922,Alpes de Haute-Provence  –  1re circonscription,665.9949691650816,Circonscription,13.0
+923,Corse-du-Sud   –  2e circonscription,626.0026446951281,Circonscription,13.0
+924,Lot     –  2e circonscription,620.9785766715327,Circonscription,11.11
+925,Lozère   –  Circonscription unique ,621.0076578157432,Circonscription,10.76
+926,Corse-du-Sud   –  1re circonscription,617.0005854533971,Circonscription,13.0
+927,Cantal  –  1re circonscription,600.9894711413177,Circonscription,10.61
+928,Hautes-Alpes   –  2e circonscription,569.0031404381982,Circonscription,10.96
+929,Ariège  –  1re circonscription,567.000332857155,Circonscription,10.92
+930,Saint-Barthélémy et Saint-Martin  –  Circonscription unique ,506.9966012771378,Circonscription,13.0
+931,Cantal  –  2e circonscription,467.99784838632746,Circonscription,10.61
+932,Wallis-et-Futuna  –  Circonscription unique ,142.0015480020289,Circonscription,13.0
+933,Saint-Pierre-et-Miquelon  –  Circonscription unique ,69.00132215313126,Circonscription,13.0

@@ -40,7 +40,7 @@ Indice de perte de qualité de vie pour la dépression,0,1,0.29,0.01,depression_
 Réduction des semaines de travail chaque année,0,52,12,1,depression_mere,semaines,Source : Plaisier et al. 2010,12
 Valeur d'une année de QALY,0,150000,25000,100,economique,€,"Le QALY (de l’anglais quality-adjusted life year, « année de vie pondérée par la qualité ») est un indicateur économique visant à estimer la valeur de la vie. Source : valeur utilisée par les Anglais",25000
 Prix d'une vie,0,10,3,0.1,economique,millions d'€,"Source : valeur utilisée par l'Etat français lors de son évaluation d'impact des politiques publiques (dernier exemple : évaluer les 80km/h). Les Anglais utilisent 1,7M£, les Américains 10M$. Cf. https://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/archives/Elements-pour-une-r%C3%A9vision-de-la-valeur-de-la-vie-humaine.pdf et https://fr.wikipedia.org/wiki/Valeur_de_la_vie",3
-Revenu hebdomadaire moyen d'une femme,0,1000,450,10,economique,€,Source : INSEE 2018,450
+Revenu horaire moyen d'une femme,0,20,13,0.01,economique,€,Source : INSEE 2018,13
 Prévalence de la dépression,0,25,10,0.5,medical,%,b,10
 Prévalence de l'anxiété,0,10,3,0.1,medical,%,b,3
 Prévalence de la psychose,0,2,0.2,0.01,medical,%,b,0.2

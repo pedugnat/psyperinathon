@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def val(df, col):
     return df.loc[col][-1]
 
@@ -16,12 +17,7 @@ def get_revenu_moyen_femme(df):
         * 0.5
     )"""
 
-    return (
-        val(df, "Revenu hebdomadaire moyen d'une femme")
-        * 0.74
-        * 0.75
-        * 0.60
-    )
+    return val(df, "Revenu horaire moyen d'une femme") * 35 * 0.74 * 0.75 * 0.60
 
 
 def process_values(df_variables, depression=True, anxiete=True, psychose=True):
@@ -53,15 +49,21 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
         # DEPRESSION BEBE
         # Secteur Public
         cdbsp_sante_social = (
-            val(df_variables, "Coût pour la Sécu d'une naissance prématurée liée à la dépression maternelle")
+            val(
+                df_variables,
+                "Coût pour la Sécu d'une naissance prématurée liée à la dépression maternelle",
+            )
             + val(df_variables, "Coût des problèmes émotionnels pour le bébé")
             + (
                 val(
-                    df_variables, "Probabilité supplémentaire de troubles du comportement"
+                    df_variables,
+                    "Probabilité supplémentaire de troubles du comportement",
                 )
                 / 100
             )
-            * val(df_variables, "Coût pour la Sécu des troubles du comportement par cas")
+            * val(
+                df_variables, "Coût pour la Sécu des troubles du comportement par cas"
+            )
         )
 
         cdbsp_educ = val(df_variables, "Coûts supplémentaires pour l'éducation")
@@ -69,17 +71,20 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
 
         # Société
         cdbsoc_qaly = (
-            - 0
+            -0
             - 0
             + val(
                 df_variables,
                 "Perte de qualité vie due à des troubles du comportement (en QALY)",
             )
             * val(df_variables, "Valeur d'une année de QALY")
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
             + val(
-                df_variables, "Coûts supplémentaires des problèmes émotionnels (en QALY)"
+                df_variables,
+                "Coûts supplémentaires des problèmes émotionnels (en QALY)",
             )
             + val(df_variables, "Probabilité supplémentaire de mort de l'enfant")
             / 100
@@ -93,14 +98,18 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
                 df_variables,
                 "Coût en perte de productivité des troubles du comportement par cas",
             )
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
             + val(df_variables, "Coût lié à l'abandon de l'école sans qualification")
         )
 
         cdbsoc_autres = (
             val(df_variables, "Coût suppl total pour victimes crimes et délits par cas")
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
         )
 
@@ -130,7 +139,9 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
             )
             / 100
             + val(df_variables, "Coût des problèmes émotionnels en cas d'anxiété")
-            + val(df_variables, "Coût pour la Sécu des troubles du comportement par cas")
+            + val(
+                df_variables, "Coût pour la Sécu des troubles du comportement par cas"
+            )
             * val(df_variables, "Risque supplémentaire de troubles du comportement")
             / 100
             + val(
@@ -151,7 +162,10 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
         cabsp_educ = val(df_variables, "Coût lié aux problèmes émotionnels si anxiété")
 
         cabsp_justice = (
-            val(df_variables, "Coût pour la justice des troubles du comportement par cas")
+            val(
+                df_variables,
+                "Coût pour la justice des troubles du comportement par cas",
+            )
             * val(df_variables, "Risque supplémentaire de troubles du comportement")
             / 100
         )
@@ -332,19 +346,19 @@ def process_values(df_variables, depression=True, anxiete=True, psychose=True):
 
     repartition = {
         "Santé et social": int(total_sante_social) / total_secteurs,
-        "Secteur public <br>(éducation, justice, etc.)": int(total_autre_servicepublic) / total_secteurs,
-        "Société entière<br>(perte de chance, <br>de qualité de vie, <br>de productivité, etc.)": int(total_societe_entiere) / total_secteurs,
+        "Secteur public <br>(éducation, justice, etc.)": int(total_autre_servicepublic)
+        / total_secteurs,
+        "Société entière<br>(perte de chance, <br>de qualité de vie, <br>de productivité, etc.)": int(
+            total_societe_entiere
+        )
+        / total_secteurs,
     }
 
-    df_repartition_secteur = pd.DataFrame(repartition, index=["Répartition des coûts par secteur"]).T
+    df_repartition_secteur = pd.DataFrame(
+        repartition, index=["Répartition des coûts par secteur"]
+    ).T
 
     return df_par_cas, df_repartition_secteur
-
-
-
-
-
-
 
 
 def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=True):
@@ -375,15 +389,21 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
         # DEPRESSION BEBE
         # Secteur Public
         cdbsp_sante_social = (
-            val(df_variables, "Coût pour la Sécu d'une naissance prématurée liée à la dépression maternelle")
+            val(
+                df_variables,
+                "Coût pour la Sécu d'une naissance prématurée liée à la dépression maternelle",
+            )
             + val(df_variables, "Coût des problèmes émotionnels pour le bébé")
             + (
                 val(
-                    df_variables, "Probabilité supplémentaire de troubles du comportement"
+                    df_variables,
+                    "Probabilité supplémentaire de troubles du comportement",
                 )
                 / 100
             )
-            * val(df_variables, "Coût pour la Sécu des troubles du comportement par cas")
+            * val(
+                df_variables, "Coût pour la Sécu des troubles du comportement par cas"
+            )
         )
 
         cdbsp_educ = val(df_variables, "Coûts supplémentaires pour l'éducation")
@@ -391,17 +411,20 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
 
         # Société
         cdbsoc_qaly = (
-            - 0
+            -0
             - 0
             + val(
                 df_variables,
                 "Perte de qualité vie due à des troubles du comportement (en QALY)",
             )
             * val(df_variables, "Valeur d'une année de QALY")
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
             + val(
-                df_variables, "Coûts supplémentaires des problèmes émotionnels (en QALY)"
+                df_variables,
+                "Coûts supplémentaires des problèmes émotionnels (en QALY)",
             )
             + val(df_variables, "Probabilité supplémentaire de mort de l'enfant")
             / 100
@@ -415,14 +438,18 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
                 df_variables,
                 "Coût en perte de productivité des troubles du comportement par cas",
             )
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
             + val(df_variables, "Coût lié à l'abandon de l'école sans qualification")
         )
 
         cdbsoc_autres = (
             val(df_variables, "Coût suppl total pour victimes crimes et délits par cas")
-            * val(df_variables, "Probabilité supplémentaire de troubles du comportement")
+            * val(
+                df_variables, "Probabilité supplémentaire de troubles du comportement"
+            )
             / 100
         )
 
@@ -452,7 +479,9 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
             )
             / 100
             + val(df_variables, "Coût des problèmes émotionnels en cas d'anxiété")
-            + val(df_variables, "Coût pour la Sécu des troubles du comportement par cas")
+            + val(
+                df_variables, "Coût pour la Sécu des troubles du comportement par cas"
+            )
             * val(df_variables, "Risque supplémentaire de troubles du comportement")
             / 100
             + val(
@@ -473,7 +502,10 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
         cabsp_educ = val(df_variables, "Coût lié aux problèmes émotionnels si anxiété")
 
         cabsp_justice = (
-            val(df_variables, "Coût pour la justice des troubles du comportement par cas")
+            val(
+                df_variables,
+                "Coût pour la justice des troubles du comportement par cas",
+            )
             * val(df_variables, "Risque supplémentaire de troubles du comportement")
             / 100
         )
@@ -622,10 +654,9 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
         columns=["Mère", "Bébé", "Total"],
         index=["Dépression périnatale", "Anxiété périnatale", "Psychose périnatale"],
     )
-    
+
     prevalences = (
-        df_variables
-        .loc[
+        df_variables.loc[
             [
                 "Prévalence de " + mal
                 for mal in ["la dépression", "l'anxiété", "la psychose"]
@@ -637,9 +668,7 @@ def process_values_sensi(df_variables, depression=True, anxiete=True, psychose=T
     )
 
     df_par_naissance = df_par_cas.copy()
-    #print(df_par_naissance.iloc[:, 1:])
+    # print(df_par_naissance.iloc[:, 1:])
     df_par_naissance.iloc[:, :] = df_par_naissance.iloc[:, :].mul(prevalences, axis=0)
-    
 
-    return df_par_naissance['Total'].sum()
-
+    return df_par_naissance["Total"].sum()

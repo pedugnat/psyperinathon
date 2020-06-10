@@ -7,12 +7,12 @@ from dash.dependencies import Input, Output, State
 import dash_table as dt
 
 # OTHER IMPORTS
+import numpy as np
+import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-import numpy as np
-from itertools import chain
-import pandas as pd
 import time
+from itertools import chain
 
 # LOCAL IMPORTS
 from utils import make_group, generate_popovers, generate_qm
@@ -66,7 +66,9 @@ tabs_variables = dbc.Tabs(
             tab_style=eq_width,
         ),
         dbc.Tab(
-            make_group("Variables économiques", items_economique, "Variables-Economiques"),
+            make_group(
+                "Variables économiques", items_economique, "Variables-Economiques"
+            ),
             label="Variables économiques",
             tab_style=eq_width,
         ),
@@ -77,9 +79,13 @@ tabs_maladies = dbc.Tabs(
     [
         dbc.Tab(
             [
-                make_group("Coûts pour la mère", items_depression_mere, "Dépression-Mère"),
+                make_group(
+                    "Coûts pour la mère", items_depression_mere, "Dépression-Mère"
+                ),
                 html.Hr(),
-                make_group("Coûts pour le bébé", items_depression_bebe, "Dépression-Bébé"),
+                make_group(
+                    "Coûts pour le bébé", items_depression_bebe, "Dépression-Bébé"
+                ),
             ],
             label="Dépression de la mère",
             tab_style=eq_width,
@@ -159,8 +165,15 @@ presentation_alliance_3 = "Les (futurs) bébés et les (futurs) parents mériten
 qui_sommes_nous = html.Div(
     [
         html.Div(
-            #"L'Alliance Francophone de Santé Mentale Périnatale est ",
-            [html.Div(txt, style={"padding": "0 0 0.6em 0"}) for txt in [presentation_alliance_1, presentation_alliance_2, presentation_alliance_3]],
+            # "L'Alliance Francophone de Santé Mentale Périnatale est ",
+            [
+                html.Div(txt, style={"padding": "0 0 0.6em 0"})
+                for txt in [
+                    presentation_alliance_1,
+                    presentation_alliance_2,
+                    presentation_alliance_3,
+                ]
+            ],
             style={"font-size": "1.2em", "text-align": "justify"},
         )
     ],
@@ -225,7 +238,7 @@ navbar = dbc.Navbar(
 
 
 global bdd_naissances
-bdd_naissances = pd.read_csv("naissance_echelons.csv")
+bdd_naissances = pd.read_csv("naissance_echelons_clean.csv")
 
 form_naissances = generate_form_naissances(bdd_naissances)
 
@@ -271,8 +284,8 @@ pp_tableaux = dbc.Popover(
                 html.Span(
                     " désigne le coût total rapporté au nombre de naissances, c’est-à-dire combien coûte "
                 ),
-                html.Span("en moyenne", style={"font-style": 'italic'}),
-                html.Span(" les maladies. ")
+                html.Span("en moyenne", style={"font-style": "italic"}),
+                html.Span(" les maladies. "),
             ]
         ),
     ],
@@ -356,7 +369,13 @@ app.layout = html.Div(
 
 @app.callback(Output("nombre-naissances", "value"), [Input("dd-echelle", "value")])
 def upd_input_echelle(val):
-    return val
+    return int(val)
+
+@app.callback(Output("slider-41", "value"), [Input("dd-echelle", "value")])
+def upd_input_echelle(val):
+    upd_salaire_horaire = bdd_naissances[bdd_naissances["Nombre de naissances (2018)"] == val].values[0][-1]
+    print("vall", upd_salaire_horaire)
+    return float(upd_salaire_horaire)
 
 
 @app.callback(
@@ -398,7 +417,7 @@ def compute_costs(n_generate, n_adjust, n_naissances, *sliders):
     df_par_naissance = df_par_cas.copy()
     df_par_naissance.iloc[:, 1:] = df_par_naissance.iloc[:, 1:].mul(prevalences, axis=0)
 
-    #for df in [df_par_naissance]:
+    # for df in [df_par_naissance]:
     df_par_naissance.loc["3 maladies"] = ["Total des trois maladies"] + np.sum(
         df_par_naissance.values[:, 1:], axis=0
     ).tolist()
