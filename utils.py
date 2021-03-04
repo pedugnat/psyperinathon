@@ -19,7 +19,8 @@ tt = {"always_visible": False, "placement": "topLeft"}
 
 # VARIABLES
 global df_variables
-df_variables = pd.read_csv("bdd_variables.csv")
+df_variables = pd.read_csv("resources/bdd_variables.csv")
+
 
 def marker(num):
     return int(num) if num % 1 == 0 else num
@@ -68,7 +69,7 @@ def generate_item(df_variables, category):
 def make_group(title, items, item_name):
     """items est un dict sous forme : key = nom var ; value = widget"""
     # rd_cost_maladie = np.random.randint(0, 100000)
-    #item_name = "-".join(title.split()[:2])
+    # item_name = "-".join(title.split()[:2])
 
     if title in ["Variables économiques", "Variables médicales"]:
         button_open_tab = html.Div("")
@@ -114,7 +115,11 @@ def make_group(title, items, item_name):
             )
         ]
 
-    return dbc.Card([card_header] + card_content, color="dark", outline=True,)
+    return dbc.Card(
+        [card_header] + card_content,
+        color="dark",
+        outline=True,
+    )
 
 
 def generate_qm(item):
@@ -151,7 +156,7 @@ def make_card_repartition(df_par_naissance):
 
     proportion_mere = 100 * total_mere / (total_mere + total_bebe)
 
-    image_filename = "card_image_transparent.png"
+    image_filename = "resources/card_image_transparent.png"
     encoded_image = base64.b64encode(open(image_filename, "rb").read())
 
     card = html.Div(
@@ -174,7 +179,10 @@ def make_card_repartition(df_par_naissance):
                         [
                             html.H1(
                                 f"{proportion_mere: .0f} %",
-                                style={"color": "#1b75bc", "font-weight": "bold",},
+                                style={
+                                    "color": "#1b75bc",
+                                    "font-weight": "bold",
+                                },
                             ),
                             html.P("de ces coûts sont liés à la mère"),
                             html.H1(
@@ -274,11 +282,7 @@ def get_pitch():
     )
     lien_nhs_2 = "https://www.england.nhs.uk/2016/02/fyfv-mh/"
     lien_nhs_3 = "https://www.england.nhs.uk/wp-content/uploads/2016/02/Mental-Health-Taskforce-FYFV-final.pdf"
-    lien_govuk = (
-        "https://www.gov.uk/government/news/prime-minister-pledges-a-revolution-in-mental-health-treatment"
-    )
-
-
+    lien_govuk = "https://www.gov.uk/government/news/prime-minister-pledges-a-revolution-in-mental-health-treatment"
 
     pitch = html.Div(
         [
@@ -297,20 +301,27 @@ def get_pitch():
                         target="_blank",
                     ),
                     html.Span(
-                        ", écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investi plus de 300 millions de livres pour amorcer sa politique, et maintient désormais un financement annuel de 100 millions de livres "
+                        ", écrit par des chercheurs de la London School of Economics, que le gouvernement Cameron a investi plus de 300 millions de livres "
                     ),
-                    html.A(html.Span("[1]", style={"color": "black"}), href=lien_govuk, target="_blank"),
-                    html.A(html.Span("[2]", style={"color": "black"}), href=lien_nhs, target="_blank"),
+                    html.A(
+                        html.Span("[1]", style={"color": "black"}),
+                        href=lien_govuk,
+                        target="_blank",
+                    ),
+                    html.A(
+                        html.Span("[2]", style={"color": "black"}),
+                        href=lien_nhs,
+                        target="_blank",
+                    ),
                     html.Span(
-                        ". Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, et notamment dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé ce "
+                        ". Pour mieux comprendre la nécessité de prendre en compte cet aspect de nos politiques de santé, en particulier dans une perspective d’investissement social, l’Alliance Francophone pour la Santé Mentale Périnatale a créé ce "
                     ),
                     html.Span("simulateur", style={"font-weight": "bold"}),
                     html.Span(
-                        " qui réplique le modèle médico-économique de l’article Bauer "
+                        " qui réplique le modèle médico-économique de l’article Bauer, "
                     ),
-                    html.Span("et al.", style={"font-style": "italic"}),
                     html.Span(
-                        " afin d’estimer le coût des maladies psychiatriques périnatales à toutes les échelles en France. "
+                        "afin d’estimer le coût des maladies psychiatriques périnatales à toutes les échelles en France. "
                     ),
                     html.Span(
                         "Une partie significative de ces coûts peut être économisée par une politique ambitieuse de prévention."
@@ -319,6 +330,10 @@ def get_pitch():
                 style={"text-align": "justify", "font-size": "1.2em"},
             ),
         ],
-        style={"border": "1px solid black", "padding": "1.5em 1.5em 1.5em 1.5em", "border-radius": "3px"},
+        style={
+            "border": "1px solid black",
+            "padding": "1.5em 1.5em 1.5em 1.5em",
+            "border-radius": "3px",
+        },
     )
     return pitch

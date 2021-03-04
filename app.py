@@ -34,7 +34,7 @@ tt = {"always_visible": False, "placement": "topLeft"}
 # VARIABLES
 global df_variables
 col_types = {"maxi": float, "mini": int, "val": float, "step": float}
-df_variables = pd.read_csv("bdd_variables.csv", dtype=col_types)
+df_variables = pd.read_csv("resources/bdd_variables.csv", dtype=col_types)
 nb_variables_total = df_variables.shape[0]
 
 
@@ -127,9 +127,10 @@ pitch = get_pitch()
 
 mode_demploi_text = {
     "mode_demploi_1": "Premièrement, il vous faudra choisir l’échelle à laquelle vous voulez évaluer le coût des maladies périnatales. Il est possible de choisir la France, l’une des 12 régions, l’un des 100 départements, l’une des 200 plus grandes villes ou l'une des 577 circonscriptions. Lorsque vous sélectionnez un territoire, le nombre de naissances en 2018 sur le territoire apparaît à droite. Vous pouvez toujours modifier directement ce chiffre à la main.",
-    "mode_demploi_2": "Deuxièmement, il vous faudra ajuster les principales variables qui influent sur le résultat final. En effet, notre modélisation est fondée sur des hypothèses (les plus crédibles selon nous), mais il vous est possible de les ajuster pour refléter au mieux vos convictions et vos questions. Par exemple, il est difficile de connaître précisément la prévalence de la dépression périnatale en France, mais les estimations communément admises sont de 10%. Libre à vous de modifier la valeur si vous pensez que cette estimation est différente de la votre.",
-    "mode_demploi_3": "Troisièmement, si vous souhaitez aller plus loin dans l’utilisation de l’outil, il est possible de modifier toutes les hypothèses initiales de l'article, mais celles-ci sont plus techniques. Par exemple, vous aurez la possibilité de modifier le coût d’une hospitalisation liée à une dépression, ou encore les coûts supplémentaires pour la santé, l'éducation voire la justice des troubles du comportement liés à l’anxiété périnatale.",
-    "mode_demploi_4": "Une fois ces trois étapes remplies, il vous suffira de cliquer sur 'Générer l'analyse et une interface récapitulative des coûts à votre échelle et avec vos hypothèses apparaîtra : c’est le coût engendré par les maladies psychiques périnatales ! Tout au long de votre parcours, n’hésitez pas à cliquer sur les petits points d’interrogation, ils vous donneront des informations supplémentaires.",
+    "mode_demploi_2": "Vous pouvez alors cliquer sur Générer l'analyse, et voir les premiers résultats ! Une interface récapitulative des coûts à votre échelle et avec vos hypothèses apparaîtra : c’est le coût engendré par les maladies psychiques périnatales",
+    "mode_demploi_3": "Deuxièmement, si vous souhaitez aller plus loin dans l'estimation des coûts, vous pouvez ajuster les principales variables qui influent sur notre estimation. En effet, celle-ci est fondée sur des hypothèses (les plus crédibles selon nous), mais il vous est possible de les ajuster pour refléter au mieux vos convictions et vos questions. Par exemple, il est difficile de connaître précisément la prévalence de la dépression périnatale en France, mais les estimations communément admises sont de 10%. Libre à vous de modifier la valeur si vous pensez que cette estimation est différente de la votre.",
+    "mode_demploi_4": "Troisièmement, si vous souhaitez plonger en détail dans l’utilisation de l’outil, il est possible de modifier toutes les hypothèses initiales de l'article, mais celles-ci sont plus techniques. Par exemple, vous aurez la possibilité de modifier le coût d’une hospitalisation liée à une dépression, ou encore les coûts supplémentaires pour la santé, l'éducation voire la justice des troubles du comportement liés à l’anxiété périnatale.",
+    "mode_demploi_5": "Tout au long de votre parcours, n’hésitez pas à cliquer sur les petits points d’interrogation, ils vous donneront des informations supplémentaires.",
 }
 
 mode_demploi = html.Div(
@@ -184,11 +185,71 @@ qui_sommes_nous = html.Div(
     },
 )
 
+telechargement_rapport = html.Div(
+    [
+        html.Div(
+            [
+                # html.Li(
+                #     "Test Téléchargement rapport FR"
+                # ),
+                html.Div(
+                    dbc.Button(
+                        "Rapport traduit en français",
+                        id="rapportbauer-fr-download",
+                        href="http://alliance-psyperinat.org/wp-content/uploads/2020/10/Article-Bauer-et-al-traduction-franc%CC%A7aise.pdf",
+                        target="_blank",
+                        color="secondary",
+                        outline=True,
+                        style={"display": "flex", "justify-content": "center"},
+                    )
+                ),
+                # html.Li(
+                #           "Test Téléchargement rapport EN"
+                #       ),
+                html.Hr(),
+                html.Div(
+                    dbc.Button(
+                        "Rapport original en anglais",
+                        id="rapportbauer-en-download",
+                        href="http://alliance-psyperinat.org/wp-content/uploads/2020/04/LSE-%C3%A9tude-de-co%C3%BBts-1.pdf",
+                        target="_blank",
+                        color="secondary",
+                        outline=True,
+                        style={"display": "flex", "justify-content": "center"},
+                    )
+                ),
+            ]
+        ),
+    ],
+    style={
+        "border": "1px solid black",
+        "padding": "1.5em 1.5em 1.5em 1.5em",
+        "border-radius": "3px",
+    },
+)
+
 tabs_intro = dbc.Tabs(
     [
-        dbc.Tab(pitch, label="Raison d'être", tab_style=eq_width,),
-        dbc.Tab(mode_demploi, label="Mode d'emploi", tab_style=eq_width,),
-        dbc.Tab(qui_sommes_nous, label="Qui sommes-nous ?", tab_style=eq_width,),
+        dbc.Tab(
+            pitch,
+            label="Raison d'être",
+            tab_style=eq_width,
+        ),
+        dbc.Tab(
+            mode_demploi,
+            label="Mode d'emploi",
+            tab_style=eq_width,
+        ),
+        dbc.Tab(
+            qui_sommes_nous,
+            label="Qui sommes-nous ?",
+            tab_style=eq_width,
+        ),
+        dbc.Tab(
+            telechargement_rapport,
+            label="Télécharger le rapport",
+            tab_style=eq_width,
+        ),
     ],
 )
 
@@ -198,11 +259,19 @@ tabs_intro_title = html.Div(
 
 
 button_generate = dbc.Button(
-    "Générer l'analyse !", color="primary", block=True, id="button-generate", size="lg",
+    "Générer l'analyse !",
+    color="primary",
+    block=True,
+    id="button-generate",
+    size="lg",
 )
 
 button_adjust = dbc.Button(
-    "Ajuster l'analyse !", color="primary", block=True, id="button-adjust", size="lg",
+    "Ajuster l'analyse !",
+    color="primary",
+    block=True,
+    id="button-adjust",
+    size="lg",
 )
 
 
@@ -238,7 +307,7 @@ navbar = dbc.Navbar(
 
 
 global bdd_naissances
-bdd_naissances = pd.read_csv("naissance_echelons_clean.csv")
+bdd_naissances = pd.read_csv("resources/naissance_salaires_echelons.csv")
 
 form_naissances = generate_form_naissances(bdd_naissances)
 
@@ -371,9 +440,12 @@ app.layout = html.Div(
 def upd_input_echelle(val):
     return int(val)
 
+
 @app.callback(Output("slider-41", "value"), [Input("dd-echelle", "value")])
 def upd_input_echelle(val):
-    upd_salaire_horaire = bdd_naissances[bdd_naissances["Nombre de naissances (2018)"] == val].values[0][-1]
+    upd_salaire_horaire = bdd_naissances[
+        bdd_naissances["Nombre de naissances (2018)"] == val
+    ].values[0][-1]
     print("vall", upd_salaire_horaire)
     return float(upd_salaire_horaire)
 
@@ -546,5 +618,6 @@ for i in list(range(nb_variables_total)) + ["cout-cas"]:
 
 if __name__ == "__main__":
     app.run_server(
-        debug=False, port=1234,
+        debug=False,
+        port=1234,
     )
