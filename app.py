@@ -61,7 +61,7 @@ items_medical = generate_item(df_variables, "medical")
 tabs_variables = dbc.Tabs(
     [
         dbc.Tab(
-            make_group("Variables médicales", items_medical, "Variables-Médicales"),
+            make_group("Variables TEST médicales", items_medical, "Variables-Médicales"),
             label="Variables médicales",
             tab_style=eq_width,
         ),
